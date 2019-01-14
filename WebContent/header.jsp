@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
-table{
+
+.headertable{
 	width:"1903px";
 }
 td {
@@ -17,18 +18,36 @@ td {
 	
 	
 }
+
 footer{
+	height: 200px;
+	background-image: url('logo_bottom.gif');
 	background-color: #231F1E;
- 	height: 200px;
- 	color: #969291;
- 	 	 
+	margin-top:100px;
+	padding-left: 450px;
+	
+	
 }
+
+
+.footertable td{
+	
+	background: #231F1E;
+	
+}
+div{
+	color:#969291;
+	padding-top: 100px;
+	
+	
+}
+
 
 </style>
 </head>
 
 <header>
-<table >
+<table class="headertable">
 <tr>
 <td colspan="8" width="492px" id="1"><img src="Imgs/topbg.gif"></td><td id="2"><img src="Imgs/logo.gif"></td>
 <td id="3" width="401px"><img src="Imgs/topbg.gif">
@@ -41,15 +60,15 @@ footer{
 <body>
 </body>
 <footer>
-<table class="f1" >
-<tr >
-<td width="492px" ></td>
+
+<table class="footertable">
+<tr>
 <td><img src="Imgs/logo_bottom.gif"></td>
-
-<td>Copyright 2019 by MovieBox, Inc. All rights reserved</td>
-
 </tr>
 </table>
+<div>Copyright 2019 by MovieBox, Inc. All rights reserved</div>
+
+
 </footer>
 
 </html>
