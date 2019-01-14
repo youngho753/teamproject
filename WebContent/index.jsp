@@ -7,10 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<<<<<<< HEAD
-asd
-=======
-asdasd
->>>>>>> master
+index
 </body>
 </html>
