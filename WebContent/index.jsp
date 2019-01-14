@@ -6,7 +6,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
 <body>
-메인
+<header>
+<table>
+<tr>
+<td colspan="8"></td>
+</tr>
+</table>
+</header>
 </body>
 </html>
