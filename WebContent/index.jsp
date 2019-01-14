@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-indexasdasdds;
+메인
 </body>
 </html>
