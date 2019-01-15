@@ -15,6 +15,7 @@ a:hover{color:#1bc1a3;}
 #slider-wrap{
     width:1903px;
     height:400px;
+    margin:0 auto;
     position:relative;
     overflow:hidden;
 }
