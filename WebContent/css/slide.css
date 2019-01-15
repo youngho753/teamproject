@@ -1,0 +1,8 @@
+.movie_slide{
+    margin: 0 auto;
+    width: 1903px;
+}
+
+.slide_view .mySlides{
+    display: none;
+}
