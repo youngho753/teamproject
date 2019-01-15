@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MoiveDetail
  */
-@WebServlet("/movie/detail.go")
+@WebServlet("/movie/detail.do")
 public class MoiveDetail extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

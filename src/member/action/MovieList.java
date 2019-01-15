@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class MovieList
  */
-@WebServlet("/movie/list.go")
+@WebServlet("/movie/list.do")
 public class MovieList extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

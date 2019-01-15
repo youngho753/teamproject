@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class AdminView
  */
-@WebServlet("/admin/adminView.go")
+@WebServlet("/admin/adminView.do")
 public class AdminView extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
