@@ -175,8 +175,8 @@
           </div>
       </section>
       
-      	<!-- modal영역 화면에 안 잡힘.-->
-             
+      
+      	<!-- modal영역 화면에 안 잡힘.-->       
              <!-- 아쿠아맨modal -->
 	<div class="modal fade" id="aquamanModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg">
@@ -346,11 +346,7 @@
 	</div>
       
       
-      
-      
-      
-          
-          
+
            <!-- script-->
            <script data-brackets-id='82' src="js/jquery.min.js"></script>
             <script data-brackets-id='83' src="js/jquery.scrolly.min.js"></script>
