@@ -1,12 +1,20 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
+<link rel = "stylesheet" type = "text/css" href = "../css/topBottom.css">
 <title>Insert title here</title>
 </head>
 <body>
-여긴 footer입니당
+<footer>
+
+<img src="Imgs/logo_bottom.gif" id="footerimg">
+
+<div>Copyright 2019 by MovieBox, Inc. All rights reserved</div>
+
+
+</footer>
 </body>
 </html>
