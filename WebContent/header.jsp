@@ -23,24 +23,24 @@ footer{
 	height: 200px;
 	background-image: url('logo_bottom.gif');
 	background-color: #231F1E;
-	margin-top:100px;
+	margin-top:100px; /*<---합칠때 삭제바람*/
 	padding-left: 450px;
 	
 	
 }
 
 
-.footertable td{
-	
-	background: #231F1E;
-	
-}
+
 div{
 	color:#969291;
 	padding-top: 100px;
-	
-	
+		
 }
+
+#footerimg{
+	padding-top: 20px;
+}
+
 
 
 </style>
@@ -61,11 +61,8 @@ div{
 </body>
 <footer>
 
-<table class="footertable">
-<tr>
-<td><img src="Imgs/logo_bottom.gif"></td>
-</tr>
-</table>
+<img src="Imgs/logo_bottom.gif" id="footerimg">
+
 <div>Copyright 2019 by MovieBox, Inc. All rights reserved</div>
 
 
