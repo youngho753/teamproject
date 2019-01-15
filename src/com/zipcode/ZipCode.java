@@ -1,6 +1,6 @@
 package com.zipcode;
 
-public class Zipcode {
+public class ZipCode {
 	private String zipcode;
 	private String sido;
 	private String gugun;
