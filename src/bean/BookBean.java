@@ -11,7 +11,7 @@ public class BookBean {
 	String pay_type;
 	
 	BookBean(){
-		asd
+		
 	}
 	
 	
