@@ -11,6 +11,7 @@
 $(document).ready(function(){
 	//페이지가 load되면 다른파일의 페이지를 가져온다.
     $("#header").load("movie/header.jsp");
+	$("#slide").load("movie/slide.jsp");
     $("#Article").load("movie/movieList.jsp");
     $("#footer").load("movie/footer.jsp");
 });
@@ -20,6 +21,8 @@ $(document).ready(function(){
 <body>
 <!-- header -->
 <div id = "header" style = "width : 1903px; height : 200px;"></div>
+<!--  slideshow -->
+<div id = "slide" style = "width : 1903px;"></div>
 <!-- 본문 -->
 <div id = "Article" style = "width : 1903px;"></div>
 <!-- footer -->
