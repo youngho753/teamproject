@@ -14,7 +14,7 @@ td {
 	
 	background-image: url('Imgs/topbg.gif');
 	
-	padding: 0px;
+	padding: 0px;asd
 	
 	
 }
