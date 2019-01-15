@@ -22,7 +22,7 @@ $(document).ready(function(){
 <!-- header -->
 <div id = "header" style = "width : 1903px; height : 200px;"></div>
 <!--  slideshow -->
-<div id = "slide"></div>
+<div id = "slide" style = "width : 1903px;"></div>
 <!-- 본문 -->
 <div id = "Article" style = "width : 1903px;"></div>
 <!-- footer -->

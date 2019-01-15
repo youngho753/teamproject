@@ -3,40 +3,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel = "stylesheet" type = "text/css" href = "../css/slide.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
+	<link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'/>
+	<link href='https://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'/>
+	<link rel ="stylesheet" type = "text/css" href = "css/slide.css">
 <title>slide</title>
-
-
-<script>
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 5000); // Change image every 5 seconds
-}
-</script>
 
 </head>
 <body>
-	<section class="movie_slide">
-        <div class="slide_view">
-          <img class="mySlides" src="Imgs/top_img1.jpg">
-          <img class="mySlides" src="Imgs/top_img2.jpg">
-          <img class="mySlides" src="Imgs/top_img3.jpg">    
-        </div>
-    </section>
-		<!-- script -->
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="js/slide.js"></script>
+	<div id="wrapper">
+      <div id="slider-wrap">
+          <ul id="slider">
+             <li>               
+<img src="Imgs/top_img1.jpg">
+             </li>
+             
+             <li>
+<img src="Imgs/top_img2.jpg">
+             </li>
+             
+             <li>
+<img src="Imgs/top_img3.jpg">
+             </li>
+          </ul>
+          
+           <!--controls-->
+          <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+          <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+          <div id="counter"></div>
+          
+          <div id="pagination-wrap">
+            <ul>
+            </ul>
+          </div>
+          <!--controls-->  
+                 
+      </div>
+  
+   </div>
+            <!-- script-->
+            <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+            <script src="js/slide.js"></script>
 </body>
 </html>
