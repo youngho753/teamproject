@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>환영합니다.</title>
-<style>
+<style>on
 *{
 	margin : 0px;
 	padding : 0px;

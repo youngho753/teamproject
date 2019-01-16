@@ -5,15 +5,15 @@
 <head>
 <meta charset="UTF-8">
 <link rel = "stylesheet" type = "text/css" href = "../css/topBottom.css">
-<title>Insert title here</title>
+
 </head>
 <body>
 <footer>
-
+<div id = "container">
 <img src="Imgs/logo_bottom.gif" id="footerimg">
 
 <div>Copyright 2019 by MovieBox, Inc. All rights reserved</div>
-
+</div>
 
 </footer>
 </body>
