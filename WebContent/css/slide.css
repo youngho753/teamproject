@@ -4,7 +4,7 @@ a{text-decoration:none; color:#666;}
 a:hover{color:#1bc1a3;}
 
 #wrapper{
-    width:1903px;
+    width:1600px;
     margin:50px auto;
     height:400px;
     position:relative;
@@ -13,7 +13,7 @@ a:hover{color:#1bc1a3;}
 }
 
 #slider-wrap{
-    width:1903px;
+    width:1600px;
     height:400px;
     margin:0 auto;
     position:relative;
@@ -32,7 +32,7 @@ a:hover{color:#1bc1a3;}
 #slider-wrap ul#slider li{
     float:left;
     position:relative;
-    width: 1903px;
+    width: 1600px;
     height:400px;   
 }
 
