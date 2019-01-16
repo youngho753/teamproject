@@ -20,13 +20,13 @@ $(document).ready(function(){
 
 <body>
 <!-- header -->
-<div id = "header" style = "width : 1903px; height : 200px;"></div>
+<div id = "header" style = "width : 1600px; height : 200px;"></div>
 <!--  slideshow -->
-<div id = "slide" style = "width : 1903px;"></div>
+<div id = "slide" style = "width : 1600px;"></div>
 <!-- 본문 -->
-<div id = "Article" style = "width : 1903px;"></div>
+<div id = "Article" style = "width : 1600px;"></div>
 <!-- footer -->
-<div id = "footer" style = "width : 1903px; height : 200px;"></div>
+<div id = "footer" style = "width : 1600px; height : 200px;"></div>
 </body>
 </html>
 
