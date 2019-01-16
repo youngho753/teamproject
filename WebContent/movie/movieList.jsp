@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/movielist.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="css/starhover.css">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
 <title>movieList</title>
@@ -20,22 +21,28 @@
                      <!-- 아쿠아맨 -->
                   <li id="movie_border">
                      <div class="poster">
-                         <img src="Imgs/aquaman.jpg" data-toggle="modal" data-target="#aquamanModal">
-                     </div>
-                      <div class="movie_name">
-                        <ul>
-                            <li><img src="Imgs/12_img.gif"></li> 
-                            <li><span>아쿠아맨</span></li>
-                        </ul>
-                     </div>
-                     <div class="movie_button">
-                         <input class="btn btn-outline-dark" type="button" value="상세정보"><input class="btn btn-outline-dark" type="button" value="예매하기">
-                     </div>
+	                     <!-- 이미지 밑 별점 들어가는곳 -->
+	                         <img src="Imgs/aquaman.jpg" data-toggle="modal" data-target="#aquamanModal">
+	                    		<!-- 별점태그를 inclue page 해서 간단화함 -->
+	                     		<jsp:include page="star_ratingtag.jsp"/>
+	                      <div class="movie_name">
+	                        <ul>
+	                            <li><img src="Imgs/12_img.gif"></li> 
+	                            <li><span>아쿠아맨</span></li>
+	                        </ul>
+	                     </div>
+	                     <div class="movie_button">
+	                         <input class="btn btn-outline-dark" type="button" value="상세정보"><input class="btn btn-outline-dark" type="button" value="예매하기">
+	                     </div>
+                    </div>
                   </li>
+                  
                       <!-- 범블비 -->
                   <li id="movie_border">
                       <div class="poster">
+                      	<!-- 이미지 밑 별점 들어가는곳 -->
                          <img src="Imgs/bumblebee.jpg" data-toggle="modal" data-target="#bumblebeeModal">
+                     	<jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
@@ -47,10 +54,13 @@
                          <input class="btn btn-outline-dark" type="button" value="상세정보"><input class="btn btn-outline-dark" type="button" value="예매하기">
                      </div>
                   </li>
+                  
                       <!-- 구스베이비 -->
                   <li id="movie_border">
                       <div class="poster">
+                      <!-- 이미지 밑 별점 들어가는곳 -->
                          <img src="Imgs/goosebaby.jpg" data-toggle="modal" data-target="#goosebabyModal">
+                     	<jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
@@ -62,10 +72,13 @@
                          <input class="btn btn-outline-dark" type="button" value="상세정보"><input class="btn btn-outline-dark" type="button" value="예매하기">
                      </div>
                   </li>
+                  
                       <!-- 그린북 -->
                   <li id="movie_border">
                       <div class="poster">
+                       <!-- 이미지 밑 별점 들어가는곳 -->
                          <img src="Imgs/greenbook.jpg" data-toggle="modal" data-target="#greenbookModal">
+                     	<jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
@@ -77,10 +90,13 @@
                          <input class="btn btn-outline-dark" type="button" value="상세정보"><input class="btn btn-outline-dark" type="button" value="예매하기">
                      </div>
                   </li>
+                  
                       <!-- 내안의 그놈 -->
                   <li id="movie_border">
                       <div class="poster">
+                        <!-- 이미지 밑 별점 들어가는곳 -->
                         <img src="Imgs/insideman.jpg" data-toggle="modal" data-target="#insidemanModal">
+                     	<jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
@@ -94,13 +110,16 @@
                   </li>
              </ul>
           </div>
+          
           <!-- 포스터 2행-->
           <div class="movie_inner">
              <ul id="movielist">
                         <!-- 메이트-->
                  <li id="movie_border">
                       <div class="poster">
+                      <!-- 이미지 밑 별점 들어가는곳 -->
                          <img src="Imgs/mate.jpg" data-toggle="modal" data-target="#mateModal">
+                     	<jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
@@ -112,10 +131,13 @@
                          <input class="btn btn-outline-dark" type="button" value="상세정보"><input class="btn btn-outline-dark" type="button" value="예매하기">
                      </div>
                   </li>
+                  
                    <!-- 보헤미안 랩소디-->
                  <li id="movie_border">
                       <div class="poster">
-                        <img src="Imgs/rhapsody.jpg" data-toggle="modal" data-target="#rhapsodyModal">
+                      <!-- 이미지 밑 별점 들어가는곳 -->
+                        <img src="Imgs/rhapsody.jpg" data-toggle="modal" data-target="#rhapsodyModal">    
+                        <jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
@@ -127,10 +149,13 @@
                          <input class="btn btn-outline-dark" type="button" value="상세정보"><input class="btn btn-outline-dark" type="button" value="예매하기">
                      </div>
                   </li>
+                  
                    <!-- 말모이 -->
                 <li id="movie_border">
                       <div class="poster">
+                      <!-- 이미지 밑 별점 들어가는곳 -->
                          <img src="Imgs/secretword.jpg" data-toggle="modal" data-target="#malmoeModal">
+                          <jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
@@ -142,10 +167,13 @@
                          <input class="btn btn-outline-dark" type="button" value="상세정보"><input class="btn btn-outline-dark" type="button" value="예매하기">
                      </div>
                   </li>
+                  
                    <!-- 스파이더맨 뉴 유니버스-->
                  <li id="movie_border">
                       <div class="poster">
-                        ><img src="Imgs/spiderman.jpg" data-toggle="modal" data-target="#spiderModal">
+                      <!-- 이미지 밑 별점 들어가는곳 -->
+                        <img src="Imgs/spiderman.jpg" data-toggle="modal" data-target="#spiderModal">
+                        <jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
@@ -157,9 +185,12 @@
                          <input class="btn btn-outline-dark" type="button" value="상세정보"><input class="btn btn-outline-dark" type="button" value="예매하기">
                      </div>
                   </li>
+                  <!-- 왕이될 아이-->
                  <li id="movie_border">
                       <div class="poster">
+                      <!-- 이미지 밑 별점 들어가는곳 -->
                          <img src="Imgs/thekidking.jpg" data-toggle="modal" data-target="#thekidkingModal">
+                         <jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
@@ -175,8 +206,8 @@
           </div>
       </section>
       
-      	<!-- modal영역 화면에 안 잡힘.-->
-             
+      
+      	<!-- modal영역 화면에 안 잡힘. (현재 별점 hover로 인해 사용이 막힌 상태)-->       
              <!-- 아쿠아맨modal -->
 	<div class="modal fade" id="aquamanModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	  <div class="modal-dialog modal-lg">
@@ -346,13 +377,10 @@
 	</div>
       
       
-      
-      
-      
-          
-          
+
            <!-- script-->
-           <script data-brackets-id='82' src="js/jquery.min.js"></script>
+           <script src="js/starhover.js"></script>
+            <script data-brackets-id='82' src="js/jquery.min.js"></script>
             <script data-brackets-id='83' src="js/jquery.scrolly.min.js"></script>
 			<script data-brackets-id='84' src="js/jquery.poptrox.min.js"></script>
 			<script data-brackets-id='85' src="js/skel.min.js"></script>
