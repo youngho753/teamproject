@@ -17,10 +17,10 @@
 <body>
 	
     <div style="height: 350px;"></div>
-    <h1 align="center">회원가입이 완료되었습니다.</h1>
-    <h5 align="center">무비박스에 가입해 주셔서 감사합니다.</h5>
-    <div id="imgview">
-    <img src="../Imgs/gomain_btn.gif" id="gomain_btn">
+    	<h1 align="center">회원가입이 완료되었습니다.</h1>
+    	<h5 align="center">무비박스에 가입해 주셔서 감사합니다.</h5>
+    	<div id="imgview">
+   		 <img src="../Imgs/gomain_btn.gif" id="gomain_btn">
     </div>
 
 </body>
