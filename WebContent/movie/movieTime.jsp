@@ -148,7 +148,7 @@ div.calendar {
 				<a href = "#" onmouseover = "changePlaceIcon(305,124)">
 					<li>제주</li>
 				</a>
-				<a href = "#" onmouseover = "changePlaceIcon(333,142)">
+				<a href = "#" onmouseover = "changePlaceIcon(330,139)">
 					<li>제주아라</li>
 				</a>
 				<a href="#">
