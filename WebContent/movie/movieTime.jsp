@@ -143,9 +143,9 @@ div.calendar {
 		</div>
 		<div class="place" style="width: 300px;">
 			<img src="../Imgs/movietime/inArea.gif" width="300px"
-				style="position: absolute; height: 440px;">
+				style="position: absolute; height: 452px;">
 			<ul class="inAreaList">
-				<a href = "#" onmouseover = "changePlaceIcon(305,152)">
+				<a href = "#" onmouseover = "changePlaceIcon(305,124)">
 					<li>제주</li>
 				</a>
 				<a href = "#" onmouseover = "changePlaceIcon(333,142)">
@@ -174,7 +174,7 @@ div.calendar {
 		<!--지도-->
 		<div class="place" id = "divMap">
 			<img src = "../Imgs/movietime/place_icon.png" id = "placeIcon" style = "position : absolute; visibility : hidden">
-			<img src="../Imgs/movietime/place0.jpg" style="height: 440px;"
+			<img src="../Imgs/movietime/place0.jpg" style="height: 452px;"
 				id="imgPlace">
 		</div>
 
