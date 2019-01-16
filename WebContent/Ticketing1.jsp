@@ -53,36 +53,49 @@ $(document).ready(function(){
 	var week = ['일','월','화','수','목','금','토'];
 	//시간 쓰기	
 	var time = [24,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
-	//요일의 행
 	
-	var calender = "<ul>";
-	calender +="<li>";
+	//요일의 행
+	var calender = "<table id='calender_ul'>";
+	calender +="<tr>"; 
+	calender +="<td>";
 	calender +="<img src='Imgs/l_btn.gif' id='l_btn'>"
-	calender +="</li>"
+	calender +="</td>";
 		
 	
 	//달력의 초기값
 	var sNum = 1;
 		
 	//행만들기
+	var tmp = toDay;
 	for(var i=1; i<=5; i++){
-				calender += "<li>"+ (sNum+toDay) +"("+week[i]+")"+"</li>";
-				sNum++;
+		if(toDay==eval(tmp+i)){
+			calender += "<td bgcolor='#198591'>"+"<a href='#' id='se'>"+ eval(tmp+i) +"("+week[i]+")"+ "</a>" +"</td>";
+			
+		}else {
+			calender += "<td>"+"<a href='#'>"+ (sNum+toDay) +"("+week[i]+")"+ "</a>" +"</td>";
+			sNum++;
+		}
+				
 		};
 	
-				
-		
 		
 	//시간	
-	var Time = "<ul id='Time_ul'>";
-	Time +="<li>";
+	var Time = "<table id='Time_ul'>";
+	Time +="<tr>";
+	Time +="<td>";
 	Time +="<img src='Imgs/l_btn.gif' id='l_btn'>"
-	Time +="</li>"
-	
+	Time +="</td>";
+		
 	var tNum = 1;
+	var tmp = time[toTime]-5;
 	for(var t=1; t<=10; t++){
-			Time += "<li>"+"<a href='#'>"+ ((tNum+time[toTime])-5)+"</a>" +"</li>";
+		 if(toTime==eval(tmp+t)){
+			 Time += "<td bgcolor='#198591'>"+"<a href='#' id='se'>"+ eval(tmp+t) +"</a>" +"</td>";
+			
+		}else{
+			Time += "<td>"+"<a href='#' id=''>"+ eval(tmp+t)+"</a>" +"</td>";
 			tNum++;
+		} 
 		
 	}	
 	
@@ -91,12 +104,12 @@ $(document).ready(function(){
                      var div = document.getElementById('calendarweek');
                         div.innerHTML = div.innerHTML 
                         +calender
-                        +"<li>"+"<img src='Imgs/r_btn.gif' id='r_btn'>"+"</li>";
+                        +"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn'>"+"</td>"+"</tr>";
                      
                      var div = document.getElementById('calendarTime');
                         div.innerHTML = div.innerHTML
                         +Time
-        				+"<li>"+"<img src='Imgs/r_btn.gif' id='r_btn'>"+"</li>"+"</ul>"
+        				+"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn'>"+"</td>"+"</tr>";
                       };
 	
 	
@@ -114,6 +127,7 @@ body{
 
 }
 table{
+
 	width: 966px;
 	height: 544px;
 	border-collapse: collapse;
@@ -128,37 +142,8 @@ table{
 	
 	}
 
-ul{
-	margin: 0;
-	padding: 0;
-	text-align:center;
-	
-	
-}	
-li{
-	margin:0 ;
- 	display: inline;
- 	padding:0 5px;
- 	text-align: center;
- 	
- 	  	
- 	}
- #Time_ul a{
- 	text-align:center;
- 	
- }
- 
- 
-#r_btn{
-
-	margin-top: 10px;
-	padding-top: 10px; 
-	
-}
-
 
 a {	
-	
 	display: inline-block;
 	background-color: #fff;
 	width: 30px;
@@ -167,6 +152,34 @@ a {
 	text-decoration: none;
 
 }
+
+#se{
+	background-color: #198591;
+	color: #fff;
+	
+}
+
+#Time_ul {
+	height: 10px;
+	width: 544px;
+	border: hidden;
+	text-align: center;
+	background-color: #fff;
+	
+
+}
+
+#calender_ul{
+	height: 10px;
+	width: 544px;
+	border: hidden;
+	text-align: center;
+	background-color: #fff;
+}
+
+
+
+
 
 </style>
 
@@ -184,9 +197,10 @@ a {
 <div id="calendarweek"></div>
 </td><td width="534" height="90" ><img src="Imgs/time_img.gif">
 <!--  날짜 -->
-<div id="calendarTime"></div>
+<div id="calendarTime" ></div>
 </td>
 </tr>
+
 
 
 <!-- 극장 -->
