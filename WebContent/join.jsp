@@ -21,6 +21,10 @@
 			<td><input type="password" name="mem_pw" id="mem_pw"></td>
 		</tr>
 		<tr>
+			<td align="center">비밀번호확인</td>
+			<td><input type="password" name="mem_pwCheck" id="mem_pwCheck"></td>
+		</tr>
+		<tr>
 			<td align="center">이메일 </td>
 			<td><input type="text" name="mem_mail" id="mem_mail"></td>
 		</tr>
