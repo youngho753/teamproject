@@ -22,6 +22,8 @@ public class MovieDAO {
 		return ds.getConnection();
 	}
 	
+	
+	
 	private void disConnection(Connection con,Statement st,PreparedStatement ps,ResultSet rs) {
 			try {
 				if(con!=null)con.close();
