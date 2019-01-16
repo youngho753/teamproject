@@ -5,6 +5,11 @@
 <head>
 <meta  http-equiv="Content-Type" content= "text/html; charset="UTF-8">
 <title>Insert title here</title>
+<script>
+function zip(){ //동이름 검색하는 창으로 이동
+	window.open("zipSearch.jsp","","width=700 height=300");
+}
+</script>
 </head>
 <body>
 <form action="custom.do" method="post">
@@ -53,7 +58,7 @@
 		<tr>
 			<td align="center">우편번호</td>
 		<td><input type="text" name="mem_zip" id="mem_zip">
-			<input type="button" name="btnZip" id="btnZip" value="검색"></td>
+			<input type="button" name="btnZip" id="btnZip" value="검색" onclick="zip()"></td>
 	</tr>
 	<tr>
 			<td align="center">주소</td>

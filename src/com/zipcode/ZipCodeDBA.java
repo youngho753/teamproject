@@ -27,17 +27,16 @@ public class ZipCodeDBA {
 	
 	//우편번호 검색 메소드 : zipSearch()
 	public ArrayList<ZipCode> zipSearch(String dong) {
-        Statement st;
+         Statement st;
          ResultSet rs;
          Connection con;
          ArrayList<ZipCode> arr = new ArrayList<>();  
          
          try {         
         	con = getConnection();
-            st = con.createStatement();
-            String sql = "SELECT * FROM zipcode WHERE dong like '%"+dong+"%'";
-         
-         rs = st.executeQuery(sql);
+        	String sql = "SELECT * FROM zipcode WHERE dong like '"+dong+"%'"; 
+            st = con.createStatement();        
+            rs = st.executeQuery(sql);
          while(rs.next()) {
         	ZipCode z = new ZipCode();
             z.setZipcode(rs.getString("zipcode"));
@@ -45,10 +44,8 @@ public class ZipCodeDBA {
             z.setGugun(rs.getString("gugun"));
             z.setDong(rs.getString("dong"));
             z.setBunji(rs.getString("bunji"));
-            z.setSeq(rs.getInt("seq"));
-            
             arr.add(z);
-         }      
+         	}      
          }catch (SQLException e) {
             e.printStackTrace();
          } catch (Exception e) {
