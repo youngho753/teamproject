@@ -1,15 +1,16 @@
 /*section*/
 
-section{
+.moive_wrapper{
     margin: 0 auto; /*가운데정렬*/
-    max-width:1903px;
+    max-width:1600px;
     height: auto;
     font-family: 'Lato', sans-serif;
    /* border : 5px solid red;*/
 }
 
 section .movie_inner{
-    width : 1895px;
+    width : 1600px;
+    margin : 0 auto;
     text-align: center;
   /*  border : 3px solid blue;*/
 }
@@ -81,5 +82,9 @@ section .movie_inner{
 .modal-body{
              background-color: black;  
 }
+
+/* @media{
+	
+} */
 
 
