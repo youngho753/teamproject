@@ -24,8 +24,8 @@
 		var left = $("#divMap").offset().left;
 		$("#placeIcon").css("visibility", "visible");
 		$("#placeIcon").offset({
-			left : left + n1,
-			top : top + n2
+			left : left + n1-14,
+			top : top + n2-14
 		})
 		/*  $("#placeIcon").css("left",n1);
 		$("#placeIcon").css("top",n2);  */
@@ -103,27 +103,7 @@
 
 
 		</div>
-		<div class="theater_2nd">
-			<!--달력-->
-			<div>
-				<a href="#"><img src="../Imgs/movietime/dal_ico_img.gif"></a>
-				<a href="#"><img src="../Imgs/movietime/l_btn.gif"></a> 1.15 <a
-					href="#"><img src="../Imgs/movietime/r_btn.gif"></a> 😁
-			</div>
-			<table>
-				<tr>
-					<td rowspan="2">말모이</td>
-					<td>1관 디지털</td>
-					<td>15:30&nbsp;&nbsp;&nbsp;18:15</td>
-				</tr>
-				<tr>
-					<td>8관 디지털</td>
-					<td>17:15&nbsp;&nbsp;&nbsp;18:15</td>
-				</tr>
-
-			</table>
-		</div>
-		<div>asdasdasd</div>
+		
 	</div>
 </body>
 
