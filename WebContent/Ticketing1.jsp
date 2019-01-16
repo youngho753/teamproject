@@ -7,18 +7,100 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
 $(document).ready(function(){
-	   $("#calendar").click(function(){ //send버튼을 누르면 실행
-		   window.open('fullcalendar.jsp');	   
+		//calendar버튼을 누르면 실행
+	   $("#calendar").click(function(){ 
+		   //calendar.jsp 팝업 실행 
+		   window.open('calendar.jsp','달력',
+				   'width=600, height=900, scrollbars= 0, toolbar=0, menubar=no');	   
 		});
 	});
 			 
 
 </script>
-
-
-
-
-
+<script>
+	
+	var date = new Date();
+	var d = date.getDate(); //일
+	var m = date.getMonth(); //월
+	var y = date.getFullYear(); //년
+	var h = date.getHours(); //시
+	
+	
+	//오늘
+	var toDate = new Date(y,m,d,h);
+	 
+	//그날의 요일
+	var toDay = toDate.getDate();
+	
+	//지금 시간
+	var toTime = toDate.getHours();
+	
+	
+	//그해 월의 마지막 날
+	var last=[31,28,31,30,31,30,31,31,30,31,30,31];
+	//윤년!
+	if(y%4 && y%100!=0 || y%400===0){
+		lastDate = last[1] = 29;
+	}
+	//지금 월의 마지막일 
+	var lastDate = last[m];
+	
+	//달력에 필요한 행의 갯수
+	//theDate(빈칸수),lastDate(월의 전체수)
+	var row = Math.ceil((toDay+lastDate)/7);
+	
+	//요일 쓰기
+	var week = ['일','월','화','수','목','금','토'];
+	//시간 쓰기	
+	var time = [24,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
+	//요일의 행
+	
+	var calender = "<ul>";
+	calender +="<li>";
+	calender +="<img src='Imgs/l_btn.gif' id='l_btn'>"
+	calender +="</li>"
+		
+	
+	//달력의 초기값
+	var sNum = 1;
+		
+	//행만들기
+	for(var i=1; i<=5; i++){
+				calender += "<li>"+ (sNum+toDay) +"("+week[i]+")"+"</li>";
+				sNum++;
+		};
+	
+				
+		
+		
+	//시간	
+	var Time = "<ul id='Time_ul'>";
+	Time +="<li>";
+	Time +="<img src='Imgs/l_btn.gif' id='l_btn'>"
+	Time +="</li>"
+	
+	var tNum = 1;
+	for(var t=1; t<=10; t++){
+			Time += "<li>"+"<a href='#'>"+ ((tNum+time[toTime])-5)+"</a>" +"</li>";
+			tNum++;
+		
+	}	
+	
+	//calender 출력
+	function load() {
+                     var div = document.getElementById('calendarweek');
+                        div.innerHTML = div.innerHTML 
+                        +calender
+                        +"<li>"+"<img src='Imgs/r_btn.gif' id='r_btn'>"+"</li>";
+                     
+                     var div = document.getElementById('calendarTime');
+                        div.innerHTML = div.innerHTML
+                        +Time
+        				+"<li>"+"<img src='Imgs/r_btn.gif' id='r_btn'>"+"</li>"+"</ul>"
+                      };
+	
+	
+</script>
 
 
 
@@ -26,24 +108,71 @@ $(document).ready(function(){
 </head>
 <style>
 
+body{
+
+	background-color: #f9f9f9;
+
+}
 table{
 	width: 966px;
 	height: 544px;
 	border-collapse: collapse;
 	border: 1px solid gray;
 	
-}
-tr,td{
- border: 1px solid;
-}
+	}
 
  
+.calendarDateWeek{
+
+	margin-left: 20px;
+	
+	}
+
+ul{
+	margin: 0;
+	padding: 0;
+	text-align:center;
+	
+	
+}	
+li{
+	margin:0 ;
+ 	display: inline;
+ 	padding:0 5px;
+ 	text-align: center;
+ 	
+ 	  	
+ 	}
+ #Time_ul a{
+ 	text-align:center;
+ 	
+ }
+ 
+ 
+#r_btn{
+
+	margin-top: 10px;
+	padding-top: 10px; 
+	
+}
 
 
+a {	
+	
+	display: inline-block;
+	background-color: #fff;
+	width: 30px;
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
 
+}
 
 </style>
-<body>
+
+
+
+<body onload="load()">
 <!-- 전체 테이블 -->
 <table id="Ticketing1"> 
 <!-- 날짜 -->
@@ -51,33 +180,21 @@ tr,td{
 <td colspan="4" style="border: 1px solid gray;">
 <img src="Imgs/date_img.gif">
 <img src="Imgs/dal_ico_img.gif" align="right" style="padding-right:  20px;" id="calendar" onclick="calendar();">
-</td><td width="534" height="90" ><img src="Imgs/time_img.gif"></td>
+<!-- 요일 -->
+<div id="calendarweek"></div>
+</td><td width="534" height="90" ><img src="Imgs/time_img.gif">
+<!--  날짜 -->
+<div id="calendarTime"></div>
+</td>
 </tr>
 
-<!-- 날짜 선택-->
-<tr>
-<td colspan="4"><div id="calendar">
-<ol>
-<li>1</li>
-<li>2</li>
-
-
-
-</ol>
-
-
-
-
-</div></td>
-<td><div id="calendar">2</div></td>
-</tr>
 
 <!-- 극장 -->
 <tr style="border: 1px solid gray;">
 <td colspan="4" style="border: 1px solid gray;">
 <img src="Imgs/kukjang_img.gif" >
 <img src="Imgs/reflash_img.gif" align="right" style="padding: 10px;"></td>
-<td rowspan="7" align="center" >
+<td rowspan="7" align="center" bgcolor="#ffffff">
 <img src="Imgs/johe_img.gif"></td>
 </tr>
 
