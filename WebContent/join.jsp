@@ -12,7 +12,7 @@ function zip(){ //동이름 검색하는 창으로 이동
 </script>
 </head>
 <body>
-<form action="custom.do" method="post">
+<form action="join.do" method="post">
 	<table align="center" width="550">
 		<tr>
 			<td colspan="2" align="center">회원가입</td>
@@ -40,10 +40,7 @@ function zip(){ //동이름 검색하는 창으로 이동
 		<tr>
             <td align="center">주민번호</td>
             <td><input type="text" name="mem_jumin1" id="mem_jumin1"> - <input type="password" name="mem_jumin2" id="mem_jumin2"></td>
-		<tr>
-			<td align="center">생년월일</td>
-			<td><input type="text" name="mem_date" id="mem_date"></td>
-		<tr>
+
 			<td align="center">성별</td>
 			<td><select name="gender">
 				<option value="A">남자</option>
