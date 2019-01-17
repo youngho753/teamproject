@@ -47,8 +47,8 @@ function zipSearch(){
 <form>
 <table>
 	<tr>
-		<td>동 이름 입력 <input type="text" placeholder="동이름 입력" name="dong" id="dong" onclick="zipSearch()">
-			<input type="button" value="search" name="dong" id="dong">
+		<td>동 이름 입력 <input type="text" placeholder="동이름 입력" name="dong" id="dong">
+			<input type="button" value="search" onclick="zipSearch()">
 		</td>
 	</tr>
 </table>
