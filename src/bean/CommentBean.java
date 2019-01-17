@@ -8,17 +8,20 @@ public class CommentBean {
 	String comment_contents;//내용
 	String comment_movie;
 	
-	/*영호씨 이거 왜 이렇게 만들었어요? 예?*/
-	/*public CommentBean(int no, String comment_id, String comment_date, int comment_grade, String comment_comtents,
+	public CommentBean(){
+		
+	}
+	
+	public CommentBean(int no, String comment_id, String comment_date, int comment_grade, String comment_comtents,
 			String comment_movie) {
 		super();
 		this.no = no;
 		this.comment_id = comment_id;
 		this.comment_date = comment_date;
 		this.comment_grade = comment_grade;
-		this.comment_comtents = comment_comtents;
+		this.comment_contents = comment_comtents;
 		this.comment_movie = comment_movie;
-	}*/
+	}
 
 
 	public int getNo() {
