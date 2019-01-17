@@ -31,7 +31,7 @@ $(document).ready(function(){
      //*> OPTIONAL SETTINGS
     ************************/
     //automatic slider
-    var autoSlider = setInterval(slideRight, 4000);
+    var autoSlider = setInterval(slideRight, 5000);
     
     //for each slide 
     $.each($('#slider-wrap ul li'), function() { 
@@ -51,7 +51,7 @@ $(document).ready(function(){
     //pause automatic slide when hover
     $('#slider-wrap').hover(
       function(){ $(this).addClass('active'); clearInterval(autoSlider); }, 
-      function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 4000); }
+      function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 5000); }
     );
     
     
