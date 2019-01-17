@@ -6,9 +6,29 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style>
+ .addr:hover{ 
+ 	cursor:pointer;
+ 	background-color : #ccc;
+ } /* 검색 된 주소창에 마우스 hover css */
+</style>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
 <script>
-function zipSearch(){
+$(document).ready(function(){//클릭시 해당 주소 가입창으로 바로 보내버림
+	$("#result").on("click","tr",function(){ //result영역(검색 결과) 모든 tr에 이벤트
+		var address = $("td:eq(1)",this).text()+" " +
+					  $("td:eq(2)",this).text()+" " +
+					  $("td:eq(3)",this).text()+" " +
+					  $("td:eq(4)",this).text()+" " 
+		$(opener.document).find("#mem_zip").val($("td:eq(0)",this).text());
+		$(opener.document).find("#mem_addr1").val(address);
+		self.close();
+	})
+})
+
+
+
+function zipSearch(){ //우편번호 검색
 	$.ajax({
 		type :"get",
 		url:"zipSearch.do",
@@ -16,7 +36,7 @@ function zipSearch(){
 		success:function(data){
 			data = $.parseJSON(data);
 			var htmlStr = "";
-			htmlStr += "<table>";
+			htmlStr += "<table border=1>";
 			htmlStr += "<tr>";
 			htmlStr += "<td width='100'>우편번호</td>";
 			htmlStr += "<td width='50'>시/도</td>";
@@ -25,7 +45,7 @@ function zipSearch(){
 			htmlStr += "<td width='50'>번지</td>";
 			htmlStr += "</tr>";
 			for(var i=0;i<data.length;i++){
-				htmlStr += "<tr>"
+				htmlStr += "<tr class='addr'>"
 				htmlStr += "<td>" + data[i].zipCode+"</td>";
 				htmlStr += "<td>" + data[i].sido+"</td>";
 				htmlStr += "<td>" + data[i].gugun+"</td>";
@@ -38,9 +58,21 @@ function zipSearch(){
 		},
 		error:function(e){
 			alert("error:" +e);
-		}
+		},
+		beforeSend : check // send를 실행하기전에 check라는 함수를 실행해라
 	})
 }
+
+function check(){ //동이름 공백 검색 방지
+	if($("#dong").val()==""){
+		alert("동이름 입력하세요");
+		return false;
+	}
+	return true; 
+}
+
+
+
 </script>
 </head>
 <body>

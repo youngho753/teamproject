@@ -57,13 +57,13 @@ function zip(){ //동이름 검색하는 창으로 이동
 		</tr>
 		<tr>
 			<td align="center">우편번호</td>
-		<td><input type="text" name="mem_zip" id="mem_zip">
+		<td><input type="text" name="mem_zip" id="mem_zip" disabled="disabled">
 			<input type="button" name="btnZip" id="btnZip" value="검색" onclick="zip()"></td>
 	</tr>
 	<tr>
 			<td align="center">주소</td>
-			<td><input type="text" name="mem_addr1" id="mem_addr1" disabled="disabled">
-			<input type="text" name="mem_addr2" id="mem_addr2"></td>
+			<td><input size="35" type="text" name="mem_addr1" id="mem_addr1" disabled="disabled">
+			<input size="20" type="text" name="mem_addr2" id="mem_addr2" placeholder="상세 주소 입력하세요"></td>
 	</tr>
 			<tr align="center">
 				<td colspan="2">
