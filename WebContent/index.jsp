@@ -32,16 +32,18 @@ $(document).ready(function(){
 </head>
 
 <body>
-<div id = "container">
-<!-- header -->
-<div id = "header" style = "width : 1600px;"></div>
-<!--  slideshow -->
-<div id = "slide" style = "width : 1600px;"></div>
-<!-- 본문 -->
-<div id = "Article" style = "width : 1600px;"></div>
-<!-- footer -->
-<div id = "footer" style = "width : 1600px; height : 200px;"></div>
-</div>
+
+	<!-- header -->
+	<div id = "header" style = "width : 1600px; height : 50px;"></div>
+	<!--  slideshow -->
+	<div id = "slide" style = "width : 1600px;"></div>
+	<!-- 본문 -->
+	<div id = "article" style = "width : 1600px;"></div>
+	
+	<div style="height : 200px;"></div> <!-- 경계구분용 div -->
+	<!-- footer -->
+	<div id = "footer" style = "width : 1600px; height : 200px;"></div>
+
 </body>
 </html>
 
