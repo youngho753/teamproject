@@ -22,7 +22,7 @@
 		
 
 	}
-	function changePlaceIcon(n1, n2) {
+	function changePlaceIcon(n1, n2,locationNo) {
 		var top = $("#divMap").offset().top;
 		var left = $("#divMap").offset().left;
 		$("#placeIcon").css("visibility", "visible");
@@ -90,7 +90,7 @@
 					style="position: absolute; height: 452px;">
 				<ul class="inAreaList">
 					<c:forEach items = "${locationArr }" var = "i">
-						<a href = "javascript:void(0)" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })">
+						<a href = "javascript:void(0)" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y },${i.location_name })">
 							<li>${i.location_name }</li>
 						</a>				
 					</c:forEach>
