@@ -5,9 +5,9 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="css/movielist.css">
-    <link rel="stylesheet" type="text/css" href="css/slide.css">
-     <link rel="stylesheet" type="text/css" href="css/starhover.css">
+    <link rel="stylesheet" type="text/css" href="../css/movielist.css">
+    <link rel="stylesheet" type="text/css" href="../css/slide.css">
+     <link rel="stylesheet" type="text/css" href="../css/starhover.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
@@ -23,12 +23,12 @@
                   <li id="movie_border">
                      <div class="poster">
 	                     <!-- 이미지 밑 별점 들어가는곳 -->
-	                         <img src="Imgs/aquaman.jpg">
+	                         <img src="../Imgs/aquaman.jpg">
 	                    		<!-- 별점태그를 inclue page 해서 간단화함 -->
 	                     		<jsp:include page="star_ratingtag.jsp"/>
 	                      <div class="movie_name">
 	                        <ul>
-	                            <li><img src="Imgs/12_img.gif"></li> 
+	                            <li><img src="../Imgs/12_img.gif"></li> 
 	                            <li><span>아쿠아맨</span></li>
 	                        </ul>
 	                     </div>
@@ -42,12 +42,12 @@
                   <li id="movie_border">
                       <div class="poster">
                       	<!-- 이미지 밑 별점 들어가는곳 -->
-                         <img src="Imgs/bumblebee.jpg" data-toggle="modal" data-target="#bumblebeeModal">
+                         <img src="../Imgs/bumblebee.jpg" data-toggle="modal" data-target="#bumblebeeModal">
                      	<jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/12_img.gif"></li> 
+                            <li><img src="../Imgs/12_img.gif"></li> 
                             <li><span>범블비</span></li>
                         </ul>
                      </div>
@@ -60,12 +60,12 @@
                   <li id="movie_border">
                       <div class="poster">
                       <!-- 이미지 밑 별점 들어가는곳 -->
-                         <img src="Imgs/goosebaby.jpg" data-toggle="modal" data-target="#goosebabyModal">
+                         <img src="../Imgs/goosebaby.jpg" data-toggle="modal" data-target="#goosebabyModal">
                      	<jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/all_img.gif"></li>
+                            <li><img src="../Imgs/all_img.gif"></li>
                             <li><span>구스베이비</span></li>
                         </ul>
                      </div>
@@ -78,12 +78,12 @@
                   <li id="movie_border">
                       <div class="poster">
                        <!-- 이미지 밑 별점 들어가는곳 -->
-                         <img src="Imgs/greenbook.jpg" data-toggle="modal" data-target="#greenbookModal">
+                         <img src="../Imgs/greenbook.jpg" data-toggle="modal" data-target="#greenbookModal">
                      	<jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/12_img.gif"></li>
+                            <li><img src="../Imgs/12_img.gif"></li>
                             <li><span>그린북</span></li>
                         </ul>
                      </div>
@@ -96,12 +96,12 @@
                   <li id="movie_border">
                       <div class="poster">
                         <!-- 이미지 밑 별점 들어가는곳 -->
-                        <img src="Imgs/insideman.jpg" data-toggle="modal" data-target="#insidemanModal">
+                        <img src="../Imgs/insideman.jpg" data-toggle="modal" data-target="#insidemanModal">
                      	<jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/15_img.gif"></li>
+                            <li><img src="../Imgs/15_img.gif"></li>
                             <li><span>내안의 그놈</span></li>
                         </ul>
                      </div>
@@ -119,12 +119,12 @@
                  <li id="movie_border">
                       <div class="poster">
                       <!-- 이미지 밑 별점 들어가는곳 -->
-                         <img src="Imgs/mate.jpg" data-toggle="modal" data-target="#mateModal">
+                         <img src="../Imgs/mate.jpg" data-toggle="modal" data-target="#mateModal">
                      	<jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/15_img.gif"></li>
+                            <li><img src="../Imgs/15_img.gif"></li>
                             <li><span>메이트</span></li>
                         </ul>
                      </div>
@@ -137,12 +137,12 @@
                  <li id="movie_border">
                       <div class="poster">
                       <!-- 이미지 밑 별점 들어가는곳 -->
-                        <img src="Imgs/rhapsody.jpg" data-toggle="modal" data-target="#rhapsodyModal">    
+                        <img src="../Imgs/rhapsody.jpg" data-toggle="modal" data-target="#rhapsodyModal">    
                         <jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/12_img.gif"></li>
+                            <li><img src="../Imgs/12_img.gif"></li>
                             <li><span>보헤미안랩소디</span></li>
                         </ul>
                      </div>
@@ -155,12 +155,12 @@
                 <li id="movie_border">
                       <div class="poster">
                       <!-- 이미지 밑 별점 들어가는곳 -->
-                         <img src="Imgs/secretword.jpg" data-toggle="modal" data-target="#malmoeModal">
+                         <img src="../Imgs/secretword.jpg" data-toggle="modal" data-target="#malmoeModal">
                           <jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/12_img.gif"></li>
+                            <li><img src="../Imgs/12_img.gif"></li>
                             <li><span>말모이</span></li>
                         </ul>
                      </div>
@@ -173,12 +173,12 @@
                  <li id="movie_border">
                       <div class="poster">
                       <!-- 이미지 밑 별점 들어가는곳 -->
-                        <img src="Imgs/spiderman.jpg" data-toggle="modal" data-target="#spiderModal">
+                        <img src="../Imgs/spiderman.jpg" data-toggle="modal" data-target="#spiderModal">
                         <jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/12_img.gif"></li> 
+                            <li><img src="../Imgs/12_img.gif"></li> 
                             <li><span>스파이더맨 뉴 유니버스</span></li>
                         </ul>
                      </div>
@@ -190,12 +190,12 @@
                  <li id="movie_border">
                       <div class="poster">
                       <!-- 이미지 밑 별점 들어가는곳 -->
-                         <img src="Imgs/thekidking.jpg" data-toggle="modal" data-target="#thekidkingModal">
+                         <img src="../Imgs/thekidking.jpg" data-toggle="modal" data-target="#thekidkingModal">
                          <jsp:include page="star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/all_img.gif"></li>
+                            <li><img src="../Imgs/all_img.gif"></li>
                             <li><span>왕이될아이</span></li>
                         </ul>
                      </div>
@@ -213,12 +213,12 @@
       
 
            <!-- script-->
-           <script src="js/starhover.js"></script>
-            <script data-brackets-id='82' src="js/jquery.min.js"></script>
-            <script data-brackets-id='83' src="js/jquery.scrolly.min.js"></script>
-			<script data-brackets-id='84' src="js/jquery.poptrox.min.js"></script>
-			<script data-brackets-id='85' src="js/skel.min.js"></script>
-			<script data-brackets-id='86' src="js/util.js"></script>
+           <script src="../js/starhover.js"></script>
+            <script data-brackets-id='82' src="../js/jquery.min.js"></script>
+            <script data-brackets-id='83' src="../js/jquery.scrolly.min.js"></script>
+			<script data-brackets-id='84' src="../js/jquery.poptrox.min.js"></script>
+			<script data-brackets-id='85' src="../js/skel.min.js"></script>
+			<script data-brackets-id='86' src="../js/util.js"></script>
 			<script src="http://code.jquery.com/jquery-latest.min.js"></script>
             <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
             <script src="http://googledrive.com/host/0B-QKv6rUoIcGREtrRTljTlQ3OTg"></script><!-- ie10-viewport-bug-workaround.js -->
