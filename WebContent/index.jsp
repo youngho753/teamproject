@@ -19,6 +19,7 @@ $(document).ready(function(){
     $("#header").load("movie/header.jsp");
 	$("#slide").load("movie/slide.jsp");
     $("#article").load("movie/movieList.jsp");
+    $("#movie_place").load("movie/footer_theater.jsp");
     $("#footer").load("movie/footer.jsp");
 });
 </script>
@@ -33,6 +34,9 @@ $(document).ready(function(){
 	<div id = "article" style = "width : 1600px;"></div>
 	
 	<div style="height : 200px;"></div> <!-- 경계구분용 div -->
+	
+	
+	<div id="movie_place" style="width : 1600px;"></div>
 	<!-- footer -->
 	<div id = "footer" style = "width : 1600px; height : 200px;"></div>
 	

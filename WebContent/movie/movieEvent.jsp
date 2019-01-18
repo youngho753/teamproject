@@ -12,42 +12,42 @@
 
 <body>
 			<!-- 로고 메뉴부분-->
-    <header id="header">
+  <!--   <header id="header">
 			<table class="headertable">
 			<tr>
 				<td colspan="8" width="492px" id="1">
-					<img src="../Imgs/topbg.gif"> <!-- 공백 -->
+					<img src="../Imgs/topbg.gif">
 				</td>
 				
 				<td id="2">
-					<a href="../index.jsp"><img src="../Imgs/logo.gif"></a> <!-- 로고 -->
+					<a href="../index.jsp"><img src="../Imgs/logo.gif"></a> 
 				</td>
 				
 				<td id="3" width="401px">
-					<img src="../Imgs/topbg.gif"> <!-- 공백 -->
+					<img src="../Imgs/topbg.gif"> 
 				</td>
 				
 				<td id="4">
-					<a href="#"><img src="../Imgs/menu1.gif"></a> <!-- 영화 -->
+					<a href="#"><img src="../Imgs/menu1.gif"></a> 
 				</td>
 				<td id="5">
-					<a href="#"><img src="../Imgs/menu2.gif"></a>	<!-- 영화관 -->
+					<a href="#"><img src="../Imgs/menu2.gif"></a>	
 				</td>
 				
 				<td id="6">
-					<a href="movieEvent.jsp"><img src="../Imgs/menu3.gif"></a> <!-- 이벤트 -->
+					<a href="movieEvent.jsp"><img src="../Imgs/menu3.gif"></a> 
 				</td>
 				
 				<td id="7">
-					<a href="#"><img src="../Imgs/menu4.gif"></a>	<!-- 로그인 -->
+					<a href="#"><img src="../Imgs/menu4.gif"></a>	
 				</td>
 				
 				<td id="8" width="466px">
-					<img src="../Imgs/topbg.gif"> <!-- 공백 -->
+					<img src="../Imgs/topbg.gif">
 				</td>
 			</tr>
 		</table>
-	</header>
+	</header> -->
 	
 	
 	<!-- 로고와 이벤트사진 경계-->
@@ -187,23 +187,7 @@
 		               </ul>
 		            </div>
 			    </div>
-			</div>
-		                   
-		    <div style="height: 50px">
-		        
-		    </div>
-		                    
-		    <div class="body_border">
-			
-			</div>
-     
-            <!-- 카피라이트 및 사업자등록 영역-->
-        <footer>
-            
-            
-        </footer>
-					
-					
+			</div>          
 					<!-- script -->
 					<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
