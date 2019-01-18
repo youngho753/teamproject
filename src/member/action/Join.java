@@ -42,7 +42,7 @@ public class Join extends HttpServlet {
 		String mem_mail = req.getParameter("mem_mail");
 		String mem_name = req.getParameter("mem_name");
 		String mem_jumin1 = req.getParameter("mem_jumin1");
-		String 
+		
 		
 		
 	}
