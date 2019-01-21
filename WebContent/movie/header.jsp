@@ -24,14 +24,14 @@
 				</td>
 				
 				<td id="4">
-					<a href="#"><img src="Imgs/menu1.gif"></a> <!-- 영화 -->
+					<a href="movie.jsp"><img src="Imgs/menu1.gif"></a> <!-- 영화 -->
 				</td>
 				<td id="5">
 					<a href="#"><img src="Imgs/menu2.gif"></a>	<!-- 영화관 -->
 				</td>
 				
 				<td id="6">
-					<a href="movie/movieEvent.jsp"><img src="Imgs/menu3.gif"></a> <!-- 이벤트 -->
+					<a href="movieEvent.jsp"><img src="Imgs/menu3.gif"></a> <!-- 이벤트 -->
 				</td>
 				
 				<td id="7">

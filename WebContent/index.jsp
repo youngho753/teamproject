@@ -8,40 +8,38 @@
 <link rel = "icon" href = "favicon.ico" type = "image/x-icon"/>
 <link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
 
+<style>
+	#container{
+		margin: 0 auto;
+		width: 1600px;
+	}
+</style>
 
-
-<link rel="stylesheet" type="text/css" href="../css/all.css">
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>
-/* 이 페이지는 처음 시작할때 나오는 페이지 입니다. */
-$(document).ready(function(){
-	//페이지가 load되면 다른파일의 페이지를 가져온다.
-    $("#header").load("movie/header.jsp");
-	$("#slide").load("movie/slide.jsp");
-    $("#article").load("movie/movieList.jsp");
-    $("#movie_place").load("movie/footer_theater.jsp");
-    $("#footer").load("movie/footer.jsp");
-});
-</script>
+
 </head>
 
 <body>
-
-	<!-- header -->
-	<div id = "header" style = "width : 1600px; height : 50px;"></div>
-	<!--  slideshow -->
-	<div id = "slide" style = "width : 1600px;"></div>
-	<!-- 본문 -->
-	<div id = "article" style = "width : 1600px;"></div>
+	<div id="container">
+			<!-- header영역 -->
+			<header>
+				<jsp:include page="movie/header.jsp"/>
+			</header>
 	
-	<div style="height : 200px;"></div> <!-- 경계구분용 div -->
+			<!-- 슬라이드쇼 영역 -->
+				<jsp:include page="movie/slide.jsp"/>
 	
+			<!-- 바디 영화리스트 영역 -->
+				<jsp:include page="movie/movieList.jsp"/>
 	
-	<div id="movie_place" style="width : 1600px;"></div>
-	<!-- footer -->
-	<div id = "footer" style = "width : 1600px; height : 200px;"></div>
-
+				<div style="height : 200px;"></div> <!-- 경계구분용 div -->
+	
+			<!-- footer 위쪽 영화관위치 영역 -->
+				<jsp:include page="movie/footer_theater.jsp"/>
+	
+			<!-- footer 영역 -->
+				<jsp:include page="movie/footer.jsp"/>
+		
+	</div>
 </body>
 </html>
-
-

@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta  http-equiv="Content-Type" content= "text/html; charset="UTF-8">
+<meta  http-equiv="Content-Type" content= "text/html; charset='UTF-8'">
+<link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
 <title>Insert title here</title>
 <script>
 function zip(){ //동이름 검색하는 창으로 이동

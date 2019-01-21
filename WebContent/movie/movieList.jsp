@@ -179,7 +179,7 @@
                       <div class="movie_name">
                         <ul>
                             <li><img src="Imgs/12_img.gif"></li> 
-                            <li><span>스파이더맨 뉴 유니버스</span></li>
+                            <li><span>스파이더맨 뉴유니버스</span></li>
                         </ul>
                      </div>
                      <div class="movie_button">
