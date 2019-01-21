@@ -94,7 +94,6 @@ $(document).ready(function(){
 		}else{
 			alert("더이상 움직일수 없습니다.")
 		}
-		
 		weektable();
 		return false;
 		
@@ -109,17 +108,18 @@ $(document).ready(function(){
 		calendarweek +="</td>";
 	
 	var sNum = 1;
-	//행만들기
+	//오늘
 	var tm = eval(toDate.getDate()-1); 
 	
 	for(var i=week_next_num; i<=week_max_num; i++){
 		if(toDay==eval(tm+i)){
 			calendarweek += "<td bgcolor='#198591' style='font-size: 15px;'>"+"<a href='#' id='se'>"+"오늘"+ "</a>" +"</td>";
-		 }else {  
+		 }else {
+			sNum++;
 			var a = eval(toWeek+i)-1;
 			if(a > 6) a = a % 7;
-			calendarweek += "<td>"+"<a href='#' >"+ eval((sNum+toDay)) +"("+week[a]+")"+ "</a>" +"</td>";
-				sNum++;			
+			calendarweek += "<td>"+"<a href='#' >"+ eval((toDay+sNum)+week_next_num) +"("+week[a]+")"+ "</a>" +"</td>";
+			
 		}
 		var div = $('#calendarweek').html( 
 				calendarweek
