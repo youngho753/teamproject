@@ -13,8 +13,6 @@ $(document).ready(function(){
 		   window.open('calendar.jsp','달력','width=600, height=900, scrollbars= 0, toolbar=0, menubar=no resizable=no');
 		});
 	});
-			 
-
 </script>
 <script>
 $(document).ready(function(){
@@ -57,44 +55,49 @@ $(document).ready(function(){
 	//시간 쓰기	
 	var time = [24,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23];
 	
-	//요일의 행
-	
-	
-	
-	
-	
-	
-	
-	var next_num = 1;
+	//변수
+	var week_next_num = 1;
+	var time_next_num = 1;
 	var time_max_num = 10;
 	var week_max_num = 5;
 	
 	//time 오른쪽 버튼 클릭
 	$(document).on('click','#r_btn',function(){ 
-		next_num++;
+		time_next_num++;
 		time_max_num++;
 		timeTable();
 		return false;
 	});
 	//time 왼쪽 버튼 클릭
 	$(document).on('click','#l_btn',function(){ 
-		next_num--;
+		time_next_num--;
 		time_max_num--;
 		timeTable();
 		return false;
+		
 	});
 	
 	//week 오른쪽 버튼 클릭
 	$(document).on('click','#r_btn_week',function(){ 
-		next_num++;
+		week_next_num++;
 		week_max_num++;
 		weektable();
 		return false;
 	});
 	
 	//week 왼쪽 버튼 클릭
-	$(document).on('click','#l_btn_week',function(){ 
-		alert("더이상 표시할수 없습니다.");
+	$(document).on('click','#l_btn_week',function(){
+	var i = 0;
+		if(i = week_next_num){
+			week_next_num--;
+			week_max_num--;
+		}else{
+			alert("더이상 움직일수 없습니다.")
+		}
+		
+		weektable();
+		return false;
+		
 	});
 	
 	//주간 테이블
@@ -109,11 +112,11 @@ $(document).ready(function(){
 	//행만들기
 	var tm = eval(toDate.getDate()-1); 
 	
-	for(var i=next_num; i<=week_max_num; i++){
+	for(var i=week_next_num; i<=week_max_num; i++){
 		if(toDay==eval(tm+i)){
 			calendarweek += "<td bgcolor='#198591' style='font-size: 15px;'>"+"<a href='#' id='se'>"+"오늘"+ "</a>" +"</td>";
 		 }else {  
-			var a = eval(toWeek+i)-3
+			var a = eval(toWeek+i)-1;
 			if(a > 6) a = a % 7;
 			calendarweek += "<td>"+"<a href='#' >"+ eval((sNum+toDay)) +"("+week[a]+")"+ "</a>" +"</td>";
 				sNum++;			
@@ -138,7 +141,7 @@ $(document).ready(function(){
 	var tNum = 1;
 	var tmp = time[toTime]-5;
 	
-	for(var t=next_num; t<=time_max_num; t++){
+	for(var t=time_next_num; t<=time_max_num; t++){
 		if(toTime==eval(tmp+t)){
 			 Time += "<td bgcolor='#198591'>"+"<a href='#' id='se'>"+ eval(tmp+t) +"</a>" +"</td>";
 			
@@ -171,6 +174,16 @@ $(document).ready(function(){
 	});
 });
 </script>
+<script>
+$(document).ready(function(){
+		//극장 선택 버튼을 누르면 실행
+	   $("#TheatersSelect1").click(function(){ 
+		   //calendar.jsp 팝업 실행 
+		   window.open('calendar.jsp','달력','width=600, height=900, scrollbars= 0, toolbar=0, menubar=no resizable=no');
+		});
+	});
+</script>
+
 <title>영화 예매1</title> <!-- 타이틀은 일괄로 변경 바람  -->
 </head>
 <style>
@@ -274,7 +287,6 @@ a {
 <td colspan="2" align="center"><img src="Imgs/kukjang_plus.gif" id="TheatersSelect1"></td>
 <td colspan="2" align="center"><Img src="Imgs/kukjang_plus.gif" id="TheatersSelect2"></td>
 </tr>
-
 <!-- 극장 선택 이미지 --> 
 <tr id="TheatersSelect">
 <td colspan="2" align="center" >
