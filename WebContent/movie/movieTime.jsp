@@ -16,8 +16,7 @@
 	});
 	function changePlace(num) {
 		getLocation(num);
-		
-
+	
 	}
 	function changePlaceIcon(n1, n2) {
 		var top = $("#divMap").offset().top;
