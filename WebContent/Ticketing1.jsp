@@ -113,18 +113,25 @@ $(document).ready(function(){
 	var tm = eval(toDate.getDate()-1); 
 	
 	for(var i=week_next_num; i<=week_max_num; i++){
+		sNum++;	
+		var b = eval((sNum+toDay)+week_next_num);
+		//if (b > last) b = b % last; 
 		if(toDay==eval(tm+i)){
 			calendarweek += "<td bgcolor='#198591' style='font-size: 15px;'>"+"<a href='#' id='se'>"+"오늘"+ "</a>" +"</td>";
 		 }else {  
+			 
 			var a = eval(toWeek+i)-1;
 			if(a > 6) a = a % 7;
-			calendarweek += "<td>"+"<a href='#' >"+ eval((sNum+toDay)) +"("+week[a]+")"+ "</a>" +"</td>";
-				sNum++;			
+			calendarweek += "<td>"+"<a href='#' >"+ b +"("+week[a]+")"+ "</a>" +"</td>";
+						
 		}
 		var div = $('#calendarweek').html( 
 				calendarweek
-	             +"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn_week'>"+"</td>"+"</tr>");   
+	             +"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn_week'>"+"</td>"+"</tr>");
+		
 		}
+	
+	
 	}
 	
 	weektable();
