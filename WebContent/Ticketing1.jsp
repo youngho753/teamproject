@@ -176,7 +176,7 @@ $(document).ready(function(){
 		//극장 선택 버튼을 누르면 실행
 	   $("#TheatersSelect1").click(function(){ 
 		   //calendar.jsp 팝업 실행 
-		   window.open('movieTime.jsp','지역선택','width=600, height=900, scrollbars= 0, toolbar=0, menubar=no resizable=no');
+		   window.open('movieTime.jsp','지역선택','width=600px, height=910px, scrollbars= 0, toolbar=0, menubar=no resizable=no');
 		});
 	});
 </script>
