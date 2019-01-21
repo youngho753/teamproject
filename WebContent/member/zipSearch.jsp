@@ -20,6 +20,8 @@ $(document).ready(function(){//클릭시 해당 주소를 가입창으로 바로
 					  $("td:eq(2)",this).text()+" " +
 					  $("td:eq(3)",this).text()+" " +
 					  $("td:eq(4)",this).text()+" " 
+	    $(opener.document).find("#mem_zip1").val($("td:eq(0)",this).text());
+		$(opener.document).find("#mem_addr11").val(address);
 		$(opener.document).find("#mem_zip").val($("td:eq(0)",this).text());
 		$(opener.document).find("#mem_addr1").val(address);
 		self.close();

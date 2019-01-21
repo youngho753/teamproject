@@ -1,11 +1,14 @@
 package member.action;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import bean.MemberBean;
 import dao.MemberDAO;
@@ -65,9 +68,18 @@ public class Join extends HttpServlet {
 		mb.setMem_addr1(mem_addr1);
 		mb.setMem_addr2(mem_addr2); // + 시퀀스랑 가입일자 디비에서 넣을것
 		
+		
+		
 		//디비로 연결 및 쏘기
 		MemberDAO dao = MemberDAO.getInstance();
-		dao.memberInsert(mb);
+		dao.memberInsert(mb); //회원가입 정보 DB에 저장 완료
+		
+		HttpSession session = req.getSession(); //세션 생성
+		session.setAttribute("mem_id", mem_id); // 세션으로 아이디값 저장
+		resp.setContentType("text/html;charset=utf-8"); //글자 설정(필요 없어보임)
+		RequestDispatcher rd = req.getRequestDispatcher("registerConfirmed.jsp"); //가입 완료창
+		//rd.forward(req, resp); (일단 필요없는듯)
+		
 		
 		
 		
