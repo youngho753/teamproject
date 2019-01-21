@@ -121,8 +121,6 @@ $(document).ready(function(){
 			calendarweek += "<td>"+"<a href='#' >"+ eval((sNum+toDay)) +"("+week[a]+")"+ "</a>" +"</td>";
 				sNum++;			
 		}
-	
-		
 		var div = $('#calendarweek').html( 
 				calendarweek
 	             +"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn_week'>"+"</td>"+"</tr>");   
@@ -140,7 +138,6 @@ $(document).ready(function(){
 		Time +="</td>";
 	var tNum = 1;
 	var tmp = time[toTime]-5;
-	
 	for(var t=time_next_num; t<=time_max_num; t++){
 		if(toTime==eval(tmp+t)){
 			 Time += "<td bgcolor='#198591'>"+"<a href='#' id='se'>"+ eval(tmp+t) +"</a>" +"</td>";
