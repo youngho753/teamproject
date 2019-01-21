@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta  http-equiv="Content-Type" content= "text/html; charset="UTF-8">
+<meta  http-equiv="Content-Type" content= "text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script>
 function zip(){ //동이름 검색하는 창으로 이동
@@ -46,8 +46,8 @@ function zip(){ //동이름 검색하는 창으로 이동
 			<td align="center">성별</td>
 			<td>
 				<select name="mem_gender">
-					<option value="male">남자</option>
-					<option value="female">여자</option>
+					<option value="남">남자</option>
+					<option value="여">여자</option>
 				</select>
 			</td>
 		</tr>

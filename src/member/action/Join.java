@@ -77,8 +77,8 @@ public class Join extends HttpServlet {
 		HttpSession session = req.getSession(); //세션 생성
 		session.setAttribute("mem_id", mem_id); // 세션으로 아이디값 저장
 		resp.setContentType("text/html;charset=utf-8"); //글자 설정(필요 없어보임)
-		RequestDispatcher rd = req.getRequestDispatcher("registerConfirmed.jsp"); //가입 완료창
-		//rd.forward(req, resp); (일단 필요없는듯)
+		resp.sendRedirect("/movie/joinfinish.jsp"); //회원 가입 완료창으로 이동
+		
 		
 		
 		
