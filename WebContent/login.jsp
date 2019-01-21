@@ -19,7 +19,6 @@
         padding-left: 35%;
     }
 </style>
-
 </head>
 <form action="login.do" method="post">
 	

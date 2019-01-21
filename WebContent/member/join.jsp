@@ -14,7 +14,7 @@ function zip(){ //동이름 검색하는 창으로 이동
 </head>
 <body>
 <form action="join.do" method="post">
-	<table align="center" width="550">
+	<table align="center" width="600">
 		<tr>
 			<td colspan="2" align="center">회원가입</td>
 		</tr>
@@ -31,36 +31,41 @@ function zip(){ //동이름 검색하는 창으로 이동
 			<td><input type="password" name="mem_pwCheck" id="mem_pwCheck"></td>
 		</tr>
 		<tr>
-			<td align="center">이메일 </td>
-			<td><input type="text" name="mem_mail" id="mem_mail"></td>
-		</tr>
-		<tr>
 			<td align="center">이름</td>
 			<td><input type="text" name="mem_name" id="mem_name"></td>
+			
 		</tr>
 		<tr>
-            <td align="center">주민번호</td>
+			<td align="center">주민번호</td>
             <td><input type="text" name="mem_jumin1" id="mem_jumin1"> - <input type="password" name="mem_jumin2" id="mem_jumin2"></td>
-
+		</tr>
+		<tr>
+            <td align="center">이메일 </td>
+			<td><input type="text" name="mem_email" id="mem_mail"></td>
+		</tr>
+		<tr>
 			<td align="center">성별</td>
-			<td><select name="gender">
-				<option value="A">남자</option>
-				<option value="B">여자</option>
-			</select></td>
+			<td>
+				<select name="mem_gender">
+					<option value="male">남자</option>
+					<option value="female">여자</option>
+				</select>
+			</td>
 		</tr>
 		<tr>
 			<td align="center">전화번호</td>
 			<td colspan="3">
-			<input type="text" name="phone"></td>
+			<input type="text" name="mem_tel"></td>
 		</tr>
 		<tr>
 			<td align="center">우편번호</td>
-		<td><input type="text" name="mem_zip" id="mem_zip" disabled="disabled">
-			<input type="button" name="btnZip" id="btnZip" value="검색" onclick="zip()"></td>
+		<td><input type="text" name="mem_zip1" id="mem_zip1" disabled="disabled"> <input type="hidden" name="mem_zip" id="mem_zip">
+			<input type="button" name="btnZip" id="btnZip" value="검색" onclick="zip()">
+			</td>
 	</tr>
 	<tr>
 			<td align="center">주소</td>
-			<td><input size="35" type="text" name="mem_addr1" id="mem_addr1" disabled="disabled">
+			<td><input size="35" type="text" name="mem_addr11" id="mem_addr11" disabled="disabled"> <input size="35" type="hidden" name="mem_addr1" id="mem_addr1">
 			<input size="20" type="text" name="mem_addr2" id="mem_addr2" placeholder="상세 주소 입력하세요"></td>
 	</tr>
 			<tr align="center">
