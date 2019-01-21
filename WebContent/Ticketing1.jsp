@@ -10,7 +10,7 @@ $(document).ready(function(){
 		//calendar버튼을 누르면 실행
 	   $("#calendar").click(function(){ 
 		   //calendar.jsp 팝업 실행 
-		   window.open('calendar.jsp','달력','width=600, height=900, scrollbars= 0, toolbar=0, menubar=no resizable=no');
+		   window.open('calendar.jsp','달력','width=600, height=900, scrollbars= 0, toolbar=0, menubar=no, resizable=no');
 		});
 	});
 </script>
