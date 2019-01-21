@@ -35,7 +35,7 @@
 				</td>
 				
 				<td id="7">
-					<a href="#"><img src="Imgs/menu4.gif"></a>	<!-- 로그인 -->
+					<a href="member/memLogin.jsp"><img src="Imgs/menu4.gif"></a>	<!-- 로그인 -->
 				</td>
 				
 				<td id="8" width="466px">

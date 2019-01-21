@@ -54,6 +54,7 @@ public class Join extends HttpServlet {
 		
 		HttpSession session = req.getSession(); //세션 생성
 		session.setAttribute("mem_id", mem_id); // 세션으로 아이디값 저장
+		resp.sendRedirect("../movie/joinfinish.jsp");
 
 
 	
