@@ -25,7 +25,7 @@ $(document).ready(function(){
 	//페이지가 load되면 다른파일의 페이지를 가져온다.
     $("#header").load("movie/header.jsp");
 	$("#slide").load("movie/slide.jsp");
-    $("#article").load("movie/movieList.jsp");
+	$("#article").load("movie/movieList.jsp");	
     $("#movie_place").load("movie/footer_theater.jsp");
     $("#footer").load("movie/footer.jsp");
 });
