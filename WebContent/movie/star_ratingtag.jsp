@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!-- 이미지 밑 별점 들어가는곳 -->
+<<<<<<< HEAD
 <style>
 /*별점 css*/
 .star-input>.input,
@@ -145,7 +146,8 @@ starRating();
 				</div>
 		</span>
 		</span>
-	</div>	</div>
+	</div>
+=======
                      	<div class="darkness"></div>
 					      <div class="star-rating">
 					                 <span draggable="false">
@@ -168,3 +170,4 @@ starRating();
 					                    </span>
 					                </span>
 					       </div>
+>>>>>>> admin

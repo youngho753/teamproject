@@ -42,6 +42,7 @@ public class Join extends HttpServlet {
 		String mem_mail = req.getParameter("mem_mail");
 		String mem_name = req.getParameter("mem_name");
 		String mem_jumin1 = req.getParameter("mem_jumin1");
+<<<<<<< HEAD
 		String mem_jumin2 = req.getParameter("mem_jumin2");
 		String mem_gender = req.getParameter("mem_gender");
 		String mem_tel = req.getParameter("mem_tel");
@@ -74,6 +75,8 @@ public class Join extends HttpServlet {
 		resp.sendRedirect("../movie/joinfinish.jsp");
 
 
+=======
+>>>>>>> admin
 	
 		
 		
