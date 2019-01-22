@@ -25,7 +25,7 @@
 <body>
 		<div class="full-body">
 				<header id="header">
-						<jsp:include page="movie/header.jsp"/>
+				  <jsp:include page="movie/header.jsp"/>
 				</header>
 				
 				<!-- 로고와 이벤트사진 경계-->

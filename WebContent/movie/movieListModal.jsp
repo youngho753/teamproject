@@ -5,8 +5,8 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/modal.css">
-	<link rel="stylesheet" type="text/css" href="css/movielist.css">
+	<link rel="stylesheet" type="text/css" href="/teamproject/css/modal.css">
+	<link rel="stylesheet" type="text/css" href="/teamproject/css/movieArray.css">
 	<title>무비리스트 모달팝업 가능페이지</title>
 </head>
 <body>
@@ -18,10 +18,10 @@
                   <li id="movie_border">
                      <div class="poster">
 	                     <!-- 이미지 밑 별점 들어가는곳 -->
-	                         <img src="Imgs/aquaman.jpg" data-toggle="modal" data-target="#aquamanModal" >
+	                         <img src="/teamproject/Imgs/aquaman.jpg" data-toggle="modal" data-target="#aquamanModal" >
 	                      <div class="movie_name">
 	                        <ul>
-	                            <li><img src="Imgs/12_img.gif"></li> 
+	                            <li><img src="/teamproject/Imgs/12_img.gif"></li> 
 	                            <li><span>아쿠아맨</span></li>
 	                        </ul>
 	                     </div>
@@ -34,11 +34,11 @@
                       <!-- 범블비 -->
                   <li id="movie_border">
                       <div class="poster">
-                         <img src="Imgs/bumblebee.jpg" data-toggle="modal" data-target="#bumblebeeModal">                	
+                         <img src="/teamproject/Imgs/bumblebee.jpg" data-toggle="modal" data-target="#bumblebeeModal">                	
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/12_img.gif"></li> 
+                            <li><img src="/teamproject/Imgs/12_img.gif"></li> 
                             <li><span>범블비</span></li>
                         </ul>
                      </div>
@@ -50,11 +50,11 @@
                       <!-- 구스베이비 -->
                   <li id="movie_border">
                       <div class="poster">
-                         <img src="Imgs/goosebaby.jpg" data-toggle="modal" data-target="#goosebabyModal">      
+                         <img src="/teamproject/Imgs/goosebaby.jpg" data-toggle="modal" data-target="#goosebabyModal">      
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/all_img.gif"></li>
+                            <li><img src="/teamproject/Imgs/all_img.gif"></li>
                             <li><span>구스베이비</span></li>
                         </ul>
                      </div>
@@ -66,11 +66,11 @@
                       <!-- 그린북 -->
                   <li id="movie_border">
                       <div class="poster">
-                         <img src="Imgs/greenbook.jpg" data-toggle="modal" data-target="#greenbookModal">
+                         <img src="/teamproject/Imgs/greenbook.jpg" data-toggle="modal" data-target="#greenbookModal">
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/12_img.gif"></li>
+                            <li><img src="/teamproject/Imgs/12_img.gif"></li>
                             <li><span>그린북</span></li>
                         </ul>
                      </div>
@@ -82,11 +82,11 @@
                       <!-- 내안의 그놈 -->
                   <li id="movie_border">
                       <div class="poster">               
-                        <img src="Imgs/insideman.jpg" data-toggle="modal" data-target="#insidemanModal">
+                        <img src="/teamproject/Imgs/insideman.jpg" data-toggle="modal" data-target="#insidemanModal">
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/15_img.gif"></li>
+                            <li><img src="/teamproject/Imgs/15_img.gif"></li>
                             <li><span>내안의 그놈</span></li>
                         </ul>
                      </div>
@@ -103,11 +103,11 @@
                         <!-- 메이트-->
                  <li id="movie_border">
                       <div class="poster">
-                       <img src="Imgs/mate.jpg" data-toggle="modal" data-target="#mateModal">
+                       <img src="/teamproject/Imgs/mate.jpg" data-toggle="modal" data-target="#mateModal">
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/15_img.gif"></li>
+                            <li><img src="/teamproject/Imgs/15_img.gif"></li>
                             <li><span>메이트</span></li>
                         </ul>
                      </div>
@@ -119,11 +119,11 @@
                    <!-- 보헤미안 랩소디-->
                  <li id="movie_border">
                       <div class="poster">
-                        <img src="Imgs/rhapsody.jpg" data-toggle="modal" data-target="#rhapsodyModal">      
+                        <img src="/teamproject/Imgs/rhapsody.jpg" data-toggle="modal" data-target="#rhapsodyModal">      
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/12_img.gif"></li>
+                            <li><img src="/teamproject/Imgs/12_img.gif"></li>
                             <li><span>보헤미안랩소디</span></li>
                         </ul>
                      </div>
@@ -135,11 +135,11 @@
                    <!-- 말모이 -->
                 <li id="movie_border">
                       <div class="poster">                  
-                         <img src="Imgs/secretword.jpg" data-toggle="modal" data-target="#malmoeModal">
+                         <img src="/teamproject/Imgs/secretword.jpg" data-toggle="modal" data-target="#malmoeModal">
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/12_img.gif"></li>
+                            <li><img src="/teamproject/Imgs/12_img.gif"></li>
                             <li><span>말모이</span></li>
                         </ul>
                      </div>
@@ -151,11 +151,11 @@
                    <!-- 스파이더맨 뉴 유니버스-->
                  <li id="movie_border">
                       <div class="poster">
-                        <img src="Imgs/spiderman.jpg" data-toggle="modal" data-target="#spiderModal">
+                        <img src="/teamproject/Imgs/spiderman.jpg" data-toggle="modal" data-target="#spiderModal">
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/12_img.gif"></li> 
+                            <li><img src="/teamproject/Imgs/12_img.gif"></li> 
                             <li><span>스파이더맨 뉴유니버스</span></li>
                         </ul>
                      </div>
@@ -166,11 +166,11 @@
                   <!-- 왕이될 아이-->
                  <li id="movie_border">
                       <div class="poster">        
-                         <img src="Imgs/thekidking.jpg" data-toggle="modal" data-target="#thekidkingModal">
+                         <img src="/teamproject/Imgs/thekidking.jpg" data-toggle="modal" data-target="#thekidkingModal">
                      </div>
                       <div class="movie_name">
                         <ul>
-                            <li><img src="Imgs/all_img.gif"></li>
+                            <li><img src="/teamproject/Imgs/all_img.gif"></li>
                             <li><span>왕이될아이</span></li>
                         </ul>
                      </div>
