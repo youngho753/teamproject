@@ -89,8 +89,9 @@ $(document).ready(function(){
 <style>
 
 table {
-	height: 400px;
-	width: 500px;
+	
+	height: 300px;
+	width: 350px;
 	border-collapse: collapse;
 }
 tr,td{
