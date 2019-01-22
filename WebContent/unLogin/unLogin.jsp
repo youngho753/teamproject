@@ -104,7 +104,11 @@ h1 {
 </head>
 
 <body>
-	<div class=loginFrame>
+		<%-- <header id="header" style="width:1600px;">
+					  <jsp:include page="/movie/header.jsp"/>
+		</header> --%>
+		
+		<div class=loginFrame>
 		<h1>LOGIN</h1>
 		<hr>
 		<div class="buttonFrame">

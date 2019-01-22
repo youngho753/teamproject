@@ -120,6 +120,7 @@ function regi(){ //회원가입 신청시, *항목중 빈칸 있으면 alert 없
 </head>
 <body>
 	<div id="container">
+		
 		<div class="body_border">MOVIEBOX</div>
 		<div style="height: 50px; margin: 5px;">
 			<span style="color: purple;"><strong>회원가입</strong></span>

@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>말모이 상세페이지</title>
+
 	<style>
 		#full-body{
 			margin:0 auto;
@@ -23,7 +24,7 @@
 	
 	//시작하자마자 테이블 뿌리기위해 load를 이용.	
 	function getData(pageNum){
-		$("#comment_result").load("list.do",{"pageNum":pageNum},function(data){
+		$("#comment_result").load("/teamproject/list.do",{"pageNum":pageNum},function(data){
 			$("#comment_result").html(data);
 		});
 	}
@@ -36,9 +37,10 @@
 		function sendComment(){
 			$.ajax({
 				type : "POST",
-				url : "comment.do",
+				url : "/teamproject/comment.do",
 				data : {"comment_content": $("#comment_content").val(),
-						"star_grade" : $('input[name=star-input]:checked').val()
+						"star_grade" : $('input[name=star-input]:checked').val(),
+						"movieTitle" : $("#movieTitle").val()
 				},
 				success : function(gift){
 					$("#comment_result").html(gift);
@@ -75,38 +77,38 @@
 		//스틸컷 또는 동영상 누를떄마다 cutORvideo 영역이 바뀌게 하기
 		
 		function showStillcut(){
-			$("#cutORvideo").load("malmoeStillCut.jsp");
+			$("#cutORvideo").load("/sangsae/malmoeStillCut.jsp");
 		}
 		
 		function showVideo(){
-			$("#cutORvideo").load("malmoeVideo.jsp");
+			$("#cutORvideo").load("/sangsae/malmoeVideo.jsp");
 		}
 	
 	</script>
 
 </head>
 <body>
-		<div id="full-body">
+		<div id="full-body" style="">
 			<table width="968" border="0" align="center" cellpadding="0" cellspacing="0">
 		  <tr>
-		    <td width="14"><img src="../Imgs/blank.gif" width="14" height="3"></td>
+		    <td width="14"><img src="/teamproject/Imgs/blank.gif" width="14" height="3"></td>
 		    <td colspan="3"><table width="908" border="0" cellspacing="0" cellpadding="0">
 		      <tr>
-		        <td width="230"><img src="../Imgs/mal.jpg" width="230" height="336"></td>
+		        <td width="230"><img src="/teamproject/Imgs/mal.jpg" width="230" height="336"></td>
 		        <td><table border="0" cellspacing="0" cellpadding="0">
 		          <tr>
 		            <td width="20">&nbsp;</td>
-		            <td colspan="4"><img src="../Imgs/12.gif" width="30" height="31"> <span class="style4">말모이 </span></td>
+		            <td colspan="4"><img src="/teamproject/Imgs/12.gif" width="30" height="31"> <span class="style4">말모이 </span></td>
 		            </tr>
 		          <tr>
 		            <td rowspan="3">&nbsp;</td>
-		            <td height="5" colspan="4" background="../Imgs/blank.gif"><img src="../Imgs/blank.gif" width="3" height="15"></td>
+		            <td height="5" colspan="4" background="/teamproject/Imgs/blank.gif"><img src="/teamproject/Imgs/blank.gif" width="3" height="15"></td>
 		            </tr>
 		          <tr>
-		            <td height="1" colspan="4" background="../Imgs/line.gif"><img src="../Imgs/line.gif" width="8" height="1"></td>
+		            <td height="1" colspan="4" background="/teamproject/Imgs/line.gif"><img src="/teamproject/Imgs/line.gif" width="8" height="1"></td>
 		          </tr>
 		          <tr>
-		            <td height="5" colspan="4" background="../Imgs/blank.gif"><img src="../Imgs/blank.gif" width="3" height="15"></td>
+		            <td height="5" colspan="4" background="/teamproject/Imgs/blank.gif"><img src="/teamproject/Imgs/blank.gif" width="3" height="15"></td>
 		          </tr>
 		          <tr>
 		            <td rowspan="2">&nbsp;</td>
@@ -114,12 +116,12 @@
 		            <td colspan="2">예매율 <span class="style3">1</span>위 29.6% </td>
 		            <td width="122">
 		            	<div align="right">
-		            		<img src="../Imgs/eyme.gif" width="121" height="43"> <!-- onclick줘서 동작시키기 -->
+		            		<img src="/teamproject/Imgs/eyme.gif" width="121" height="43"> <!-- onclick줘서 동작시키기 -->
 		            	</div>
 		            </td>
 		          </tr>
 		          <tr>
-		            <td height="5" colspan="4"><img src="../Imgs/blank.gif" width="3" height="20"></td>
+		            <td height="5" colspan="4"><img src="/teamproject/Imgs/blank.gif" width="3" height="20"></td>
 		            </tr>
 		          <tr>
 		            <td>&nbsp;</td>
@@ -153,25 +155,25 @@
 		          </tr>
 		          <tr>
 		            <td rowspan="2">&nbsp;</td>
-		            <td height="10" colspan="4" background="../Imgs/blank.gif"><img src="../Imgs/blank.gif" width="3" height="20"></td>
+		            <td height="10" colspan="4" background="/teamproject/Imgs/blank.gif"><img src="/teamproject/Imgs/blank.gif" width="3" height="20"></td>
 		            </tr>
 		          <tr>
-		            <td colspan="4" background="../Imgs/line.gif"><img src="../Imgs/line.gif" width="8" height="1"></td>
+		            <td colspan="4" background="/teamproject/Imgs/line.gif"><img src="/teamproject/Imgs/line.gif" width="8" height="1"></td>
 		            </tr>
 		          <tr>
 		            <td>&nbsp;</td>
-		            <td colspan="4" background="../Imgs/blank.gif"><img src="../Imgs/blank.gif" width="3" height="15"></td>
+		            <td colspan="4" background="/teamproject/Imgs/blank.gif"><img src="/teamproject/Imgs/blank.gif" width="3" height="15"></td>
 		            </tr>
 		          <tr>
 		            <td></td>
 		            <td></td>
 		            <td width="322"></td>
-		            <td colspan="2"><div align="right"><img src="../Imgs/movie_time.gif" width="100" height="39"></div></td>
+		            <td colspan="2"><div align="right"><img src="/teamproject/Imgs/movie_time.gif" width="100" height="39"></div></td>
 		            </tr>
 		        </table></td>
 		      </tr>
 		    </table></td>
-		    <td width="14"><img src="../Imgs/blank.gif" width="14" height="3"></td>
+		    <td width="14"><img src="/teamproject/Imgs/blank.gif" width="14" height="3"></td>
 		  </tr>
 		  <tr>
 		    <td>&nbsp;</td>
@@ -223,7 +225,7 @@
 		    <td>&nbsp;</td>
 		    <td width="76" bgcolor="#000000"></td>
 		    <td width="798" bgcolor="#000000">
-		    		<div id="cutORvideo"><jsp:include page="malmoeStillCut.jsp"/> <!-- 스틸컷 or 동영상이 나오도록 구분해야함 -->
+		    		<div id="cutORvideo"><jsp:include page="/sangsae/malmoeStillCut.jsp"/> <!-- 스틸컷 or 동영상이 나오도록 구분해야함 -->
 		    		</div>
 		    </td>
 		    <td width="76" bgcolor="#000000"></td>
@@ -254,7 +256,7 @@
 		        </td>
 		      </tr>
 		      <tr>
-		        <td><div align="center"><img src="../Imgs/stillcut/man_img.gif" width="62" height="62"></div></td>
+		        <td><div align="center"><img src="/teamproject/Imgs/stillcut/man_img.gif" width="62" height="62"></div></td>
 		        <!--평점입력 -->
 				<td><div align="center">				
 				  <table width="175" border="0" cellspacing="0" cellpadding="0">
@@ -265,7 +267,7 @@
 		            <tr>
 		              <td>
 		              		<div align="center">     
-		              			<jsp:include page="star.jsp"/>  <!-- 나중에는 영화이름까지 넣으면 해당 상세페이지에만 그 평점이 보이도록 해야함 -->     		
+		              			<jsp:include page="/sangsae/star.jsp"/>  <!-- 나중에는 영화이름까지 넣으면 해당 상세페이지에만 그 평점이 보이도록 해야함 -->     		
 		              		</div> 
 		              </td>
 		            </tr>
@@ -279,14 +281,14 @@
 		            	
 		              	<textarea name="comment_content" id="comment_content" cols="100%" rows="5" placeholder="100자까지 적을 수 있습니다." maxlength="100" onkeyup="textCount(this,'commentCount')"></textarea>
 		              	<input type="hidden" id="userID" value="여기는아이디세션값"/>
-		              	<input type="hidden" id="movieName" value="상세보기버튼 눌렀을 때, 해당영화의 이름을 가져오기"/>
+		              	<input type="text" id="movieTitle" value="${param.movieTitle}"/>
 		            </td>
 		          </tr>
 		        </table>
 		     
 		        </td>
 		        <td>
-		        	<img src="../Imgs/submit_btn.gif" width="86" height="86" onclick="sendComment();">
+		        	<img src="/teamproject/Imgs/submit_btn.gif" width="86" height="86" onclick="sendComment();">
 		        </td>
 		      </tr>
 		      <tr>
@@ -300,11 +302,10 @@
 		</table>
 		
 		 <!-- 입력한 코멘트가 Ajax방식으로 comment_result div영역에 뿌려짐 -->
-		<div id="comment_result" style=" width : 1084px; text-align: center;">
+		<div id="comment_result" style="width : 1084px; align: center;">
 		
 		</div>
 		 <!-- 코멘트 끝 -->
 	</div>
-	
 </body>
 </html>

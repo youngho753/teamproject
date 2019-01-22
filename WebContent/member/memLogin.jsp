@@ -113,6 +113,9 @@ $(".btnLogin").click(function(){ //아이디 비번 미 입력시 입력요청
 
 </head>
 <body>
+			<%-- <header id="header" style="width:1600px;">
+				  <jsp:include page="/movie/header.jsp"/>
+			</header> --%>
 	<div class=loginFrame>
 		<h1>LOGIN</h1>
 		<hr>
