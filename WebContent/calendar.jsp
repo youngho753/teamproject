@@ -18,6 +18,7 @@ $(document).ready(function(){
 	//오늘
 	var toDate = new Date(y,m,1);
 	//그날의 요일
+	
 	var toDay = toDate.getDay();
 	
 	//그해 월의 마지막 날
@@ -39,7 +40,7 @@ $(document).ready(function(){
 	//요일의 행
 	function calender(){
 	var calender = "<table id='calender_table'>";
-	calender += "<tr>";
+	calender += "<tr style='background : #f8f8f8'>";
 	calender += "<td>일</td>";
 	calender += "<td>월</td>";
 	calender += "<td>화</td>";
@@ -51,7 +52,8 @@ $(document).ready(function(){
 	
 	//달력의 초기값
 	var sNum = 1;
-		
+	//선택 가능 요일 변수
+	var nextNum = 1;
 	//행만들기
 	for(var i=1; i<=row; i++){
 		calender += "<tr>";
@@ -60,11 +62,15 @@ $(document).ready(function(){
 			//월 1 이전 + 월마지막 이후는 &nbsp;
 			if(i===1 && k<=toDay || sNum>lastDate){
 				calender += "<td> &nbsp; </td>";
-				
-			}else{
-				//if (sNum = toDay) = sNum
-				calender += "<td>"+ sNum+ "</td>";
+			}else{ 
+				if(sNum === d)
+					calender += "<td id ='to'>"+ sNum+ "</td>";
+				else if(sNum === eval(d+nextNum))
+					calender += "<td id ='next'>"+ sNum+ "</td>";
+				else
+					calender += "<td>"+ sNum + "</td>";
 				sNum++;
+				
 			}
 		
 		}
@@ -72,7 +78,7 @@ $(document).ready(function(){
 		calender +="</tr>";
 	}
 	//calender 출력
-	
+	$('body').append(sNum===d);
 	$('body').append(calender);
 	};
 	calender();
@@ -88,13 +94,27 @@ table {
 	border-collapse: collapse;
 }
 tr,td{
+
 	text-align: center;
-	border: 1px solid gray;
+	
+}
+
+h1{
+
+	text-align: center;
+}
+
+#to{
 	
 
+	border-radius: 50%;
+	background-color: #503396;
 }
-h1{
-	text-align: center;
+
+#next{
+
+	border-radius: 50%;
+	background-color: #d5cddc;
 }
 
 </style>
