@@ -10,6 +10,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
 <link href="https://fonts.googleapis.com/css?family=Coiny"
 	rel="stylesheet">
+<link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
 <title>Insert title here</title>
 	
 <style>
