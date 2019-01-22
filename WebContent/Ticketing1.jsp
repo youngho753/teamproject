@@ -169,8 +169,6 @@ $(document).ready(function(){
 	};
 	
 	timeTable();
-	
-	
 	            
 	
 });
@@ -264,7 +262,7 @@ a {
 <body>
 
 
-<form id= "Ticketing">
+<form name="Ticketing" action="Ticketing.do" method="get">
 <!-- 전체 테이블 -->
 <table id="Ticketing1">
 
