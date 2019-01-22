@@ -133,7 +133,7 @@ $(document).ready(function(){
 			var b = eval(tm+i);
 			if (b >= lastDay+1) b = eval((b % lastDay))
 			
-			calendarweek += "<td>"+"<a href='#' >"+ b +"("+week[a]+")"+ "</a>" +"</td>";
+			calendarweek += "<td id='nonweekSelect'>"+"<a href='#'>"+ b +"("+week[a]+")"+ "</a>" +"</td>";
 						
 		}
 		var div = $('#calendarweek').html( 
@@ -141,8 +141,18 @@ $(document).ready(function(){
 	             +"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn_week'>"+"</td>"+"</tr>");
 				
 		}
+	$(document).on('click','#weekSelect , #nonweekSelect',function(){
+	 		
+ 		var select = $('#weekSelect').text();
+		var nonselect = $(this).text();
+ 		
+ 		alert(nonselect);		
+ 		return false;
+ 		
+ 	}); 
 	
-	return false;
+	
+	
 	}
 	
 	weektable();
@@ -169,22 +179,22 @@ $(document).ready(function(){
 			
 		}
 		
-	};
-	             
+	}
+	            
  	 var div = $('#calendarTime').html(
                 Time
     			+"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn'>"+"</td>"+"</tr>");
- 
+ 	
  	$(document).on('click','#timeSelect , #timeNonSelect',function(){
-		timeTable();
+ 		 		
  		var select = $('#timeSelect').text();
 		var nonselect = $(this).text();
  		var grade = $("input:radio[name=TheatersType]:checked").val(); //체크된 radio의 name();
- 		
  		alert(nonselect);		
  		return false;
- 	});
- 	 
+ 		
+ 	}); 
+ 	
  	
 	}
 	
