@@ -1,10 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>관리자 메인</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <style type="text/css">
 <!--
 .style1 {
@@ -96,15 +98,18 @@
                         <tr>
                           <td colspan="2"><hr style="border: solid 2px gray;"></td>
                         </tr>
-                        <tr>
+                        <tbody id="result">                        
+                        <tr>                        
                           <td colspan="2">
                             <!-- 영화정보 리스트 뿌려지는 부분 -->
                             <table width="430" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                            <c:forEach items="${arr }" var="dto">
                               <tr>
-                                <td><span class="style9">- 말모이</span></td>
-                                <td><div align="right" class="style7 style10">01.21</div></td>
+                                <td><span class="style9"><a href="view.do?num=${dto.num}">${dto.subject }</a></span></td>
+                                <td><div align="right" class="style7 style10">${dto.reg_date }</div></td>
                               </tr>
-                              <tr>
+                             <!--  <tr>
                                 <td><span class="style9">- 내안에 그놈 </span></td>
                                 <td><div align="right" class="style9">01.21</div></td>
                               </tr>
@@ -119,7 +124,9 @@
                               <tr>
                                 <td><span class="style9">- 아쿠아맨</span></td>
                                 <td><div align="right" class="style9">01.22</div></td>
-                              </tr>
+                             </tr>-->
+                             </c:forEach>
+                              </tr>                              
                           </table></td>
                         </tr>
                         <tr>

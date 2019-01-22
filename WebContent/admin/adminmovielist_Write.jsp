@@ -78,7 +78,7 @@
       <td width="6" height="30" align="right">
         <div align="left"> </div></td>
       <td width="49" height="30" align="right"><div align="left">
-          <input name="submit" type="submit" id="submit" value="글목록">
+          <input type="button" value="글목록" onclick="location.href='adminmovieinfolist.jsp'">
       </div></td>
       <td width="512">&nbsp;</td>
     </tr>
