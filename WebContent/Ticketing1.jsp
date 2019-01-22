@@ -153,7 +153,6 @@ $(document).ready(function(){
 	for(var t=time_next_num; t<=time_max_num; t++){
 		if(toTime==eval(tmp+t)){
 			 Time += "<td bgcolor='#198591'>"+"<a href='#' id='se'>"+ eval(tmp+t) +"</a>" +"</td>";
-			
 		}else{
 			var b = eval(toTime+t);
 			if (eval(toTime+t) >=23) b = b % 24  
