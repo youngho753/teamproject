@@ -80,6 +80,46 @@ public class MemberDAO {
 		}
 	}
 	
+	//로그인 아이디/비번 체크
+	public String memberLoginCheck(String id, String pw) {
+		String check = "0";
+		Connection con  = null;
+		Statement st = null;
+		ResultSet rs = null;
+		try {
+			con = getConnection();
+			String sql = "";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return check;
+		
+	}
+	
+	//아이디 비번 일치하면 로그인 하는 곳
+	public MemberBean memberLogin(String id, String pw) {
+		MemberBean mb = new MemberBean();
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		try {
+			con = getConnection();
+			String sql = "select * from member where mem_id = '" + id + "' and mem_pw = '" + pw + "'";
+			st = con.createStatement();
+			rs = st.executeQuery(sql);
+			while(rs.next()) {
+				
+				
+				
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mb;
+	}
+	
 	
 	
 	private void disConnection(Connection con, Statement st, PreparedStatement ps, ResultSet rs) {

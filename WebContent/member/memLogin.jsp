@@ -79,12 +79,38 @@ h1 {
 	border: none;
 }
 
-#search2 {
+#join {
 	border-top: none;
 	border-right: none;
 	border-bottom: none;
 }
 </style>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>  <!-- 제이쿼리  -->
+<script>
+$(".btnLogin").click(function(){ //아이디 비번 미 입력시 입력요청
+	if($("#id").val() == "" || $("#pw").val() == ""){
+		alert("아이디와 비밀번호를 입력하세요");
+	}else{
+		$.ajax({
+			type : "post",
+			url : "login.do",
+			data : {
+				"id" : $("#id").val(),
+				"pw" : $("#pw").val()
+			},
+			success : function(data){
+				alert(data);
+			}
+		})
+		
+	}
+});
+</script>
+
+
+
+
 </head>
 <body>
 	<div class=loginFrame>
@@ -97,18 +123,15 @@ h1 {
 			<div id=moiveBox>MOVIEBOX LOGIN</div>
 			<div id="Grid">
 				<div style="text-align: right">
-					<input type="text" placeholder="아이디"><br> <input style="margin-top: 15px" type="password
-					" placeholder="비밀번호"><br>
+					<input type="text" placeholder="아이디" name="id"><br> <input style="margin-top: 15px" type="password"  id="pw" placeholder="비밀번호"><br>
 				</div>
 				<div style="text-align: left; margin-left: 30px;">
 					<input class="btnLogin" type="button" value="로그인">
 				</div>
 			</div>
 			<div class="lastBtns" style="margin-top: 30px">
-				<input id="search1" type="button" value="ID/PW찾기"><input id="search2" type="button" value="회원가입">
+				<input id="search1" type="button" value="ID/PW찾기"><input id="join" type="button" value="회원가입">
 			</div>
-
-
 		</div>
 	</div>
 </body>
