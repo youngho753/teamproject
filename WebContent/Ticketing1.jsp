@@ -6,11 +6,14 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
+var popupX = (window.screen.width / 2) - (200 / 2);
+var popupY= (window.screen.height /2) - (100 / 2);
+
 $(document).ready(function(){
 		//calendar버튼을 누르면 실행
 	   $("#calendar").click(function(){ 
 		   //calendar.jsp 팝업 실행 
-		   window.open('calendar.jsp','달력','width=600, height=900, scrollbars= 0, toolbar=0, menubar=no, resizable=no');
+		   window.open('calendar.jsp','달력','width=600, height=600, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left='+ popupX + ', top='+ popupY + ', screenX='+ popupX + ', screenY= '+ popupY);
 		});
 	});
 </script>
