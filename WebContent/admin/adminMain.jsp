@@ -41,7 +41,7 @@
               <td width="840"><strong>영화목록</strong></td>
               <td width="20"><div align="center">
                   <!-- 영화목록 보여질 부분 + 아이콘 (영화목록 리스트페이지로 연결)-->
-                  <a href="#"><img src="Imgs/list_plus_btn.gif" width="13" height="13" border="0"></a></div></td>
+                  <a href="list.do"><img src="Imgs/list_plus_btn.gif" width="13" height="13" border="0"></a></div></td>
             </tr>
             <tr background="Imgs/list_bg.gif">
               <td colspan="2"><img src="Imgs/list_bg.gif" width="1" height="15"></td>
@@ -218,26 +218,17 @@
                     <td width="49"><div align="right" class="style1">
                       <div align="right"><a href="#">정보찾기</a></div>
                     </div></td>
-                  </tr>
-                  <tr background="Imgs/title_bg.gif">
-                    <td height="5" colspan="2"><img src="Imgs/title_bg.gif" width="1" height="5"></td>
-                  </tr>
+                  </tr>                  
                   <tr>
                     <td colspan="2"><div align="center">
                       <input name="textfield" type="text" value="아이디">
                     </div></td>
-                  </tr>
-                  <tr background="Imgs/title_bg.gif">
-                    <td height="9" colspan="2"><img src="Imgs/title_bg.gif" width="1" height="5"></td>
-                  </tr>
+                  </tr>                  
                   <tr>
                     <td colspan="2"><div align="center">
                       <input name="textfield2" type="text" value="비밀번호">
                     </div></td>
-                  </tr>
-                  <tr background="Imgs/title_bg.gif">
-                    <td height="5" colspan="2"><img src="Imgs/title_bg.gif" width="1" height="5"></td>
-                  </tr>
+                  </tr>                  
                   <tr>
                     <td colspan="2"><div align="center">
                       <input type="submit" name="Submit" style="width:130pt" value="로그인">
