@@ -108,8 +108,8 @@ h1 {
 		<h1>LOGIN</h1>
 		<hr>
 		<div class="buttonFrame">
-			<input type="button" class="btn1" value="회원 로그인" onclick="window.open('../member/memLogin.jsp','','width=800,height=600')"><input
-				type="button" class="btn2" value="비회원 로그인">
+			<input type="button" class="btn1" value="회원 로그인" onclick="location.href=('../member/memLogin.jsp')"><input
+				type="button" class="btn2" value="비회원 로그인">					
 		</div>
 		<div id="grid">
 			<div>

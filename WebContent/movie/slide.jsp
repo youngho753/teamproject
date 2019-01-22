@@ -8,9 +8,8 @@
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet"/>
 	<link href='https://fonts.googleapis.com/css?family=Anton' rel='stylesheet' type='text/css'/>
 	<link href='https://fonts.googleapis.com/css?family=Neucha' rel='stylesheet' type='text/css'/>
-	<link rel ="stylesheet" type = "text/css" href = "css/slide.css">
+	<link rel ="stylesheet" type = "text/css" href = "/teamproject/css/slide.css">
 <title>slide</title>
-
 </head>
 <body>
 	<div id="wrapper">

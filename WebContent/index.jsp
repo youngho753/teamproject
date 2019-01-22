@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>환영합니다.</title>
 <style>
 *{
@@ -30,25 +31,27 @@ $(document).ready(function(){
     $("#footer").load("movie/footer.jsp");
 });
 </script>
+=======
+<title>라이프시어터, 무비박스</title>
+<link rel = "icon" href = "favicon.ico" type = "image/x-icon"/>
+>>>>>>> resentUpdate
 </head>
 
 <body>
-
-	<!-- header -->
-	<div id = "header" style = "width : 1600px; height : 50px;"></div>
-	<!--  slideshow -->
-	<div id = "slide" style = "width : 1600px;"></div>
-	<!-- 본문 -->
-	<div id = "article" style = "width : 1600px;"></div>
-	
-	<div style="height : 200px;"></div> <!-- 경계구분용 div -->
-	
-	
-	<div id="movie_place" style="width : 1600px;"></div>
-	<!-- footer -->
-	<div id = "footer" style = "width : 1600px; height : 200px;"></div>
-
+	<div id="container" style="margin: 0 auto; width:1600px">
+			<header id="header">
+				  <jsp:include page="movie/header.jsp"/>
+			</header>
+				
+			<!-- 슬라이드쇼 영역 -->
+				<jsp:include page="movie/slide.jsp"/>
+			
+			<!-- 무비리스트 영역 사진 클릭시 동영상 modal 팝업됨 -->
+				<jsp:include page="movie/movieList.jsp"/>
+						
+			<div style="height : 200px;"></div> <!-- 경계구분용 div -->
+			<!--  footer -->
+				<jsp:include page="movie/footer.jsp"/>
+	</div>
 </body>
 </html>
-
-
