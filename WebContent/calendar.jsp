@@ -40,7 +40,7 @@ $(document).ready(function(){
 	//요일의 행
 	function calender(){
 	var calender = "<table id='calender_table'>";
-	calender += "<tr style='background : #f8f8f8'>";
+	calender += "<tr style='background : #a8a8a8'>";
 	calender += "<td>일</td>";
 	calender += "<td>월</td>";
 	calender += "<td>화</td>";
