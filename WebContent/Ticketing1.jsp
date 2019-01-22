@@ -62,6 +62,8 @@ $(document).ready(function(){
 	var time_max_num = 10;
 	var week_max_num = 5;
 	
+		
+	
 	//time 오른쪽 버튼 클릭
 	$(document).on('click','#r_btn',function(){ 
 		time_next_num++;
@@ -103,6 +105,7 @@ $(document).ready(function(){
 			
 		}
 		
+		
 		weektable();
 		return false;
 		
@@ -136,10 +139,10 @@ $(document).ready(function(){
 		var div = $('#calendarweek').html( 
 				calendarweek
 	             +"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn_week'>"+"</td>"+"</tr>");
-		
+				
 		}
 	
-	
+	return false;
 	}
 	
 	weektable();
@@ -160,33 +163,32 @@ $(document).ready(function(){
 			 Time += "<td bgcolor='#198591' id='timeSelect'>"+ eval(tmp+t) +"</a>"+"</td>";
 		}else{
 			var b = eval(tmp+t);
-			if (eval(tmp+t) >=23) b = b % 24  
+			if (b >=24) 
+				b %=24;  
 			Time += "<td id='timeNonSelect'>"+"<a href='#' >"+ b +"</a>" +"</td>";
 			
 		}
-	}
+		
+	};
 	             
  	 var div = $('#calendarTime').html(
                 Time
     			+"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn'>"+"</td>"+"</tr>");
- 	 
-	
+ 
  	$(document).on('click','#timeSelect , #timeNonSelect',function(){
- 		
- 		
+		timeTable();
  		var select = $('#timeSelect').text();
- 		var nonselect = $('#timeNonSelect').text();
- 		var grade = $("input:radio[name=TheatersType]:checked").val(); //체크된 radio의 name(); 
+		var nonselect = $(this).text();
+ 		var grade = $("input:radio[name=TheatersType]:checked").val(); //체크된 radio의 name();
  		
- 		
- 		
- 		
+ 		alert(nonselect);		
  		return false;
- 	
  	});
+ 	 
  	
- 	
-	};
+	}
+	
+	
 	
 	timeTable();
 	
