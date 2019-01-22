@@ -218,6 +218,7 @@ html, body {
                         <ul>
                             <li><img src="/teamproject/Imgs/12_img.gif"></li> 
                             <li><span>스파이더맨 뉴유니버스</span></li>
+
                         </ul>
                      </div>
                      <div class="movie_button">

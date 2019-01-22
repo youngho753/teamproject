@@ -1,6 +1,5 @@
-@charset "UTF-8";
 
-/*별점 css*/
+/* 별점 css*/
 .star-input>.input,
 .star-input>.input>label:hover,
 .star-input>.input>input:focus+label,
@@ -22,7 +21,7 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 .star-input>output{display:inline-block;width:60px; font-size:18px;text-align:right; vertical-align:middle;}
 /*별점 css끝*/
 
-/* hover 효과*/
+/* hover*/
 /*#hover-frame {
   width:250px;
   height:360px;
@@ -73,4 +72,3 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 .poster:hover .star-rating {
   opacity:1;
   transform:scale(1);
-}	
