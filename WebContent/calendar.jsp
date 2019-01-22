@@ -54,6 +54,8 @@ $(document).ready(function(){
 	var sNum = 1;
 	//선택 가능 요일 변수
 	var nextNum = 1;
+	
+	
 	//행만들기
 	for(var i=1; i<=row; i++){
 		calender += "<tr>";
@@ -78,10 +80,12 @@ $(document).ready(function(){
 		calender +="</tr>";
 	}
 	//calender 출력
-	$('body').append(sNum===d);
+	
 	$('body').append(calender);
 	};
 	calender();
+	
+	
 	
 
 });
