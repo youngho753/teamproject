@@ -40,10 +40,6 @@
 				<jsp:include page="movie/movieListModal.jsp"/>
 						
 			<div style="height : 200px;"></div> <!-- 경계구분용 div -->
-				
-			<!-- footer 위 쪽 영화관 위치 영역 -->
-				<jsp:include page="movie/footer_theater.jsp"/>
-			
 			<!--  footer -->
 				<jsp:include page="movie/footer.jsp"/>
 		</div>

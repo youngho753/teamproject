@@ -155,10 +155,6 @@
 			    <div style="height: 50px">
 			        
 			    </div>
-		
-				<!-- footer 위쪽 영화관위치 영역 -->
-				<jsp:include page="movie/footer_theater.jsp"/>
-	
 					<!-- footer 영역 -->
 				<jsp:include page="movie/footer.jsp"/>
 		</div>
