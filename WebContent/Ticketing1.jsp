@@ -12,8 +12,8 @@ $(document).ready(function(){
 		//calendar버튼을 누르면 실행
 	   $("#calendar").click(function(){ 
 		   //calendar.jsp 팝업 실행 
-		var popupX = (window.screen.width / 2) - (200/2);
-		var popupY = (window.screen.height / 2) - (100/2);
+		var popupX = (window.screen.width / 2) - (200 / 2);
+		var popupY = (window.screen.height / 2) - (100 / 2);
 		window.open('calendar.jsp','달력','width=370, height=400, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left= '+ popupX + ', top= '+ popupY + ', screenX= '+ 290 + ', screenY= '+ 200);
 		});
 	});
@@ -72,7 +72,7 @@ $(document).ready(function(){
 	//time 왼쪽 버튼 클릭
 	$(document).on('click','#l_btn',function(){ 
 		var i = 0;
-		if(i >= time_max_num){
+		if(i >= eval(time_max_num)){
 			alert("더이상 움직일수 없습니다.")
 		}else{
 			time_next_num--;
@@ -122,14 +122,13 @@ $(document).ready(function(){
 	
 	for(var i=week_next_num; i<=week_max_num; i++){
 		if(toDay==eval(tm+i)){
-			calendarweek += "<td bgcolor='#198591' style='font-size: 15px;'>"+"<a href='#' id='se'>"+"오늘"+ "</a>" +"</td>";
+			calendarweek += "<td bgcolor='#198591' style='font-size: 15px;'>"+"<a href='#' id='weekSelect'>"+"오늘"+ "</a>" +"</td>";
 		 }else {  
 			var a = eval(toWeek+i)-1;
 			if(a > 6) a = a % 7
 			
 			var b = eval(tm+i);
 			if (b >= lastDay+1) b = eval((b % lastDay))
-			
 			
 			calendarweek += "<td>"+"<a href='#' >"+ b +"("+week[a]+")"+ "</a>" +"</td>";
 						
@@ -148,19 +147,21 @@ $(document).ready(function(){
 	//시간
 	function timeTable(){
 		var Time = "<table id='Time_ul'>";
-		Time +="<tr>";
+		Time +="<tr id='timeTable_tr'>";
 		Time +="<td>";
 		Time +="<img src='Imgs/l_btn.gif' id='l_btn'>"
 		Time +="</td>";
+		
+		
 	var tNum = 1;
 	var tmp = time[toTime]-5;
 	for(var t=time_next_num; t<=time_max_num; t++){
 		if(toTime==eval(tmp+t)){
-			 Time += "<td bgcolor='#198591'>"+"<a href='#' id='se'>"+ eval(tmp+t) +"</a>" +"</td>";
+			 Time += "<td bgcolor='#198591' id='timeSelect'>"+ eval(tmp+t) +"</a>"+"</td>";
 		}else{
-			var b = eval(toTime+t);
-			if (eval(toTime+t) >=23) b = b % 24  
-			Time += "<td>"+"<a href='#' id=''>"+ b +"</a>" +"</td>";
+			var b = eval(tmp+t);
+			if (eval(tmp+t) >=23) b = b % 24  
+			Time += "<td id='timeNonSelect'>"+"<a href='#' >"+ b +"</a>" +"</td>";
 			
 		}
 	}
@@ -168,10 +169,30 @@ $(document).ready(function(){
  	 var div = $('#calendarTime').html(
                 Time
     			+"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn'>"+"</td>"+"</tr>");
+ 	 
+	
+ 	$(document).on('click','#timeSelect , #timeNonSelect',function(){
+ 		
+ 		
+ 		var select = $('#timeSelect').text();
+ 		var nonselect = $('#timeNonSelect').text();
+ 		var grade = $("input:radio[name=TheatersType]:checked").val(); //체크된 radio의 name(); 
+ 		
+ 		
+ 		
+ 		
+ 		return false;
+ 	
+ 	});
+ 	
  	
 	};
 	
 	timeTable();
+	
+	
+	
+	
 	            
 	
 });
@@ -232,7 +253,21 @@ a {
 
 }
 
-#se{
+#timeSelect{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	width: 40px;
+	background-color: #198591;
+	color: #fff;
+
+}
+
+#weekSelect{
+	padding: 0;
+	margin: 0;
+	text-decoration: none;
+	width: 40px;
 	background-color: #198591;
 	color: #fff;
 	
@@ -240,6 +275,7 @@ a {
 }
 
 #Time_ul {
+
 	height: 10px;
 	width: 544px;
 	border: hidden;
@@ -290,7 +326,7 @@ a {
 <img src="Imgs/kukjang_img.gif" >
 <img src="Imgs/reflash_img.gif" align="right" style="padding: 10px;" id="reflash1"></td>
 <td rowspan="7" align="center" bgcolor="#ffffff">
-<img src="Imgs/johe_img.gif"></td>
+<img src="Imgs/johe_img.gif" ></td>
 </tr>
 
 <!-- 극장 선택 이미지 -->
@@ -329,7 +365,7 @@ a {
 </tr>
 <tr id="TheatersType"><!-- 영화관 선택 라디오 -->
 <td>&nbsp;&nbsp;<input type="radio" value="더빙" name="TheatersType">더빙<td>
-<input type="radio" value="자막" name="TheatersType">자막</td><td colspan="2">
+<input type="radio" value="자막" name="TheatersType" >자막</td><td colspan="2">
 <input type="radio" value="ATMOS" name="TheatersType">ATMOS</td>
 </tr>
 </table>
