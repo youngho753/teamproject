@@ -5,25 +5,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style>
-
-table {
-	height: 400px;
-	width: 500px;
-	border-collapse: collapse;
-}
-tr,td{
-	border: 1px solid gray;
-	
-
-}
-h1{
-	text-align: center;
-}
-
-</style>
-</head>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
+$(document).ready(function(){
+
 	
 	var date = new Date();
 	var d = date.getDate(); //일
@@ -49,10 +34,11 @@ h1{
 	var row = Math.ceil((toDay+lastDate)/7);
 	
 	//달력의 연도/월 표기
-	document.write("<h1>"+y+"년"+(m+1)+"월"+"</h1>")
+	$('body').append("<h1>"+y+"년"+(m+1)+"월"+"</h1>")
 	
 	//요일의 행
-	var calender = "<table class='calender_table'>";
+	function calender(){
+	var calender = "<table id='calender_table'>";
 	calender += "<tr>";
 	calender += "<td>일</td>";
 	calender += "<td>월</td>";
@@ -76,6 +62,7 @@ h1{
 				calender += "<td> &nbsp; </td>";
 				
 			}else{
+				//if (sNum = toDay) = sNum
 				calender += "<td>"+ sNum+ "</td>";
 				sNum++;
 			}
@@ -85,9 +72,34 @@ h1{
 		calender +="</tr>";
 	}
 	//calender 출력
-	document.write(calender);
 	
+	$('body').append(calender);
+	};
+	calender();
+	
+
+});
 </script>
+<style>
+
+table {
+	height: 400px;
+	width: 500px;
+	border-collapse: collapse;
+}
+tr,td{
+	text-align: center;
+	border: 1px solid gray;
+	
+
+}
+h1{
+	text-align: center;
+}
+
+</style>
+</head>
+
 <body>
 <div id="calender"></div>
 </body>
