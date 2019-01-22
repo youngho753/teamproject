@@ -43,11 +43,8 @@ $(document).ready(function(){
 		lastDate = last[1] = 29;
 	}
 	//지금 월의 마지막일 
-	var lastDate = last[m];
+	var lastDay = last[m];
 	
-	//달력에 필요한 행의 갯수
-	//theDate(빈칸수),lastDate(월의 전체수)
-	var row = Math.ceil((toDay+lastDate)/7);
 	
 	//요일 쓰기
 	var week = ['일','월','화','수','목','금','토'];
@@ -70,8 +67,14 @@ $(document).ready(function(){
 	});
 	//time 왼쪽 버튼 클릭
 	$(document).on('click','#l_btn',function(){ 
-		time_next_num--;
-		time_max_num--;
+		var i = 0;
+		if(i >= time_max_num){
+			alert("더이상 움직일수 없습니다.")
+		}else{
+			time_next_num--;
+			time_max_num--;
+		}
+		
 		timeTable();
 		return false;
 		
@@ -87,12 +90,13 @@ $(document).ready(function(){
 	
 	//week 왼쪽 버튼 클릭
 	$(document).on('click','#l_btn_week',function(){
-	var i = 0;
-		if(i = week_next_num){
+		var i = 1;
+		if(i >= week_next_num){
+			alert("더이상 움직일수 없습니다.")
+		}else{
 			week_next_num--;
 			week_max_num--;
-		}else{
-			alert("더이상 움직일수 없습니다.")
+			
 		}
 		
 		weektable();
@@ -107,21 +111,22 @@ $(document).ready(function(){
 		calendarweek +="<td>";
 		calendarweek +="<img src='Imgs/l_btn.gif' id='l_btn_week'>"
 		calendarweek +="</td>";
-	
+		
 	var sNum = 1;
 	//행만들기
 	var tm = eval(toDate.getDate()-1); 
 	
 	for(var i=week_next_num; i<=week_max_num; i++){
-		sNum++;	
-		var b = eval((sNum+toDay)+week_next_num);
-		//if (b > last) b = b % last; 
 		if(toDay==eval(tm+i)){
 			calendarweek += "<td bgcolor='#198591' style='font-size: 15px;'>"+"<a href='#' id='se'>"+"오늘"+ "</a>" +"</td>";
 		 }else {  
-			 
 			var a = eval(toWeek+i)-1;
-			if(a > 6) a = a % 7;
+			if(a > 6) a = a % 7
+			
+			var b = eval(tm+i);
+			if (b >= lastDay+1) b = eval((b % lastDay))
+			
+			
 			calendarweek += "<td>"+"<a href='#' >"+ b +"("+week[a]+")"+ "</a>" +"</td>";
 						
 		}
@@ -150,8 +155,9 @@ $(document).ready(function(){
 			 Time += "<td bgcolor='#198591'>"+"<a href='#' id='se'>"+ eval(tmp+t) +"</a>" +"</td>";
 			
 		}else{
-			
-			Time += "<td>"+"<a href='#' id=''>"+ eval(tmp+t)+"</a>" +"</td>";
+			var b = eval(toTime+t);
+			if (eval(toTime+t) >=23) b = b % 24  
+			Time += "<td>"+"<a href='#' id=''>"+ b +"</a>" +"</td>";
 			
 		}
 	}
@@ -183,7 +189,7 @@ $(document).ready(function(){
 		//극장 선택 버튼을 누르면 실행
 	   $("#TheatersSelect1").click(function(){ 
 		   //calendar.jsp 팝업 실행 
-		   window.open('movieTime.jsp','지역선택','width=600px, height=910px, scrollbars= 0, toolbar=0, menubar=no resizable=no');
+		   window.open('movieTime.jsp','지역선택','width=1100px, height=600px, scrollbars= 0, toolbar=0, menubar=no resizable=no');
 		});
 	});
 </script>
