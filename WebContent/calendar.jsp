@@ -79,7 +79,17 @@ $(document).ready(function(){
 		//행닫기
 		calender +="</tr>";
 	}
-	//calender 출력
+	
+	
+	$(document).on('click','#to , #next',function(){
+ 		var select = $('#to').text();
+		var nonselect = $(this).text();
+ 		
+ 		alert(nonselect);		
+ 		return false;
+ 		
+ 	}); 
+ 	
 	
 	$('body').append(calender);
 	};
