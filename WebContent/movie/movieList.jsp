@@ -5,22 +5,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" type="text/css" href="/teamproject/css/movielist.css">
-    <link rel="stylesheet" type="text/css" href="css/slide.css">
-    <link rel="stylesheet" type="text/css" href="css/starhover.css">
+    <link rel="stylesheet" type="text/css" href="/teamproject/css/movieArray.css">
+    <link rel="stylesheet" type="text/css" href="/teamproject/css/slide.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
 
 <title>movieList</title>
-	<script>
-
-		 function scrollControl(){
-			$('html, body').css('overflow-y','hidden'); /* 안 먹히는중 */
-		
-		}	
-	</script>
+	
 </head>
 <body>
 	<section class="moive_wrapper">
@@ -33,7 +26,7 @@
 	                     <!-- 이미지 밑 별점 들어가는곳 -->
 	                         <img src="/teamproject/Imgs/aquaman.jpg">
 	                    		<!-- 별점태그를 inclue page 해서 간단화함 -->
-	                     		<jsp:include page="star_ratingtag.jsp"/>
+	                     		<jsp:include page="/movie/star_ratingtag.jsp"/>
 	                      <div class="movie_name">
 	                        <ul>
 	                            <li><img src="/teamproject/Imgs/12_img.gif"></li> 
@@ -51,7 +44,7 @@
                       <div class="poster">
                       	<!-- 이미지 밑 별점 들어가는곳 -->
                          <img src="/teamproject/Imgs/bumblebee.jpg" data-toggle="modal" data-target="#bumblebeeModal">
-                     	<jsp:include page="star_ratingtag.jsp"/>
+                     	<jsp:include page="/movie/star_ratingtag.jsp"/>
                      </div>
                       <div class="movie_name">
                         <ul>
@@ -216,7 +209,6 @@
       </section>
       
            <!-- script-->
-           <script src="js/starhover.js"></script>
             <script data-brackets-id='82' src="js/jquery.min.js"></script>
             <script data-brackets-id='83' src="js/jquery.scrolly.min.js"></script>
 			<script data-brackets-id='84' src="js/jquery.poptrox.min.js"></script>

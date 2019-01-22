@@ -1,7 +1,7 @@
 /*section*/
 
 .moive_wrapper{
-    margin: 0 auto; /*ê°€ìš´ë°ì •ë ¬*/
+    margin: 0 auto; /*°¡¿îµ¥Á¤·Ä*/
     max-width:1600px;
     height: auto;
     font-family: 'Lato', sans-serif;
@@ -29,7 +29,7 @@ section .movie_inner{
 
 .movie_inner ul li{ 
      display: inline-block;
-     max-width: 255px; /* í•œ ê°œ posterì˜ í¬ê¸°ì™€ ë†’ì´(ì˜í™”ì´ë¦„,ë²„íŠ¼í¬í•¨)*/
+     max-width: 255px; /* ÇÑ °³ posterÀÇ Å©±â¿Í ³ôÀÌ(¿µÈ­ÀÌ¸§,¹öÆ°Æ÷ÇÔ)*/
      max-height: 360px;
 }
 
@@ -51,7 +51,7 @@ section .movie_inner{
     max-height: 358px;
 }
 
-/*ul íƒœê·¸ movielist*/
+/*ul ÅÂ±× movieList*/
 
 #movielist .movie_button{
     text-align: center;
