@@ -41,14 +41,15 @@
               <td width="840"><strong>영화목록</strong></td>
               <td width="20"><div align="center">
                   <!-- 영화목록 보여질 부분 + 아이콘 (영화목록 리스트페이지로 연결)-->
-                  <a href="list.do"><img src="Imgs/list_plus_btn.gif" width="13" height="13" border="0"></a></div></td>
+                  <a href="#"><img src="Imgs/list_plus_btn.gif" width="13" height="13" border="0"></a></div></td>
             </tr>
-            <tr background="Imgs/list_bg.gif">
-              <td colspan="2"><img src="Imgs/list_bg.gif" width="1" height="15"></td>
+            <tr>
+              <td colspan="2"><hr style="border: solid 2px gray;"></td>
             </tr>
             <tr>
               <td colspan="2"><table width="860" border="0" cellspacing="0" cellpadding="0">
                   <tr>
+   
                     <!-- 영화목록 이미지부분 -->
                     <td colspan="2"><img src="Imgs/ex_list.gif" width="139" height="203"></td>
                     <td width="4" rowspan="2">&nbsp;</td>
@@ -89,10 +90,11 @@
                         <tr>
                           <td width="840"><strong>영화정보</strong></td>
                           <!-- 영화정보 리스트 보여질 부분 + 아이콘 (리스트로 연결)-->
-                          <td width="20"><div align="center"><a href="#"><img src="Imgs/list_plus_btn.gif" width="13" height="13" border="0"></a></div></td>
+                          <td width="20"><div align="center">
+                          <a href="#"><img src="Imgs/list_plus_btn.gif" width="13" height="13" border="0"></a></div></td>
                         </tr>
-                        <tr background="Imgs/list_bg.gif">
-                          <td colspan="2"><img src="Imgs/list_bg.gif" width="1" height="15"></td>
+                        <tr>
+                          <td colspan="2"><hr style="border: solid 2px gray;"></td>
                         </tr>
                         <tr>
                           <td colspan="2">
@@ -130,10 +132,11 @@
                         <tr>
                           <td width="840"><strong>상영관정보</strong></td>
                           <!-- 상영관정보 리스트 보여질 부분 + 아이콘 (리스트로 연결)-->
-                          <td width="20"><div align="center"><a href="#"><img src="Imgs/list_plus_btn.gif" width="13" height="13" border="0"></a></div></td>
+                          <td width="20"><div align="center">
+                          <a href="#"><img src="Imgs/list_plus_btn.gif" width="13" height="13" border="0"></a></div></td>
                         </tr>
-                        <tr background="Imgs/list_bg.gif">
-                          <td colspan="2"><img src="Imgs/list_bg.gif" width="1" height="15"></td>
+                        <tr>
+                          <td colspan="2"><hr style="border: solid 2px gray;"></td>
                         </tr>
                         <tr>
                           <td colspan="2">
@@ -176,8 +179,8 @@
                   <!-- 이벤트목록 보여질 부분 + 아이콘 (이벤트정보 리스트페이지로 연결)-->
                   <a href="#"><img src="Imgs/list_plus_btn.gif" width="13" height="13" border="0"></a></div></td>
                   </tr>
-                <tr background="Imgs/list_bg.gif">
-                          <td colspan="2"><img src="Imgs/list_bg.gif" width="1" height="15"></td>
+                <tr>
+                          <td colspan="2"><hr style="border: solid 2px gray;"></td>
                         </tr>
                 <tr>
                   <td colspan="3">
