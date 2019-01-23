@@ -1,20 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
-
-
 $(document).ready(function(){
 		//calendar버튼을 누르면 실행
 	   $("#calendar").click(function(){ 
 		   //calendar.jsp 팝업 실행 
-		var popupX = (window.screen.width / 2) - (200 / 2);
-		var popupY = (window.screen.height / 2) - (100 / 2);
-		window.open('calendar.jsp','달력','width=370, height=400, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left= '+ popupX + ', top= '+ popupY + ', screenX= '+ 290 + ', screenY= '+ 200);
+		window.open('calendar.jsp','달력','width=370, height=400, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left= '+ 290 + ', top= '+ 300 + ', screenX= '+ 290 + ', screenY= '+ 200);
 		});
 	});
 </script>
@@ -181,19 +178,11 @@ $(document).ready(function(){
 			
 		}; 
 		
- 		
- 		
  	}); 
- 	
- 	
+ 	 	
 	}
 
 	timeTable();
-	
-	
-	
-	
-	            
 	
 });
 </script>
@@ -215,6 +204,29 @@ $(document).ready(function(){
 		});
 	});
 </script>
+<!-- <script>
+$(document).ready(function(){
+	$("#TheatersSelect1").click(function() {
+		$.ajax({
+			url:"movieTime.jsp",
+			type:"post",
+			data: "",
+			dataType : "text",
+			success : function(data) {
+				$("#Theater").html(data)
+				$("#Theater").html(<h1></h1>)
+			},
+			error:function(e){
+				alert("error:"+e);
+			}
+			
+				
+
+		});
+		
+	});
+});
+</script> -->
 
 <title>영화 예매1</title> <!-- 타이틀은 일괄로 변경 바람  -->
 </head>
@@ -293,9 +305,6 @@ a {
 }
 
 
-
-
-
 </style>
 
 <body>
@@ -320,7 +329,6 @@ a {
 </tr>
 
 
-
 <!-- 극장 -->
 <tr style="border: 1px solid gray;">
 <td colspan="4" style="border: 1px solid gray;">
@@ -332,7 +340,11 @@ a {
 
 <!-- 극장 선택 이미지 -->
 <tr id="TheatersSelect">
-<td colspan="2" align="center"><div id = "Theaters"><input type="image" src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1" value="TheatersSelect1"></div></td>
+<td colspan="2" align="center">
+<div id = "Theaters" >
+<input type="image" src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1" value="TheatersSelect1">
+</div>
+</td>
 <td colspan="2" align="center"><input type="image" src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect2" value="TheatersSelect2"></td>
 </tr>
 <!-- 극장 선택 이미지 --> 
@@ -370,6 +382,7 @@ a {
 <input type="radio" value="자막" name="TheatersType" >자막</td><td colspan="2">
 <input type="radio" value="ATMOS" name="TheatersType">ATMOS</td>
 </tr>
+
 </table>
 </form>
 
