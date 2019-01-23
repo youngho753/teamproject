@@ -4,9 +4,9 @@ public class MemberBean {
 	int no;
 	String mem_id;
 	String mem_pw;
+	String mem_name;
 	String mem_jumin1;
 	String mem_jumin2;
-	String mem_name;
 	String mem_zip;	//우편번호
 	String mem_addr1;	//주소
 	String mem_addr2; 	//상세주소
@@ -18,15 +18,16 @@ public class MemberBean {
 	public MemberBean() {
 		
 	}
+
 	public MemberBean(int no, String mem_id, String mem_pw, String mem_jumin1,String mem_jumin2,String mem_name, String mem_zip, String mem_addr1,
 			String mem_addr2, String mem_tel, String mem_email, String mem_date, String mem_gender) {
 		super();
 		this.no = no;
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
+		this.mem_name = mem_name;
 		this.mem_jumin1 = mem_jumin1;
 		this.mem_jumin2 = mem_jumin2;
-		this.mem_name = mem_name;
 		this.mem_zip = mem_zip;
 		this.mem_addr1 = mem_addr1;
 		this.mem_addr2 = mem_addr2;
@@ -73,7 +74,6 @@ public class MemberBean {
 	public void setMem_pw(String mem_pw) {
 		this.mem_pw = mem_pw;
 	}
-	
 	public String getMem_zip() {
 		return mem_zip;
 	}
