@@ -25,7 +25,6 @@
 			<!--  footer -->
 				<jsp:include page="movie/footer.jsp"/>
 	</div>
-=======
 <title>환영합니다.</title>
 <style>
 *{
@@ -70,7 +69,6 @@ $(document).ready(function(){
 	<!-- footer -->
 	<div id = "footer" style = "width : 1600px; height : 200px;"></div>
 
->>>>>>> admin
 </body>
 </html>
 
