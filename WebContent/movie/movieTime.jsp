@@ -11,6 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
 <script>
+
 	$("document").ready(function() {
 
 	});
@@ -19,6 +20,7 @@
 		
 
 	}
+	
 	function changePlaceIcon(n1, n2) {
 		var top = $("#divMap").offset().top;
 		var left = $("#divMap").offset().left;
@@ -46,17 +48,21 @@
 			}
 		});
 	}
+	
+	 
+	
 </script>
 </head>
 
 <body>
+
 	<div id="container">
 		<h3>영화관 선택</h3> 
 		<div class="theater_1st">
 			<div class="place">
 				<ul class="areaList">
 					<li class="likeMovie">선호영화관</li>
-					<a href="javascript:changePlace(0);">
+					<a href="javascript:changePlace(0):">
 						<li>서울</li>
 					</a>
 					<a href="javascript:changePlace(1);">
@@ -87,8 +93,9 @@
 					style="position: absolute; height: 452px;">
 				<ul class="inAreaList">
 					<c:forEach items = "${locationArr }" var = "i">
-						<a href = "javascript:void(0)" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })">
-							<li>${i.location_name}</li>
+						<a href = "ticket.do?locationNum=${i.location_no}" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })" >
+							<li>${i.location_name }</li>
+							
 						</a>				
 					</c:forEach>
 				</ul>
@@ -99,12 +106,14 @@
 					style="position: absolute; visibility: hidden"> <img
 					src="/teamproject/Imgs/movietime/place0.jpg" style="height: 452px;"
 					id="imgPlace">
+					
+					
 			</div>
-
+		
 
 		</div>
 		
 	</div>
-</body>
+	
 
 </html>
