@@ -3,8 +3,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Untitled Document</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<title>영화상세보기 입력창</title>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<meta charset="UTF-8">
 <style type="text/css">
 <!--
 .style1 {
@@ -22,6 +23,7 @@
 </head>
 
 <body>
+<form action="write.do" method="post" enctype="multipart/form-data">
 <div align="center">
   <table width="1200" border="0" cellspacing="0" cellpadding="0">
     <tr>
@@ -42,7 +44,7 @@
       <td bgcolor="#CCCCCC"><div align="center" class="style3">영화 포스터 <br>
       이미지 첨부</div></td>
       <td>&nbsp;</td>
-      <td colspan="6"> <input type="file" name="sign2"></td>
+      <td colspan="6"> <input type="file" name="mpostfile"></td>
     </tr>
     <tr>
       <td colspan="8"><hr></td>
@@ -50,17 +52,13 @@
     <tr>
       <td bgcolor="#CCCCCC"><div align="center" class="style2"><strong>영화제목</strong></div></td>
       <td height="28">&nbsp; </td>
-      <td width="175" height="28"><input type="text" name="moviesubject"></td>
+      <td width="175" height="28"><input type="text" name="msubject"></td>
       <td width="109" bgcolor="#CCCCCC"><div align="center"><span class="style4">관람등급아이콘</span></div></td>
       <td height="28" colspan="4"><span class="style2">
-        <input name="radiobutton" type="radio" value="radiobutton" checked>
-  전체관람가
-  <input name="radiobutton" type="radio" value="radiobutton" >
-  12세이상
-  <input name="radiobutton" type="radio" value="radiobutton" >
-  15세이상
-  <input name="radiobutton" type="radio" value="radiobutton" >
-  19세이상</span></td>
+        <input type="radio" name="radio" value="radioAll" checked="checked">전체관람가</span>
+  		<input type="radio" name="radio" value="radio12" >12세이상
+  		<input type="radio" name="radio" value="radio15" >15세이상
+ 	    <input type="radio" name="radio" value="radio19" >19세이상</td>
     </tr>
     <tr>
       <td colspan="8"><hr></td>
@@ -68,7 +66,7 @@
     <tr>
       <td height="28" bgcolor="#CCCCCC"><div align="center" class="style2"><strong>타입</strong></div></td>
       <td>&nbsp;</td>
-      <td colspan="6"><input type="text" name="moviesubject4"></td>
+      <td colspan="6"><input type="text" name="mtype"></td>
     </tr>
     <tr>
       <td colspan="8"><hr></td>
@@ -76,19 +74,17 @@
     <tr>
       <td height="28" bgcolor="#CCCCCC"><div align="center" class="style2"><strong>개봉일</strong></div></td>
       <td>&nbsp;</td>
-      <td colspan="6"><input type="text" name="moviesubject3"></td>
+      <td colspan="6"><input type="text" name="mdate"></td>
     </tr>
     <tr>
       <td colspan="8"><hr></td>
     </tr>
     <tr>
-      <td>&nbsp;</td>
-	  <!-- 영화제목입력 -->
+      <td>&nbsp;</td>	  
       <td width="100" bgcolor="#CCCCCC"><div align="center" class="style2"><strong>감독</strong></div></td>
       <td width="5" height="28">&nbsp; </td>
-      <td height="28" colspan="6"><input type="text" name="moviesubject"></td>
-	  <!-- 관람등급아이콘 선택 -->
-      <td>&nbsp;</td>
+      <td height="28" colspan="6"><input type="text" name="mdirector"></td>
+	  <td>&nbsp;</td>
     </tr>
     <tr>
       <td rowspan="14">&nbsp;</td>
@@ -97,9 +93,8 @@
     </tr>
     <tr>
       <td bgcolor="#CCCCCC"><div align="center" class="style2"><strong>출연진</strong></div></td>
-	  <!-- 영화목록에 들어갈 이미지넣기 -->
       <td height="28">&nbsp; </td>
-      <td height="28" colspan="6"><input type="text" name="moviesubject2"></td>
+      <td height="28" colspan="6"><input type="text" name="mactor"></td>
     </tr>
     <tr>
       <td colspan="8"><hr></td>
@@ -107,7 +102,7 @@
     <tr>
       <td height="28" bgcolor="#CCCCCC"><div align="center" class="style2"><strong>장르</strong></div></td>
       <td height="7">&nbsp;</td>
-      <td height="7" colspan="6"><input type="text" name="moviesubject22"></td>
+      <td height="7" colspan="6"><input type="text" name="mgenre"></td>
     </tr>
     <tr>
       <td colspan="8"><hr></td>
@@ -115,7 +110,7 @@
     <tr>
       <td height="150" bgcolor="#CCCCCC"><div align="center"><strong><span class="style2">줄거리</span></strong></div></td>
       <td height="15">&nbsp;</td>
-      <td height="15" colspan="6"><textarea rows=10 cols=150 name="summary"></textarea></td>
+      <td height="15" colspan="6"><textarea rows=10 cols=150 name="mstory"></textarea></td>
     </tr>
     <tr>
       <td colspan="8"><hr></td>
@@ -123,7 +118,9 @@
     <tr>
       <td height="28" bgcolor="#CCCCCC"><div align="center" class="style2"><strong>스틸컷이미지</strong></div></td>
       <td height="15">&nbsp;</td>
-      <td height="15" colspan="6"><input type="submit" name="Submit" value="파일첨부">        </td>
+      <td height="15" colspan="6">
+      <input type="file" name="mstillfile" value="파일첨부">
+      </td>
     </tr>
     <tr>
       <td colspan="8"><hr></td>
@@ -138,12 +135,12 @@
       <td>&nbsp;</td>
       <td>&nbsp;</td>
       <td colspan="3"><div align="right">
-          <input name="submit2" type="submit" id="bean" value="글등록">
+          <input type="submit" id="bean" value="글등록">
       </div></td>
       <td width="6" height="30" align="right">
         <div align="left"> </div></td>
       <td width="49" height="30" align="right"><div align="left">
-          <input name="submit" type="submit" id="submit" value="글목록">
+          <input type="button" value="글목록" onclick="location.href='adminmovieinfolist.jsp'">
       </div></td>
       <td width="512">&nbsp;</td>
     </tr>
@@ -155,5 +152,6 @@
     </tr>
   </table>
 </div>
+</form>
 </body>
 </html>
