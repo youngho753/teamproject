@@ -31,7 +31,7 @@
 	 
 	//window.onload 하면 페이지 로딩이 끝나마자 실행 한다는 뜻 이다.
 	window.onload = function(){
-		getData();
+		specificList();
 	};
 	
 		function sendComment(){
@@ -45,8 +45,26 @@
 				},
 				success : function(gift){
 					$("#comment_result").html(gift);
+					specificList();
 				},
 				beforeSend : showRequest
+			});
+		}
+		//댓글 보여주는 ajax
+		function specificList(){
+			$.ajax({
+				type : "POST",
+				url : "/teamproject/list.do",
+				data : {
+						"movieTitle" : $("#movieTitle").val(),
+						"pageNum" : "1"
+					},
+				success : function(gift){
+					$("#comment_result").html(gift);
+				},
+				error:function(err){
+					alert(err);
+				}
 			});
 		}
 		

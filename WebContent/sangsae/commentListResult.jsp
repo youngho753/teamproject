@@ -75,7 +75,7 @@
 		<c:if test="${i != currentPage }">
 	<a href="javascript:getData(${i})"><span id="pageNumber">${i}</span></a>
 	
-		</c:if>
+	</c:if>
 	</c:forEach>
 	
 	<!-- 다음 부분 -->

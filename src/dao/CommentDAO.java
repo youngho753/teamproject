@@ -61,7 +61,7 @@ public class CommentDAO {
 	}
 	
 	//페이징 하기 + 내용 내보내기
-	public ArrayList<CommentDTO> getPaging(int startRow, int endRow) {
+	public ArrayList<CommentDTO> getPaging(int startRow, int endRow, String comment_movie) {
 		
 		Connection con = null;
 		ResultSet rs = null;
@@ -74,12 +74,12 @@ public class CommentDAO {
 			String sql =  "select * from "
 					+ " (select rownum rn,aa.* from"
 					+ " (select * from moviecomment order by no desc)aa)"
-					+ "where rn>=? and rn<=?";
+					+ "where rn>=? and rn<=? and comment_movie=?";
 			
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, startRow);
 			ps.setInt(2, endRow);
-			
+			ps.setString(3, comment_movie);
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
