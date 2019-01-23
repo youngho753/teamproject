@@ -73,12 +73,7 @@ public class MemberBean {
 	public void setMem_pw(String mem_pw) {
 		this.mem_pw = mem_pw;
 	}
-	public String getMem_jumin() {
-		return mem_jumin;
-	}
-	public void setMem_jumin(String mem_jumin) {
-		this.mem_jumin = mem_jumin;
-	}
+	
 	public String getMem_zip() {
 		return mem_zip;
 	}
