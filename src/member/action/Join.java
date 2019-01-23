@@ -15,7 +15,7 @@ import dao.MemberDAO;
 /**
  * Servlet implementation class Join
  */
-@WebServlet("/join.do")
+@WebServlet("/member/join.do")
 public class Join extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
