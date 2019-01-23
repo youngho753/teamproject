@@ -65,6 +65,9 @@ $(document).ready(function(){
 						$("#idCheck").css("color", "red");
 						$("#idCheck").text("*중복 된 아이디 입니다.");
 					}
+				},
+				error : function(e){
+				alert("에러" + e);
 				}
 			})
 		}
