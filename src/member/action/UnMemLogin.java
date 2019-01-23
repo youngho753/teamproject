@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import dao.MemberDAO;
 
@@ -54,10 +55,12 @@ public class UnMemLogin extends HttpServlet {
 			MemberDAO dao = MemberDAO.getInstance();
 			String check = dao.unMemLogin(name, birth, phone, password); //비회원 일치정보여부 먼저확인
 			if(check == "1") { //비회원 정보있음 로그인 시킴 바로 
+				HttpSession session = req.getSession(); // 세션 생성하면서 로그인 되고 메인이동
 				check = "1";
 				out.println(check);
 			}else if(check == "2") { //회원정보 없으므로 비회원 정보 insert.
 				dao.unMemJoin(name, birth, phone, password);
+				HttpSession session = req.getSession(); //세션 생성후 로그인시키면서 메인이동
 				check = "2";
 				out.print(check);
 			}
