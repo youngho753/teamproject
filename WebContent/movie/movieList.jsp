@@ -40,9 +40,13 @@ html, body {
 
 <script>
 	function sendMovieTitle(){
-		var movieTitle = $("#movieTitle8").text();
-		alert(movieTitle);
-		location.href = "/teamproject/sangsae/malmoe_sangsaePage.jsp?="+movieTitle;
+		var moviename = $("#moviename").text();
+		location.href = "/teamproject/sangsae/malmoe_sangsaePage.jsp?moviename="+moviename;
+	}
+	
+	/* Ticketing1.jsp로 영화제목 보내기 */
+	function sendMovieTitleTicket(movieTitle){
+		location.href = "/teamproject/Ticketing1.jsp?movieTitle="+movieTitle;
 	}
 </script>
 	
@@ -60,11 +64,12 @@ html, body {
 	                      <div class="movie_name">
 	                        <ul>
 	                            <li><img src="/teamproject/Imgs/12_img.gif"></li> 
-	                            <li><span>아쿠아맨</span></li>
+	                            <li><span id="mo">아쿠아맨</span></li>
 	                        </ul>
 	                     </div>
 	                     <div class="movie_button">
-	                         <input class="btn btn-outline-dark" data-toggle="modal" data-target="#aquamanModal" type="button" value="상세정보"><input class="btn btn-outline-dark" type="button" value="예매하기">
+	                         <input class="btn btn-outline-dark" data-toggle="modal" data-target="#aquamanModal" type="button" value="상세정보">
+	                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('아쿠아맨');">
 	                     </div>
                     </div>
                   </li>
@@ -84,7 +89,7 @@ html, body {
                      </div>
                      <div class="movie_button">
                          <input class="btn btn-outline-dark" type="button" value="상세정보">
-                         <input class="btn btn-outline-dark" type="button" value="예매하기">
+                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('범블비');">
                      </div>
                   </li>
                   
@@ -103,7 +108,7 @@ html, body {
                      </div>
                      <div class="movie_button">
                          <input class="btn btn-outline-dark" type="button" value="상세정보">
-                         <input class="btn btn-outline-dark" type="button" value="예매하기">
+                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('구스베이비');">
                      </div>
                   </li>
                   
@@ -122,7 +127,7 @@ html, body {
                      </div>
                      <div class="movie_button">
                          <input class="btn btn-outline-dark" type="button" value="상세정보">
-                         <input class="btn btn-outline-dark" type="button" value="예매하기">
+                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('그린북');">
                      </div>
                   </li>
                   
@@ -141,7 +146,7 @@ html, body {
                      </div>
                      <div class="movie_button">
                          <input class="btn btn-outline-dark" type="button" value="상세정보">
-                         <input class="btn btn-outline-dark" type="button" value="예매하기">
+                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('내안의 그놈');">
                      </div>
                   </li>
              </ul>
@@ -165,7 +170,7 @@ html, body {
                      </div>
                      <div class="movie_button">
                          <input class="btn btn-outline-dark" type="button" value="상세정보">
-                         <input class="btn btn-outline-dark" type="button" value="예매하기">
+                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('메이트');">
                      </div>
                   </li>
                   
@@ -184,7 +189,7 @@ html, body {
                      </div>
                      <div class="movie_button">
                          <input class="btn btn-outline-dark" type="button" value="상세정보">
-                         <input class="btn btn-outline-dark" type="button" value="예매하기">
+                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('보헤미안랩소디');">
                      </div>
                   </li>
                   
@@ -198,12 +203,12 @@ html, body {
                       <div class="movie_name">
                         <ul>
                             <li><img src="/teamproject/Imgs/12_img.gif"></li>
-                            <li><span id="movieTitle8">말모이</span></li>
+                            <li><span id="movieTitle">말모이</span></li>
                         </ul>
                      </div>
                      <div class="movie_button">
-                         <input class="btn btn-outline-dark"  type="button" value="상세정보" onclick="sendMovieTitle();">
-                         <input class="btn btn-outline-dark" type="button" value="예매하기">
+                         <input class="btn btn-outline-dark"  type="button" value="상세정보" onclick="sendMovieTitleSangsae();">
+                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('말모이');">
                      </div>
                   </li>
                   
@@ -223,7 +228,7 @@ html, body {
                      </div>
                      <div class="movie_button">
                          <input class="btn btn-outline-dark" type="button" value="상세정보">
-                         <input class="btn btn-outline-dark" type="button" value="예매하기">
+                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('스파이더맨');">
                      </div>
                   </li>
                   <!-- 왕이될 아이-->
@@ -241,7 +246,7 @@ html, body {
                      </div>
                      <div class="movie_button">
                          <input class="btn btn-outline-dark" type="button" value="상세정보">
-                         <input class="btn btn-outline-dark" type="button" value="예매하기">
+                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('왕이될아이');">
                      </div>
                   </li>
              </ul>
