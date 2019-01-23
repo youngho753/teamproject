@@ -84,12 +84,28 @@ $(document).ready(function(){
 	$('body').append(calender);
 	
 	$('#to, #next').click(function(){
- 		
-		var select = $(this).text();
- 		
-		
-		
- 		$('body').append(select);
+ 		var select = $(this).text();
+ 		$.ajax({
+	         type:"POST",
+	         url:"Ticket.do",
+	         data:postString, //post에 줄값
+	         success:function(data){
+	            $("#Result").html(data)
+	         },
+	         beforeSend:showRequest // showRequest 함수를 불러와라
+	      });
+	     
+	  
+	   getData();// getData 함수를 호출 ready가 항상 부르고 있다.
+	 
+	   function getData() {
+			$("#Result").load("list",function(data){
+				$("#calender").html(data);
+			});
+			
+		}
+	
+	   $('body').append(select);
  		
  		
  	}); 
