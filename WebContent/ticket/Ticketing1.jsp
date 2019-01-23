@@ -150,8 +150,6 @@ $(document).ready(function(){
 		Time +="<td>";
 		Time +="<img src='/teamproject/Imgs/l_btn.gif' id='l_btn'>"
 		Time +="</td>";
-		
-		
 	
 	var tmp = time[toTime]-5;
 	
@@ -176,23 +174,20 @@ $(document).ready(function(){
  		
 		var select = $(this).text(); //클릭한 week의 값
  		
-		var jb = $('input#TheatersSelect1').val();
+		var TheatersSelect = $('input#TheatersSelect1').val(); //극장 선택 이미지
 		
-		if (jb  == null){
- 			alert('극장을 선택해주세요');
- 			
- 		}
- 		
- 		$('body').append(jb);
+		 if(TheatersSelect=='TheatersSelect1'){
+			alert("선택된 극장이 없습니다.");
+			
+		}; 
+		
  		
  		
  	}); 
  	
  	
 	}
-	
-	
-	
+
 	timeTable();
 	
 	
@@ -306,7 +301,8 @@ a {
 <body>
 
 
-<form name="Ticketing" action="Ticketing.do" method="get">
+<form name="Ticketing" >
+<!-- action="Ticketing.do" method="get" -->
 <!-- 전체 테이블 -->
 <table id="Ticketing1">
 
@@ -336,15 +332,15 @@ a {
 
 <!-- 극장 선택 이미지 -->
 <tr id="TheatersSelect">
-<td colspan="2" align="center"><img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1"></td>
-<td colspan="2" align="center"><Img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect2"></td>
+<td colspan="2" align="center"><div id = "Theaters"><input type="image" src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1" value="TheatersSelect1"></div></td>
+<td colspan="2" align="center"><input type="image" src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect2" value="TheatersSelect2"></td>
 </tr>
 <!-- 극장 선택 이미지 --> 
 <tr id="TheatersSelect">
 <td colspan="2" align="center" >
-<img src="/teamproject/Imgs/kukjang_plus.gif" style="padding: 10px;" id="TheatersSelect3"></td>
+<input type="image" src="/teamproject/Imgs/kukjang_plus.gif" style="padding: 10px;" id="TheatersSelect3" value="TheatersSelect3"></td>
 <td colspan="2" align="center">
-<Img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect4"></td>
+<input type="image" src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect4" value="TheatersSelect4"></td>
 </tr>
 
 <!-- 영화 -->
@@ -355,10 +351,10 @@ a {
 
 <!-- 영화 선택 이미지 -->
 <tr id="MoveSelect" style="border: 1px solid gray;">
-<td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
-<td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
-<td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
-<td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
+<td align="center" style="border: 1px solid gray;"><input type="image" src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
+<td align="center" style="border: 1px solid gray;"><input type="image" src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
+<td align="center" style="border: 1px solid gray;"><input type="image" src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
+<td align="center" style="border: 1px solid gray;"><input type="image" src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
 </tr>
 
 <!-- 영화관 선택 라디오 -->
