@@ -1,20 +1,24 @@
 package Ticketing;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
-
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.LocationBean;
+import dao.LocationDAO;
+
 
 
 /**
  * Servlet implementation class Ticket
  */
-@WebServlet("/movie/Ticket.do")
+@WebServlet("/movie/ticket.do")
 public class Ticket extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -34,9 +38,18 @@ public class Ticket extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
+		int locationNum = Integer.parseInt(request.getParameter("locationNum"));
+		System.out.println(locationNum);
 		
+		LocationDAO dao = LocationDAO.getInstance();
 		
-		response.sendRedirect("Ticketing1.jsp");
+		ArrayList<LocationBean> arr = dao.getLocation(locationNum);
+		
+		request.setAttribute("locationArr", arr);
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("../ticket/Ticketing1.jsp");
+		dispatcher.forward(request, response);
+		
 		
 		
 	}
