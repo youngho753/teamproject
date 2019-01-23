@@ -8,22 +8,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import bean.MemberBean;
 import dao.MemberDAO;
 
 /**
- * Servlet implementation class MemLogin
+ * Servlet implementation class UnMemLogin
  */
-@WebServlet("/member/login.do")
-public class MemLogin extends HttpServlet {
+@WebServlet("/unLogin/unMemLogin.do")
+public class UnMemLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public MemLogin() {
+    public UnMemLogin() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -42,24 +40,32 @@ public class MemLogin extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		req.setCharacterEncoding("utf-8");
-		String id = req.getParameter("id");
-		String pw = req.getParameter("pw");
-		String check;
+		String pwCheck;
+		String name = req.getParameter("name");
+		String birth = req.getParameter("birth");
+		String phone = req.getParameter("phone");
+		String password = req.getParameter("password");
+		String passwordCheck = req.getParameter("passwordCheck");
 		PrintWriter out = resp.getWriter();
-		MemberBean mb = new MemberBean();
-		MemberDAO dao = MemberDAO.getInstance();
-		check = dao.memberLoginCheck(id, pw);
+		if(!password.equals(passwordCheck)) { //비번, 비번확인 불일치로 바로 리턴
+			pwCheck = "-1"; //비번 불일치
+			out.println(pwCheck);
+		}else {
+			MemberDAO dao = MemberDAO.getInstance();
+			String check = dao.unMemLogin(name, birth, phone, password); //비회원 일치정보여부 먼저확인
+			if(check == "1") { //비회원 정보있음 로그인 시킴 바로 
+				check = "1";
+				out.println(check);
+			}else if(check == "2") { //회원정보 없으므로 비회원 정보 insert.
+				dao.unMemJoin(name, birth, phone, password);
+				check = "2";
+				out.print(check);
+			}
+		} 
 		
-		if(check == "3") { //존재하지 않는 아이디
-			out.println(check.trim()); //콜백으로 3전송
-		}else if(check == "2") { //아이디 존재하나 비번 불일치
-			out.print(check.trim());
-		}else if(check == "1") { // 아이디 비번 모두 일치하니 다시 db가서 해당 회원 정보 전체 퍼올려서 세션생성
-			mb = dao.memberLogin(id);
-			HttpSession session = req.getSession();
-			session.setAttribute("mem_id", id);
-			out.print(id.trim());
-		}
+		
+		
+		
 	}
 
 }
