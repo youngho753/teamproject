@@ -116,7 +116,7 @@ $(document).ready(function(){
 		var calendarweek = "<table id='calender_ul'>";
 		calendarweek +="<tr>"; 
 		calendarweek +="<td>";
-		calendarweek +="<img src='Imgs/l_btn.gif' id='l_btn_week'>"
+		calendarweek +="<img src='/teamproject/Imgs/l_btn.gif' id='l_btn_week'>"
 		calendarweek +="</td>";
 		
 	var sNum = 1;
@@ -138,7 +138,7 @@ $(document).ready(function(){
 		}
 		var div = $('#calendarweek').html( 
 				calendarweek
-	             +"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn_week'>"+"</td>"+"</tr>");
+	             +"<td>"+"<img src='/teamproject/Imgs/r_btn.gif' id='r_btn_week'>"+"</td>"+"</tr>");
 				
 		}
 	$(document).on('click','#weekSelect , #nonweekSelect',function(){
@@ -162,7 +162,7 @@ $(document).ready(function(){
 		var Time = "<table id='Time_ul'>";
 		Time +="<tr id='timeTable_tr'>";
 		Time +="<td>";
-		Time +="<img src='Imgs/l_btn.gif' id='l_btn'>"
+		Time +="<img src='/teamproject/Imgs/l_btn.gif' id='l_btn'>"
 		Time +="</td>";
 		
 		
@@ -183,7 +183,7 @@ $(document).ready(function(){
 	            
  	 var div = $('#calendarTime').html(
                 Time
-    			+"<td>"+"<img src='Imgs/r_btn.gif' id='r_btn'>"+"</td>"+"</tr>");
+    			+"<td>"+"<img src='/teamproject/Imgs/r_btn.gif' id='r_btn'>"+"</td>"+"</tr>");
  	
  	$(document).on('click','#timeSelect , #timeNonSelect',function(){
  		 		
@@ -320,11 +320,11 @@ a {
 <!-- 날짜 -->
 <tr id="TicketingDate" style="border: 1px solid gray;" >
 <td colspan="4" style="border: 1px solid gray;">
-<img src="Imgs/date_img.gif">
-<img src="Imgs/dal_ico_img.gif" align="right" style="padding-right:  20px;" id="calendar" >
+<img src="/teamproject/Imgs/date_img.gif">
+<img src="/teamproject/Imgs/dal_ico_img.gif" align="right" style="padding-right:  20px;" id="calendar" >
 <!-- 요일 -->
 <div id="calendarweek"></div>
-</td><td width="534" height="90" ><img src="Imgs/time_img.gif">
+</td><td width="534" height="90" ><img src="/teamproject/Imgs/time_img.gif">
 <!--  날짜 -->
 <div id="calendarTime" ></div>
 </td>
@@ -335,37 +335,37 @@ a {
 <!-- 극장 -->
 <tr style="border: 1px solid gray;">
 <td colspan="4" style="border: 1px solid gray;">
-<img src="Imgs/kukjang_img.gif" >
-<img src="Imgs/reflash_img.gif" align="right" style="padding: 10px;" id="reflash1"></td>
+<img src="/teamproject/Imgs/kukjang_img.gif" >
+<img src="/teamproject/Imgs/reflash_img.gif" align="right" style="padding: 10px;" id="reflash1"></td>
 <td rowspan="7" align="center" bgcolor="#ffffff">
-<img src="Imgs/johe_img.gif" ></td>
+<img src="/teamproject/Imgs/johe_img.gif" ></td>
 </tr>
 
 <!-- 극장 선택 이미지 -->
 <tr id="TheatersSelect">
-<td colspan="2" align="center"><img src="Imgs/kukjang_plus.gif" id="TheatersSelect1"></td>
-<td colspan="2" align="center"><Img src="Imgs/kukjang_plus.gif" id="TheatersSelect2"></td>
+<td colspan="2" align="center"><img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1"></td>
+<td colspan="2" align="center"><Img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect2"></td>
 </tr>
 <!-- 극장 선택 이미지 --> 
 <tr id="TheatersSelect">
 <td colspan="2" align="center" >
-<img src="Imgs/kukjang_plus.gif" style="padding: 10px;" id="TheatersSelect3"></td>
+<img src="/teamproject/Imgs/kukjang_plus.gif" style="padding: 10px;" id="TheatersSelect3"></td>
 <td colspan="2" align="center">
-<Img src="Imgs/kukjang_plus.gif" id="TheatersSelect4"></td>
+<Img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect4"></td>
 </tr>
 
 <!-- 영화 -->
 <tr id="MoveSelect" style="border: 1px solid gray;">
-<td colspan="4"><img src="Imgs/movie_img.gif">
-<img src="Imgs/reflash_img.gif" align="right" style="padding:  10px;" id="reflash2"></td>
+<td colspan="4"><img src="/teamproject/Imgs/movie_img.gif">
+<img src="/teamproject/Imgs/reflash_img.gif" align="right" style="padding:  10px;" id="reflash2"></td>
 </tr>
 
 <!-- 영화 선택 이미지 -->
 <tr id="MoveSelect" style="border: 1px solid gray;">
-<td align="center" style="border: 1px solid gray;"><img src="Imgs/movie_plus.gif" id="MoveSelect1"></td>
-<td align="center" style="border: 1px solid gray;"><img src="Imgs/movie_plus.gif" id="MoveSelect1"></td>
-<td align="center" style="border: 1px solid gray;"><img src="Imgs/movie_plus.gif" id="MoveSelect1"></td>
-<td align="center" style="border: 1px solid gray;"><img src="Imgs/movie_plus.gif" id="MoveSelect1"></td>
+<td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
+<td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
+<td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
+<td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
 </tr>
 
 <!-- 영화관 선택 라디오 -->
