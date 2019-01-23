@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="/teamproject/Imgs/fontello/fontello-11a7e995/css/fontello.css"/>
 	<style>
-		/* copyright 부분 footer */
+	
 		 #footer_theater{
 			width:1600px;
             height: 400px;
@@ -97,7 +97,7 @@
         }
         
     
-   
+   	/* copyright 부분 footer 및 소셜이미지부분 처리 */
 	footer{
 		width:1600px;
 	          height: 200px;

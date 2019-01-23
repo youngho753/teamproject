@@ -20,13 +20,6 @@
 	}
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script>
-/* 이 페이지는 처음 시작할때 나오는 페이지 입니다. */
-$(document).ready(function(){
-
-});
-</script>
-
 <title>라이프시어터, 무비박스</title>
 <link rel = "icon" href = "favicon.ico" type = "image/x-icon"/>
 
