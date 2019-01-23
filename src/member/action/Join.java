@@ -1,16 +1,21 @@
 package member.action;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import bean.MemberBean;
+import dao.MemberDAO;
 
 /**
  * Servlet implementation class Join
  */
-@WebServlet("/join.do")
+@WebServlet("/member/join.do")
 public class Join extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,7 +44,7 @@ public class Join extends HttpServlet {
 		String mem_id = req.getParameter("mem_id");
 		String mem_pw = req.getParameter("mem_pw");
 		String mem_pwCheck = req.getParameter("mem_pwCheck");
-		String mem_mail = req.getParameter("mem_mail");
+		String mem_email = req.getParameter("mem_email");
 		String mem_name = req.getParameter("mem_name");
 		String mem_jumin1 = req.getParameter("mem_jumin1");
 		String mem_jumin2 = req.getParameter("mem_jumin2");
@@ -72,11 +77,6 @@ public class Join extends HttpServlet {
 		HttpSession session = req.getSession(); //세션 생성
 		session.setAttribute("mem_id", mem_id); // 세션으로 아이디값 저장
 		resp.sendRedirect("../movie/joinfinish.jsp");
-
-
-	
-		
-		
 	}
 
 }

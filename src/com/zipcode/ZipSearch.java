@@ -16,7 +16,7 @@ import org.json.simple.JSONObject;
 /**
  * Servlet implementation class ZipSearch
  */
-@WebServlet("/zipSearch.do")
+@WebServlet("/member/zipSearch.do")
 public class ZipSearch extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
