@@ -81,17 +81,19 @@ $(document).ready(function(){
 	}
 	
 	
-	$(document).on('click','#to , #next',function(){
- 		var select = $('#to').text();
-		var nonselect = $(this).text();
+	$('body').append(calender);
+	
+	$('#to, #next').click(function(){
  		
- 		alert(nonselect);		
- 		return false;
+		var select = $(this).text();
+ 		
+		
+		
+ 		$('body').append(select);
+ 		
  		
  	}); 
- 	
 	
-	$('body').append(calender);
 	};
 	calender();
 	
