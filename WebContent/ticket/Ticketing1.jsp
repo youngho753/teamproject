@@ -74,13 +74,12 @@ $(document).ready(function(){
 	//time 왼쪽 버튼 클릭
 	$(document).on('click','#l_btn',function(){ 
 		var i = 0;
-		if(i >= eval(time_max_num)){
+		if(i >= eval(time_max_num-5)){
 			alert("더이상 움직일수 없습니다.")
 		}else{
 			time_next_num--;
 			time_max_num--;
 		}
-		
 		timeTable();
 		return false;
 		
@@ -104,8 +103,6 @@ $(document).ready(function(){
 			week_max_num--;
 			
 		}
-		
-		
 		weektable();
 		return false;
 		
@@ -141,17 +138,6 @@ $(document).ready(function(){
 	             +"<td>"+"<img src='/teamproject/Imgs/r_btn.gif' id='r_btn_week'>"+"</td>"+"</tr>");
 				
 		}
-	$(document).on('click','#weekSelect , #nonweekSelect',function(){
-	 		
- 		var select = $('#weekSelect').text();
-		var nonselect = $(this).text();
- 		
- 		alert(nonselect);		
- 		return false;
- 		
- 	}); 
-	
-	
 	
 	}
 	
@@ -166,15 +152,16 @@ $(document).ready(function(){
 		Time +="</td>";
 		
 		
-	var tNum = 1;
+	
 	var tmp = time[toTime]-5;
+	
 	for(var t=time_next_num; t<=time_max_num; t++){
 		if(toTime==eval(tmp+t)){
 			 Time += "<td bgcolor='#198591' id='timeSelect'>"+ eval(tmp+t) +"</a>"+"</td>";
 		}else{
 			var b = eval(tmp+t);
 			if (b >=24) 
-				b %=24;  
+				b %=24  
 			Time += "<td id='timeNonSelect'>"+"<a href='#' >"+ b +"</a>" +"</td>";
 			
 		}
@@ -185,13 +172,16 @@ $(document).ready(function(){
                 Time
     			+"<td>"+"<img src='/teamproject/Imgs/r_btn.gif' id='r_btn'>"+"</td>"+"</tr>");
  	
- 	$(document).on('click','#timeSelect , #timeNonSelect',function(){
- 		 		
- 		var select = $('#timeSelect').text();
-		var nonselect = $(this).text();
- 		var grade = $("input:radio[name=TheatersType]:checked").val(); //체크된 radio의 name();
- 		alert(nonselect);		
- 		return false;
+ 	$('#weekSelect, #nonweekSelect').click(function(){
+ 		
+		var select = $(this).text();
+ 		if ($('#TheatersSelect1')  == null){
+ 			alert('극장을 선택해주세요');
+ 			
+ 		}
+ 		
+ 		$('body').append(select);
+ 		
  		
  	}); 
  	
