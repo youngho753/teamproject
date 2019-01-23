@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Insert title here</title>
+
 <style>
 /* The Modal (background) */
 .modal {
@@ -26,7 +27,7 @@
 .modal-content {
   position: relative;
   background-color: #fefefe;
-  margin: auto;
+  margin: 0 auto;
   padding: 0;
   border: 1px solid #888;
   width: 80%;
@@ -50,7 +51,7 @@
 
 /* The Close Button */
 .close {
-  color: white;
+  color: black;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -75,13 +76,14 @@
   padding: 2px 16px;
   background-color:rgba(217,217,217);
   color: white;
+  text-align: left;
 }
 </style>
+
 </head>
 <body>
 
 <!-- Trigger/Open The Modal -->
-<!--  <button id="myMalmoeBtn">상세보기페이지열기</button> --> <!-- 이걸 movieList.jsp의 버튼에서 실행시키도록 할 것 -->
 
 <!-- The Modal -->
 <div id="myMalmoeModal" class="modal">
@@ -90,13 +92,13 @@
   <div class="modal-content">
     <div class="modal-header">
       <span class="close">&times;</span>
-      <h2>말모이</h2>
+      <span style="color: white; font-size:15px; align:left">말모이</span>
     </div>
     <div class="modal-body">
-     <jsp:include page="Malmoe_sangsaePage.jsp"/>
+     <jsp:include page="malmoe_sangsaePage.jsp"/>
     </div>
     <div class="modal-footer">
-      <h3>말모이</h3>
+       <span style="color: white; font-size:15px; align:left">말모이</span>
     </div>
   </div>
 

@@ -27,26 +27,27 @@ public class CommentDAO {
 	private Connection getConnection() throws NamingException, SQLException{
 		Context initCtx = new InitialContext();
 		Context envCtx = (Context)initCtx.lookup("java:comp/env");
-		DataSource ds = (DataSource)envCtx.lookup("jdbc/movie");
+		DataSource ds = (DataSource)envCtx.lookup("jdbc/jsp");
 		
 		return ds.getConnection();
 		
 	}
 	
 	//코멘트 넣기
-	public void insertComment(String comment, int star_grade) {
+	public void insertComment(String contents, int star_grade) {
 		
 		Connection con = null;
 		PreparedStatement ps = null;
 		
 		try {
 			con = getConnection();
-			String sql = "insert into moviecomment values(moviecomment_SEQ.nextval, ?,   ?   ,?   ,to_char(SYSDATE, 'yyyy/mm/dd'))";
+			String sql = "insert into moviecomment (no, comment_id, comment_date, comment_grade, comment_contents, comment_movie) values(moviecomment_SEQ.nextval,  ?,  to_char(SYSDATE, 'yyyy/mm/dd'),   ?   ,?  ,?)";
 			ps = con.prepareStatement(sql);
-			
 			ps.setString(1, "userTest");
 			ps.setInt(2, star_grade);
-			ps.setString(3, comment);
+			ps.setString(3, contents);
+			ps.setString(4, "말모이");
+		
 			
 			ps.executeUpdate();
 			
@@ -72,7 +73,7 @@ public class CommentDAO {
 			con = getConnection();
 			String sql =  "select * from "
 					+ " (select rownum rn,aa.* from"
-					+ " (select * from moviecomment order by num desc)aa) "
+					+ " (select * from moviecomment order by no desc)aa)"
 					+ "where rn>=? and rn<=?";
 			
 			ps = con.prepareStatement(sql);
@@ -83,14 +84,13 @@ public class CommentDAO {
 			
 			while(rs.next()) {
 				CommentDTO bean = new CommentDTO();
-				bean.setNum(rs.getInt("num"));
-				bean.setId(rs.getString("id"));
-				bean.setGrade(rs.getInt("grade"));
-				bean.setContent(rs.getString("content"));
-				bean.setWritedate(rs.getString("writedate"));
+				bean.setNum(rs.getInt("no"));
+				bean.setId(rs.getString("comment_id"));
+				bean.setGrade(rs.getInt("comment_grade"));
+				bean.setContent(rs.getString("comment_contents"));
+				bean.setWritedate(rs.getString("comment_date"));
 				
 				arr.add(bean);
-			
 			}
 		
 		} catch (NamingException | SQLException e) {
