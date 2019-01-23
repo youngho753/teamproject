@@ -158,7 +158,7 @@ function regi(){ //회원가입 신청시, *항목중 빈칸 있으면 alert 없
 				</tr>
 				<tr>
 					<td align="center">이메일</td>
-					<td><input type="text" name="mem_email" id="mem_mail"></td>
+					<td><input type="text" name="mem_email" id="mem_email"></td>
 				</tr>
 				<tr>
 					<td align="center">성별</td>
@@ -215,7 +215,7 @@ function regi(){ //회원가입 신청시, *항목중 빈칸 있으면 alert 없
 		</tr>
 		<tr>
 			<td align="center">이메일 </td>
-			<td><input type="text" name="mem_mail" id="mem_mail"></td>
+			<td><input type="text" name="mem_email" id="mem_email"></td>
 		</tr>
 		<tr>
 			<td align="center">이름</td>

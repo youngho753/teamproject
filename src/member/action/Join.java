@@ -1,11 +1,16 @@
 package member.action;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import bean.MemberBean;
+import dao.MemberDAO;
 
 /**
  * Servlet implementation class Join
@@ -39,10 +44,9 @@ public class Join extends HttpServlet {
 		String mem_id = req.getParameter("mem_id");
 		String mem_pw = req.getParameter("mem_pw");
 		String mem_pwCheck = req.getParameter("mem_pwCheck");
-		String mem_mail = req.getParameter("mem_mail");
+		String mem_email = req.getParameter("mem_email");
 		String mem_name = req.getParameter("mem_name");
 		String mem_jumin1 = req.getParameter("mem_jumin1");
-<<<<<<< HEAD
 		String mem_jumin2 = req.getParameter("mem_jumin2");
 		String mem_gender = req.getParameter("mem_gender");
 		String mem_tel = req.getParameter("mem_tel");
@@ -75,8 +79,6 @@ public class Join extends HttpServlet {
 		resp.sendRedirect("../movie/joinfinish.jsp");
 
 
-=======
->>>>>>> admin
 	
 		
 		
