@@ -60,7 +60,7 @@ public class listServlet extends HttpServlet {
 		request.setAttribute("arr", arr);
 		request.setAttribute("count", count);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("commentListResult.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/sangsae/commentListResult.jsp");
 		dispatcher.forward(request, response);
 		
 	}

@@ -22,13 +22,12 @@ public class commentServlet extends HttpServlet {
 		String contents = request.getParameter("comment_content");
 		int star_grade = Integer.parseInt(request.getParameter("star_grade"));
 		String comment_movie = request.getParameter("movieTitle");
-		
-		System.out.println(comment_movie);
+		String comment_id = request.getParameter("userID");
 		
 		CommentDAO dao = CommentDAO.getInstance();
-		dao.insertComment(contents, star_grade);
+		dao.insertComment(contents, star_grade, comment_movie, comment_id);
 		
-		response.sendRedirect("list.do");
+		response.sendRedirect("/teamproject/list.do");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

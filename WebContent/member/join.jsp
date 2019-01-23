@@ -5,17 +5,14 @@
 <head>
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<link href="https://fonts.googleapis.com/css?family=Coiny"
-	rel="stylesheet">
 <link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+<link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
 <meta  http-equiv="Content-Type" content= "text/html; charset=UTF-8">
 
-<title>Insert title here</title>
+<title>라이프 시어터, 무비박스</title>
 	
 <style>
 

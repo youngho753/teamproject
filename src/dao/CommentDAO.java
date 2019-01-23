@@ -34,7 +34,7 @@ public class CommentDAO {
 	}
 	
 	//코멘트 넣기
-	public void insertComment(String contents, int star_grade) {
+	public void insertComment(String contents, int star_grade, String comment_movie, String comment_id) {
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -43,10 +43,10 @@ public class CommentDAO {
 			con = getConnection();
 			String sql = "insert into moviecomment (no, comment_id, comment_date, comment_grade, comment_contents, comment_movie) values(moviecomment_SEQ.nextval,  ?,  to_char(SYSDATE, 'yyyy/mm/dd'),   ?   ,?  ,?)";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, "userTest");
+			ps.setString(1, comment_id);
 			ps.setInt(2, star_grade);
 			ps.setString(3, contents);
-			ps.setString(4, "말모이");
+			ps.setString(4, comment_movie);
 		
 			
 			ps.executeUpdate();

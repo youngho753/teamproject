@@ -4,9 +4,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link href="https://fonts.googleapis.com/css?family=Coiny"
-	rel="stylesheet">
-<title>Document</title>
+<link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
+<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+<title>로그인페이지</title>
 <style>
 .loginFrame {
 	width: 500px;

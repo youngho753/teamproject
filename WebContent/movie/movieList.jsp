@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
-<title>무비리스트2 수정중</title>
+<title>무비리스트</title>
 </head>
 
 <script>
@@ -21,7 +21,7 @@
 		window.open("/teamproject/sangsae/malmoe_sangsaePage.jsp?movieTitle="+movieTitle,"", "width=1800 height=800");
 	}
 	
-	/* Ticketing1.jsp로 영화제목 보내기 */
+	/* 예매하기 이미지 눌러서 Ticketing1.jsp로 영화제목 보내기 */
 	function sendMovieTitleTicket(movieTitle){
 		window.open("/teamproject/Ticketing1.jsp?movieTitle="+movieTitle,"", "width=1120 height=580");
 	}

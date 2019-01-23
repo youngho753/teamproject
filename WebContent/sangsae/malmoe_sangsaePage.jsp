@@ -1,11 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>말모이 상세페이지</title>
-
 	<style>
 		#full-body{
 			margin:0 auto;
@@ -40,7 +40,8 @@
 				url : "/teamproject/comment.do",
 				data : {"comment_content": $("#comment_content").val(),
 						"star_grade" : $('input[name=star-input]:checked').val(),
-						"movieTitle" : $("#movieTitle").val()
+						"movieTitle" : $("#movieTitle").val(),
+						"userID" : $("#userID").val()
 				},
 				success : function(gift){
 					$("#comment_result").html(gift);
@@ -57,7 +58,6 @@
 			}
 			
 			if(!$("#comment_content").val()){
-				/* alert("평점을 입력해주세요!"); */
 				$("#comment_content").focus(); //평점 안 넣었을 때 여기로 깜빡이게 하기
 				return false;
 			}
@@ -77,11 +77,18 @@
 		//스틸컷 또는 동영상 누를떄마다 cutORvideo 영역이 바뀌게 하기
 		
 		function showStillcut(){
-			$("#cutORvideo").load("/sangsae/malmoeStillCut.jsp");
+			$("#cutORvideo").load("/teamproject/sangsae/malmoeStillCut.jsp");
 		}
 		
 		function showVideo(){
-			$("#cutORvideo").load("/sangsae/malmoeVideo.jsp");
+			$("#cutORvideo").load("/teamproject/sangsae/malmoeVideo.jsp");
+		}
+		
+		//Ticketing1.jsp로 영화이름 보내기
+		function sendMovieTitleTicket(){
+			var movieTitle = $("#movieName").text();
+			window.open("/teamproject/Ticketing1.jsp?movieTitle="+movieTitle,"", "width=1120 height=580");
+			
 		}
 	
 	</script>
@@ -98,7 +105,7 @@
 		        <td><table border="0" cellspacing="0" cellpadding="0">
 		          <tr>
 		            <td width="20">&nbsp;</td>
-		            <td colspan="4"><img src="/teamproject/Imgs/12.gif" width="30" height="31"> <span class="style4">말모이 </span></td>
+		            <td colspan="4"><img src="/teamproject/Imgs/12.gif" width="30" height="31"> <span class="style4" id="movieName">말모이 </span></td>
 		            </tr>
 		          <tr>
 		            <td rowspan="3">&nbsp;</td>
@@ -116,7 +123,7 @@
 		            <td colspan="2">예매율 <span class="style3">1</span>위 29.6% </td>
 		            <td width="122">
 		            	<div align="right">
-		            		<img src="/teamproject/Imgs/eyme.gif" width="121" height="43"> <!-- onclick줘서 동작시키기 -->
+		            		<img src="/teamproject/Imgs/eyme.gif" width="121" height="43" onclick="sendMovieTitleTicket();">
 		            	</div>
 		            </td>
 		          </tr>
@@ -278,10 +285,15 @@
 		        <table style="width: 604px; border : 0px; cellspacing: 0px; cellpadding:0px;">
 		          <tr>
 		            <td>
-		            	
+		            	<c:if test="${sessionScope.mem_id != null}">
 		              	<textarea name="comment_content" id="comment_content" cols="100%" rows="5" placeholder="100자까지 적을 수 있습니다." maxlength="100" onkeyup="textCount(this,'commentCount')"></textarea>
-		              	<input type="hidden" id="userID" value="여기는아이디세션값"/>
-		              	<input type="text" id="movieTitle" value="${param.movieTitle}"/>
+		              	</c:if>
+		              	<input type="hidden" id="userID" value="${sessionScope.mem_id}"/>
+		              	<input type="hidden" id="movieTitle" value="${param.movieTitle}"/>
+		              	
+		              	<c:if test="${sessionScope.mem_id == null}">
+		              	<textarea name="comment_content" id="comment_content" cols="100%" rows="5" placeholder="로그인이 필요합니다." disabled="disabled" maxlength="100" onkeyup="textCount(this,'commentCount')"></textarea>
+		              	</c:if>
 		            </td>
 		          </tr>
 		        </table>
