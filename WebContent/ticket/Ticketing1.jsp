@@ -174,13 +174,16 @@ $(document).ready(function(){
  	
  	$('#weekSelect, #nonweekSelect').click(function(){
  		
-		var select = $(this).text();
- 		if ($('#TheatersSelect1')  == null){
+		var select = $(this).text(); //클릭한 week의 값
+ 		
+		var jb = $('input#TheatersSelect1').val();
+		
+		if (jb  == null){
  			alert('극장을 선택해주세요');
  			
  		}
  		
- 		$('body').append(select);
+ 		$('body').append(jb);
  		
  		
  	}); 
