@@ -34,17 +34,9 @@ public class Ticket extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		String select =request.getParameter("select");
 		
 		
-		/*
-		memberDAO dao = memberDAO.getInstnace();
-		int flag =dao.memberlogin(id,pass);
-		
-		RequestDispatcher rd = request.getRequestDispatcher("main.jsp");
-		rd.forward(request, response);
-		*/
-		
+		response.sendRedirect("Ticketing1.jsp");
 		
 		
 	}
