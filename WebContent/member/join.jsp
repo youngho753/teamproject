@@ -3,15 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-<link href="https://fonts.googleapis.com/css?family=Coiny"
-	rel="stylesheet">
 <link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
-<title>Insert title here</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
+<link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
+<meta  http-equiv="Content-Type" content= "text/html; charset=UTF-8">
+
+<title>라이프 시어터, 무비박스</title>
 	
 <style>
 
@@ -64,6 +65,9 @@ $(document).ready(function(){
 						$("#idCheck").css("color", "red");
 						$("#idCheck").text("*중복 된 아이디 입니다.");
 					}
+				},
+				error : function(e){
+				alert("에러" + e);
 				}
 			})
 		}
@@ -152,7 +156,7 @@ function regi(){ //회원가입 신청시, *항목중 빈칸 있으면 alert 없
 				</tr>
 				<tr>
 					<td align="center">이메일</td>
-					<td><input type="text" name="mem_email" id="mem_mail"></td>
+					<td><input type="text" name="mem_email" id="mem_email"></td>
 				</tr>
 				<tr>
 					<td align="center">성별</td>

@@ -27,26 +27,27 @@ public class CommentDAO {
 	private Connection getConnection() throws NamingException, SQLException{
 		Context initCtx = new InitialContext();
 		Context envCtx = (Context)initCtx.lookup("java:comp/env");
-		DataSource ds = (DataSource)envCtx.lookup("jdbc/movie");
+		DataSource ds = (DataSource)envCtx.lookup("jdbc/jsp");
 		
 		return ds.getConnection();
 		
 	}
 	
 	//코멘트 넣기
-	public void insertComment(String comment, int star_grade) {
+	public void insertComment(String contents, int star_grade, String comment_movie, String comment_id) {
 		
 		Connection con = null;
 		PreparedStatement ps = null;
 		
 		try {
 			con = getConnection();
-			String sql = "insert into moviecomment values(moviecomment_SEQ.nextval, ?,   ?   ,?   ,to_char(SYSDATE, 'yyyy/mm/dd'))";
+			String sql = "insert into moviecomment (no, comment_id, comment_date, comment_grade, comment_contents, comment_movie) values(moviecomment_SEQ.nextval,  ?,  to_char(SYSDATE, 'yyyy/mm/dd'),   ?   ,?  ,?)";
 			ps = con.prepareStatement(sql);
-			
-			ps.setString(1, "userTest");
+			ps.setString(1, comment_id);
 			ps.setInt(2, star_grade);
-			ps.setString(3, comment);
+			ps.setString(3, contents);
+			ps.setString(4, comment_movie);
+		
 			
 			ps.executeUpdate();
 			
@@ -60,7 +61,7 @@ public class CommentDAO {
 	}
 	
 	//페이징 하기 + 내용 내보내기
-	public ArrayList<CommentDTO> getPaging(int startRow, int endRow) {
+	public ArrayList<CommentDTO> getPaging(int startRow, int endRow, String comment_movie) {
 		
 		Connection con = null;
 		ResultSet rs = null;
@@ -72,25 +73,24 @@ public class CommentDAO {
 			con = getConnection();
 			String sql =  "select * from "
 					+ " (select rownum rn,aa.* from"
-					+ " (select * from moviecomment order by num desc)aa) "
-					+ "where rn>=? and rn<=?";
+					+ " (select * from moviecomment order by no desc)aa)"
+					+ "where rn>=? and rn<=? and comment_movie=?";
 			
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, startRow);
 			ps.setInt(2, endRow);
-			
+			ps.setString(3, comment_movie);
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
 				CommentDTO bean = new CommentDTO();
-				bean.setNum(rs.getInt("num"));
-				bean.setId(rs.getString("id"));
-				bean.setGrade(rs.getInt("grade"));
-				bean.setContent(rs.getString("content"));
-				bean.setWritedate(rs.getString("writedate"));
+				bean.setNum(rs.getInt("no"));
+				bean.setId(rs.getString("comment_id"));
+				bean.setGrade(rs.getInt("comment_grade"));
+				bean.setContent(rs.getString("comment_contents"));
+				bean.setWritedate(rs.getString("comment_date"));
 				
 				arr.add(bean);
-			
 			}
 		
 		} catch (NamingException | SQLException e) {

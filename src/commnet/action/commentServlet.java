@@ -19,13 +19,15 @@ public class commentServlet extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
 		
-		String comment = request.getParameter("comment_content");
+		String contents = request.getParameter("comment_content");
 		int star_grade = Integer.parseInt(request.getParameter("star_grade"));
+		String comment_movie = request.getParameter("movieTitle");
+		String comment_id = request.getParameter("userID");
 		
 		CommentDAO dao = CommentDAO.getInstance();
-		dao.insertComment(comment, star_grade);
+		dao.insertComment(contents, star_grade, comment_movie, comment_id);
 		
-		response.sendRedirect("list.do"); //���⼭ �����°��� �ƴϰ� ����Ʈ�� �Ѹ��� ���� sendRedirect�� ��
+		response.sendRedirect("/teamproject/list.do");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

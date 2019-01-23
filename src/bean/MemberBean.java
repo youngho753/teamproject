@@ -2,9 +2,9 @@ package bean;
 
 public class MemberBean {
 	int no;
-	String mem_name;
 	String mem_id;
 	String mem_pw;
+	String mem_name;
 	String mem_jumin1;
 	String mem_jumin2;
 	String mem_zip;	//우편번호
@@ -18,13 +18,16 @@ public class MemberBean {
 	public MemberBean() {
 		
 	}
-	public MemberBean(int no, String mem_id, String mem_pw, String mem_jumin1, String mem_jumin2, String mem_zip, String mem_addr1,
-			String mem_addr2, String mem_tel, String mem_email, String mem_date, String mem_gender, String mem_name) {
+
+	public MemberBean(int no, String mem_id, String mem_pw, String mem_jumin1,String mem_jumin2,String mem_name, String mem_zip, String mem_addr1,
+			String mem_addr2, String mem_tel, String mem_email, String mem_date, String mem_gender) {
 		super();
 		this.no = no;
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
+		this.mem_name = mem_name;
 		this.mem_jumin1 = mem_jumin1;
+		this.mem_jumin2 = mem_jumin2;
 		this.mem_zip = mem_zip;
 		this.mem_addr1 = mem_addr1;
 		this.mem_addr2 = mem_addr2;
@@ -32,11 +35,22 @@ public class MemberBean {
 		this.mem_email = mem_email;
 		this.mem_date = mem_date;
 		this.mem_gender = mem_gender;
-		this.mem_name = mem_name;
 	}
 	
+	public String getMem_jumin1() {
+		return mem_jumin1;
+	}
+	public void setMem_jumin1(String mem_jumin1) {
+		this.mem_jumin1 = mem_jumin1;
+	}
+	public String getMem_jumin2() {
+		return mem_jumin2;
+	}
+	public void setMem_jumin2(String mem_jumin2) {
+		this.mem_jumin2 = mem_jumin2;
+	}
 	public String getMem_name() {
-		return mem_name == null ? "" : mem_name.trim();
+		return mem_name;
 	}
 	public void setMem_name(String mem_name) {
 		this.mem_name = mem_name;
@@ -59,12 +73,6 @@ public class MemberBean {
 	}
 	public void setMem_pw(String mem_pw) {
 		this.mem_pw = mem_pw;
-	}
-	public String getMem_jumin1() {
-		return mem_jumin1;
-	}
-	public void setMem_jumin1(String mem_jumin1) {
-		this.mem_jumin1 = mem_jumin1;
 	}
 	public String getMem_zip() {
 		return mem_zip;
@@ -89,12 +97,6 @@ public class MemberBean {
 	}
 	public void setMem_tel(String mem_tel) {
 		this.mem_tel = mem_tel;
-	}
-	public String getMem_jumin2() {
-		return mem_jumin2 == null ? "" : mem_jumin2.trim();
-	}
-	public void setMem_jumin2(String mem_jumin2) {
-		this.mem_jumin2 = mem_jumin2;
 	}
 	public String getMem_email() {
 		return mem_email;

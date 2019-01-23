@@ -47,7 +47,7 @@ h1 {
 #grid input {
 	border: none;
 	border-bottom: solid 1px;
-	margin-top: 35px;
+	margin-top: 25px;
 } /*이름 생년월일 등*/
 .textArea {
 	width: 300px;
@@ -101,22 +101,60 @@ h1 {
 	outline: none;
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+<script>
+$(document).ready(function(){
+	$("#unLogin").click(function(){
+		if($("#name").val() == "" || $("#birth").val() == "" || $("#password").val() =="" || $("#passwordCheck").val() == ""){
+			alert("공백 없이 입력해주세요");
+		}else if($('input:radio[name=choice]:checked').val() == undefined || $('input:radio[name=choice]:checked').val() == "-1" ){
+			alert("개인정보 처리방침에 동의 하셔야지만 비회원 로그인 가능합니다"); // -1: 개인정보 약관 비동의
+		}else{
+			$.ajax({
+				type:"post",
+				url : "unMemLogin.do",
+				data: {
+					"name" : $("#name").val(),
+					"birth" : $("#birth").val(),
+					"phone" : $("#phone").val(),
+					"password" : $("#password").val(),
+					"passwordCheck" : $("#passwordCheck").val()
+				},
+				success : function(data){
+					if(data.trim() == "-1"){
+						alert("비밀번호가 일치하지 않습니다");
+					}else if(data.trim() == "1"){
+						alert("정보가 확인 되었습니다."); //로그인되면서 어디론가 보냄
+					}else if(data.trim() == "2"){
+						alert("비회원으로 정보 등록 완료!"); //정보등록완료와 동시에 로그인되면서 어디론가 보냄
+					}
+				}
+			})
+		}
+	})
+})
+</script>
 </head>
 
 <body>
-	<div class=loginFrame>
+
+<form id="frm">
+
+		
+		<div class=loginFrame>
+
 		<h1>LOGIN</h1>
 		<hr>
 		<div class="buttonFrame">
-			<input type="button" class="btn1" value="회원 로그인" onclick="location.href=('../member/memLogin.jsp')"><input
-				type="button" class="btn2" value="비회원 로그인">					
+			<input type="button" class="btn1" value="회원 로그인" onclick="location.href=('../member/memLogin.jsp')"><input type="button" class="btn2" value="비회원 로그인">					
 		</div>
 		<div id="grid">
 			<div>
-				<input type="text" placeholder="이름"><br> <input
-					type="text" placeholder="생년월일('-없이 입력)"><br> <input
-					type="text" placeholder="비밀번호 4자리"><br> <input
-					type="text" placeholder="비밀번호 확인 4자리"><br>
+				<input type="text" name="name" id="name" placeholder="이름"><br> 
+				<input type="text" name="birth" id="birth" placeholder="생년월일(앞6자리)"><br>
+				<input type="text" name="phone" id="phone" placeholder="전화번호('-없이 입력)"><br> 
+				<input type="text" name="password" id="password" placeholder="비밀번호 4자리"><br> 
+				<input type="text" name="passwordCheck" id="passwordCheck" placeholder="비밀번호 확인 4자리"><br>
 			</div>
 			<div>
 				<div style="text-align: center">[비회원 개인정보 처리방침]</div>
@@ -149,17 +187,17 @@ h1 {
 		</div>
 		<!--개인정보 처리방침밖에싸기-->
 		<div id="agree" style="padding-left: 5px">
-			개인정보 처리방침에 동의 하십니까? <input type="radio" name="choice">동의함 <input
-				type="radio" name="choice">동의하지 않음
+			개인정보 처리방침에 동의 하십니까? 
+			<input type="radio" name="choice" value="1">동의함 <input type="radio" name="choice" value="-1">동의하지 않음
 			<div id=agreeGrid>
 				<div style="font-size: 13px">* 정보수집에 동의를 거부할 수 있으며, 동의하지 않을 경우
 					비회원 예매 서비스를 이용하실 수 없습니다.</div>
 				<div style="margin: 0 auto">
-					<input class="final" type="button" value="비회원 로그인"
-						style="margin-top: 10px">
+					<input class="final" type="button" value="비회원 로그인" id="unLogin" style="margin-top: 10px">
 				</div>
 			</div>
 		</div>
 	</div>
+</form>
 </body>
 </html>

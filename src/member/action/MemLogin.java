@@ -1,11 +1,14 @@
 package member.action;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import bean.MemberBean;
 import dao.MemberDAO;
@@ -42,14 +45,21 @@ public class MemLogin extends HttpServlet {
 		String id = req.getParameter("id");
 		String pw = req.getParameter("pw");
 		String check;
+		PrintWriter out = resp.getWriter();
 		MemberBean mb = new MemberBean();
 		MemberDAO dao = MemberDAO.getInstance();
 		check = dao.memberLoginCheck(id, pw);
 		
-		
-		mb = dao.memberLogin(id, pw);
-		
-		
+		if(check == "3") { //존재하지 않는 아이디
+			out.println(check.trim()); //콜백으로 3전송
+		}else if(check == "2") { //아이디 존재하나 비번 불일치
+			out.print(check.trim());
+		}else if(check == "1") { // 아이디 비번 모두 일치하니 다시 db가서 해당 회원 정보 전체 퍼올려서 세션생성
+			mb = dao.memberLogin(id);
+			HttpSession session = req.getSession();
+			session.setAttribute("mem_id", id);
+			out.print(id.trim());
+		}
 	}
 
 }
