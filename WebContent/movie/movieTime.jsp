@@ -51,7 +51,7 @@
 
 <body>
 	<div id="container">
-		<h3>영화관 선택</h3>
+		<h3>영화관 선택</h3> 
 		<div class="theater_1st">
 			<div class="place">
 				<ul class="areaList">
@@ -88,7 +88,7 @@
 				<ul class="inAreaList">
 					<c:forEach items = "${locationArr }" var = "i">
 						<a href = "javascript:void(0)" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })">
-							<li>${i.location_name }</li>
+							<li>${i.location_name}</li>
 						</a>				
 					</c:forEach>
 				</ul>
