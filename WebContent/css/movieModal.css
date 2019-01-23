@@ -1,0 +1,81 @@
+/*section*/
+
+.moive_wrapper{
+    margin: 0 auto; /*媛��슫�뜲�젙�젹*/
+    max-width:1600px;
+    height: auto;
+    font-family: 'Lato', sans-serif;
+   /* border : 5px solid red;*/
+}
+
+section .movie_inner{
+    width : 1600px;
+    margin : 0 auto;
+    text-align: center;
+  /*  border : 3px solid blue;*/
+}
+
+/*movie*/
+
+.movie_name ul{
+    text-align: center;
+    padding-right: 18px;
+}
+
+.movie_name span{
+    text-align: center;
+    font-size: 1.6rem;
+}
+
+.movie_inner ul li{ 
+     display: inline-block;
+     max-width: 255px; /* �븳 媛� poster�쓽 �겕湲곗� �넂�씠(�쁺�솕�씠由�,踰꾪듉�룷�븿)*/
+     max-height: 360px;
+}
+
+.movie_name ul{
+    border-left: 1px solid rgba(217,217,217);
+    border-right: 1px solid rgba(217,217,217);
+}
+
+.movie_button{
+    border-left: 1px solid rgba(217,217,217);
+    border-right: 1px solid rgba(217,217,217);
+    border-bottom: 1px solid rgba(217,217,217);
+}
+
+/*poster*/
+
+.poster img{
+    max-width: 250px;
+    max-height: 358px;
+}
+
+/*ul �깭洹� movielist*/
+
+#movielist .movie_button{
+    text-align: center;
+}
+
+#movielist .movie_button input{
+    margin: 5px;
+}
+
+
+/* 모달영역 */
+ .youtubeWrap {
+        position: relative;
+        width: 100%;
+        padding-bottom: 56.25%;
+      }
+      .youtubeWrap iframe {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .modal-header{
+        background-color: black;      
+      }
+        .modal-body{
+             background-color: black;  
+        }

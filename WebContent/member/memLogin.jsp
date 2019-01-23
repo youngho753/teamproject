@@ -123,7 +123,9 @@ $(document).ready(function(){
 
 </head>
 <body>
-	<div class="loginFrame">
+
+	<div class=loginFrame>
+
 		<h1>LOGIN</h1>
 		<hr>
 		<div class="buttonFrame">

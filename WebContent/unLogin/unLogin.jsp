@@ -137,8 +137,12 @@ $(document).ready(function(){
 </head>
 
 <body>
+
 <form id="frm">
-	<div class=loginFrame>
+
+		
+		<div class=loginFrame>
+
 		<h1>LOGIN</h1>
 		<hr>
 		<div class="buttonFrame">
