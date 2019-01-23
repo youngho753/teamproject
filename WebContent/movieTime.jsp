@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Document</title>
 
-<link rel="stylesheet" type="text/css" href="/teamproject/css/movieTime.css">
+<link rel="stylesheet" type="text/css" href="../css/movieTime.css">
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 
@@ -16,8 +16,7 @@
 	});
 	function changePlace(num) {
 		getLocation(num);
-		
-
+	
 	}
 	function changePlaceIcon(n1, n2) {
 		var top = $("#divMap").offset().top;
@@ -39,7 +38,7 @@
 			},
 			success : function(data) {
 				$("#container").html(data);
-				$("#imgPlace").attr("src", "/teamproject/Imgs/movietime/place" + locationNum + ".jpg");
+				$("#imgPlace").attr("src", "../Imgs/movietime/place" + locationNum + ".jpg");
 			},
 			error : function(e) {
 				alert("다시 해주세요:" + e);
@@ -83,7 +82,7 @@
 				</ul>
 			</div>
 			<div class="place" style="width: 300px;">
-				<img src="/teamproject/Imgs/movietime/inArea.gif" width="300px"
+				<img src="../Imgs/movietime/inArea.gif" width="300px"
 					style="position: absolute; height: 452px;">
 				<ul class="inAreaList">
 					<c:forEach items = "${locationArr }" var = "i">
@@ -95,9 +94,9 @@
 			</div>
 			<!--지도-->
 			<div class="place" id="divMap">
-				<img src="/teamproject/Imgs/movietime/place_icon.png" id="placeIcon"
+				<img src="../Imgs/movietime/place_icon.png" id="placeIcon"
 					style="position: absolute; visibility: hidden"> <img
-					src="/teamproject/Imgs/movietime/place0.jpg" style="height: 452px;"
+					src="../Imgs/movietime/place0.jpg" style="height: 452px;"
 					id="imgPlace">
 			</div>
 
