@@ -104,7 +104,7 @@ public class CommentDAO {
 	}
 	
 	//총 평점 검색
-	public int commentCount() {
+	public int commentCount(String comment_movie) {
 		Connection con = null;
 		Statement st = null;
 		ResultSet rs = null;
@@ -112,7 +112,7 @@ public class CommentDAO {
 		
 		try {
 			con = getConnection();
-			String sql = "select count(*) from moviecomment";
+			String sql = "select count(*) from moviecomment where comment_movie= '"+comment_movie+"'";
 			st = con.createStatement();
 			rs = st.executeQuery(sql);
 			

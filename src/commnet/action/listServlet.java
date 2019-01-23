@@ -1,6 +1,7 @@
 package commnet.action;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -21,12 +22,14 @@ public class listServlet extends HttpServlet {
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
+		
 		
 		//페이징하기
 		String pageNum = request.getParameter("pageNum") == null?"1":request.getParameter("pageNum");  //pageNum을 사용. 처음이면 1 들어가 있다.
-		String comment_movie = request.getParameter("movieTitle");
-		System.out.println(comment_movie+"이것당");
+		String comment_movie =request.getParameter("movieTitle");
+		
+		System.out.println(comment_movie + "확인");
+		
 		int currentPage = Integer.parseInt(pageNum);
 		int pageSize = 5; //게시물을 5개씩 보여주기
 		int startRow = (currentPage-1)*pageSize+1; //만일 2page라고 한다면 페이지6부터 나와야함
@@ -35,7 +38,7 @@ public class listServlet extends HttpServlet {
 		CommentDAO dao = CommentDAO.getInstance();
 		
 		ArrayList<CommentDTO> arr = dao.getPaging(startRow, endRow, comment_movie);
-		int count = dao.commentCount();
+		int count = dao.commentCount(comment_movie);
 		
 		//총페이지수
 		int totalPage = count/pageSize+(count%pageSize ==0?0:1);

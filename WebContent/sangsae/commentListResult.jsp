@@ -64,7 +64,7 @@
 	<div class="pagePlace" align="center">
 	<!-- 이전 부분 -->
 	<c:if test="${startPage > blockPage}">
-	<a href="javascript:getData(${ startPage-blockPage})"><img src="/teamproject/Imgs/stillcut/pageLeftbtn.png"></a>
+	<a href="javascript:getData(${startPage-blockPage})"><img src="/teamproject/Imgs/stillcut/pageLeftbtn.png"></a>
 	</c:if>
 	
 	<!-- 페이지 부분 -->
