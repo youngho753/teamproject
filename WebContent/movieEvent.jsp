@@ -175,8 +175,11 @@
 			    </div>
 			</div> 
 			
+			<!-- footer_theater -->
+				<jsp:include page="movie/footer_theater.jsp"/>
+			
 			<!--  footer -->
-				<jsp:include page="movie/footer.jsp"/>         
+				<jsp:include page="movie/footer.jsp"/> 
 			<!-- script -->
 					<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		</div>
