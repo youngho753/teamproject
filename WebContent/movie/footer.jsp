@@ -6,15 +6,8 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="/teamproject/Imgs/fontello/fontello-11a7e995/css/fontello.css"/>
 	<style>
+			
 	
-		 #footer_theater{
-			width:1600px;
-            height: 400px;
-			/*border : 2px solid red; 경계확인용*/
-			padding : 0px;
-			background-color : rgba(34,31,31,0.85);
-		
-        }
         .above_wrap{
             position: relative;
             margin: 3px;
@@ -203,7 +196,8 @@
 </head>
 	<body>	
 		 <footer id="footer">
-			<div id="copyright_wrap"> <!--relative 적용중-->
+		
+			<div id="copyright_wrap"> 
 			
 				<div class="logo">
 				    <a href="index.jsp"><img src="/teamproject/Imgs/logo_bottom.gif" id="logo"></a>

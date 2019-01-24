@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel = "shortcut icon" href = "favicon.ico" type = "image/x-icon"/>
 
 <title>환영합니다.</title>
 <style>
@@ -21,10 +22,9 @@
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <title>라이프시어터, 무비박스</title>
-<link rel = "icon" href = "favicon.ico" type = "image/x-icon"/>
+
 
 </head>
-
 <body>
 	<div id="container" style="margin: 0 auto; width:1600px">
 			<header id="header">

@@ -8,6 +8,25 @@
 	<link rel="stylesheet" type="text/css" href="/teamproject/css/movieEvent.css"/>
 	
 <title>이벤트페이지</title>
+	<style>
+		.full-body{
+			margin : 0 auto;
+			width : 1600px;
+		}
+	
+		.body_border{
+            background-color: rgba(217,217,217, 0.3);
+            border-bottom: 3px solid purple;
+            width: 1600px;
+            height: 50px;
+        }		
+	</style>
+	
+	<script>
+		function openEventPage(){
+			window.open("/teamproject/eventpage/eventpage.jsp","", "width=1000 height=800");
+		}
+	</script>
 </head>
 
 <body>
@@ -35,7 +54,7 @@
 		                    <li>
 		                           <!-- 이미지1 -->
 		                        <div class="event_img">
-		                            <img src="/teamproject/event1_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event1_img.jpg" onclick="openEventPage();">
 		                        </div>
 		                            <!-- 내용&날짜 -->
 		                        <div id="event_content">
@@ -50,11 +69,11 @@
 		                        <!-- 이벤트2-->
 		                     <li>
 		                         <div class="event_img">
-		                             <img src="/teamproject/event_img/event2_img.jpg">
+		                             <img src="/teamproject/Imgs/event_img/event2_img.jpg">
 		                         </div>
 		                        <div id="event_content">
 		                            <div>
-		                               [무비박스] 새해 무비박스 회원이면 누구나 다~ 돼지
+		                               		새해 무비박스 회원이면 누구나 다~ 돼지
 		                            </div>
 		                            <div>
 		                                2019.01.11~2019.01.22
@@ -64,7 +83,7 @@
 		                         <!-- 이벤트3-->
 		                      <li>
 		                        <div class="event_img">
-		                            <img src="/teamproject/event_img/event3_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event3_img.jpg">
 		                        </div>
 		                        <div id="event_content">
 		                            <div>
@@ -79,7 +98,7 @@
 		                          <!-- 이벤트4-->
 		                       <li>
 		                        <div class="event_img">
-		                            <img src="/teamproject/event_img/event4_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event4_img.jpg">
 		                        </div>
 		                        <div id="event_content">
 		                            <div>
@@ -98,7 +117,7 @@
 		                           <!-- 이벤트5-->
 		                    <li>
 		                        <div class="event_img">
-		                            <img src="/teamproject/event_img/event5_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event5_img.jpg">
 		                        </div>
 		                        <div id="event_content">
 		                            <div>
@@ -112,7 +131,7 @@
 		                            <!-- 이벤트6-->
 		                     <li>
 		                        <div class="event_img">
-		                            <img src="/teamproject/event_img/event6_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event6_img.jpg">
 		                        </div>
 		                        <div id="event_content">
 		                            <div>
@@ -126,7 +145,7 @@
 		                             <!-- 이벤트7-->
 		                      <li>
 		                        <div class="event_img">
-		                            <img src="/teamproject/event_img/event7_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event7_img.jpg">
 		                        </div>
 		                        <div id="event_content">
 		                            <div>
@@ -140,7 +159,7 @@
 		                              <!-- 이벤트8-->
 		                       <li>
 		                        <div class="event_img">
-		                            <img src="/teamproject/event_img/event8_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event8_img.jpg">
 		                        </div>
 		                       <div id="event_content">
 		                            <div>
