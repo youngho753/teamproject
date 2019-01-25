@@ -18,6 +18,7 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
 	
+	
 	var date = new Date();
 	var d = date.getDate(); //일
 	var m = date.getMonth(); //월
@@ -25,7 +26,7 @@ $(document).ready(function(){
 	var h = date.getHours(); //시
 	
 	
-	//일 월 년 시
+	//일 월 년 시1
 	var toDate = new Date(y,m,d,h);
 	 
 	//오늘
@@ -187,6 +188,7 @@ $(document).ready(function(){
 });
 </script>
 <script>
+//리셋
 $(document).ready(function(){
 	//reflash버튼을 누르면 실행
    $('#reflash1,#reflash2').click(function(){ 
@@ -195,38 +197,42 @@ $(document).ready(function(){
 	});
 });
 </script>
-<script>
+<script>//극장 선택
 $(document).ready(function(){
 		//극장 선택 버튼을 누르면 실행
 	   $("#TheatersSelect1").click(function(){ 
-		   //calendar.jsp 팝업 실행 
+		   //극장 선택 페이지 팝업 실행 
 		   window.open('/teamproject/movie/movieTime.jsp','지역선택','width=1100px, height=600px, scrollbars= 0, toolbar=0, menubar=no resizable=no');
 		});
 	});
 </script>
-<!-- <script>
-$(document).ready(function(){
-	$("#TheatersSelect1").click(function() {
-		$.ajax({
-			url:"movieTime.jsp",
-			type:"post",
-			data: "",
-			dataType : "text",
-			success : function(data) {
-				$("#Theater").html(data)
-				$("#Theater").html(<h1></h1>)
-			},
-			error:function(e){
-				alert("error:"+e);
-			}
-			
-				
 
+
+<script>
+/* $(document).ready(function(){
+	$(Ticketing).load(function(){
+		$.ajax({
+			type : "post",
+			url : "Ticketing2.do",
+			data : {
+				"locationNum" : locationNum
+			},
+			success : function(data) {
+				$("#container").html(data);
+				$("#imgPlace").attr("text", "aa");
+			},
+			error : function(e) {
+				alert("다시 해주세요:" + e);
+			}
 		});
+	}
+	
 		
-	});
-});
-</script> -->
+	})
+	
+}); */
+
+</script>
 
 <title>영화 예매1</title> <!-- 타이틀은 일괄로 변경 바람  -->
 </head>
@@ -308,7 +314,7 @@ a {
 </style>
 
 <body>
-
+<input type ="hidden" id = "hiddenweek">
 
 <form name="Ticketing" >
 <!-- action="Ticketing.do" method="get" -->
@@ -341,8 +347,9 @@ a {
 <!-- 극장 선택 이미지 -->
 <tr id="TheatersSelect">
 <td colspan="2" align="center">
-<div id = "Theaters" >
+<div id = "Theaters">
 <input type="image" src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1" value="TheatersSelect1">
+
 </div>
 </td>
 <td colspan="2" align="center"><input type="image" src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect2" value="TheatersSelect2"></td>
