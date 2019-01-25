@@ -32,25 +32,26 @@
 <table id="comment_table">
 		<c:forEach items="${arr}" var="info">
 		<tr>
-			<td><img src="img/man_img.gif"></td>
+			<td><img src="/teamproject/Imgs/stillcut/man_img.gif"></td>
 			<td>${info.id}</td> <!-- //함수도 찾아간다. -->
 			<td><c:if test="${info.grade == 1}">
-						<img src="img/1grade.PNG">
+						<img src="/teamproject/Imgs/stillcut/1grade.PNG">
 					</c:if>
+					
 					<c:if test="${info.grade == 2}">
-						<img src="img/2grade.PNG">
+						<img src="/teamproject/Imgs/stillcut/2grade.PNG">
 					</c:if>
 					
 					<c:if test="${info.grade == 3}">
-						<img src="img/3grade.PNG">
+						<img src="/teamproject/Imgs/stillcut/3grade.PNG">
 					</c:if>
 					
 					<c:if test="${info.grade == 4}">
-						<img src="img/4grade.PNG">
+						<img src="/teamproject/Imgs/stillcut/4grade.PNG">
 					</c:if>
 					
 					<c:if test="${info.grade == 5}">
-						<img src="img/5grade.PNG">
+						<img src="/teamproject/Imgs/stillcut/5grade.PNG">
 					</c:if>
 			
 			</td>
@@ -60,10 +61,10 @@
 		</c:forEach>
 	</table>
 	
-	<div class="pagePlace" >
+	<div class="pagePlace" align="center">
 	<!-- 이전 부분 -->
 	<c:if test="${startPage > blockPage}">
-	<a href="javascript:getData(${ startPage-blockPage})"><img src="img/pageLeft.png"></a>
+	<a href="javascript:getData(${startPage-blockPage})"><img src="/teamproject/Imgs/stillcut/pageLeftbtn.png"></a>
 	</c:if>
 	
 	<!-- 페이지 부분 -->
@@ -74,12 +75,12 @@
 		<c:if test="${i != currentPage }">
 	<a href="javascript:getData(${i})"><span id="pageNumber">${i}</span></a>
 	
-		</c:if>
+	</c:if>
 	</c:forEach>
 	
 	<!-- 다음 부분 -->
 	<c:if test="${endPage < totalPage}">
-	<a href="javascript:getData(${endPage+1})"><img src="img/pageRight.png"></a>
+	<a href="javascript:getData(${endPage+1})"><img src="/teamproject/Imgs/stillcut/pageRightbtn.png"></a>
 	</c:if>
 	
 	</div>

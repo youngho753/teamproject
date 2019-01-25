@@ -34,7 +34,7 @@ public class CommentDAO {
 	}
 	
 	//코멘트 넣기
-	public void insertComment(String contents, int star_grade) {
+	public void insertComment(String contents, int star_grade, String comment_movie, String comment_id) {
 		
 		Connection con = null;
 		PreparedStatement ps = null;
@@ -43,10 +43,10 @@ public class CommentDAO {
 			con = getConnection();
 			String sql = "insert into moviecomment (no, comment_id, comment_date, comment_grade, comment_contents, comment_movie) values(moviecomment_SEQ.nextval,  ?,  to_char(SYSDATE, 'yyyy/mm/dd'),   ?   ,?  ,?)";
 			ps = con.prepareStatement(sql);
-			ps.setString(1, "userTest");
+			ps.setString(1, comment_id);
 			ps.setInt(2, star_grade);
 			ps.setString(3, contents);
-			ps.setString(4, "말모이");
+			ps.setString(4, comment_movie);
 		
 			
 			ps.executeUpdate();
@@ -61,7 +61,7 @@ public class CommentDAO {
 	}
 	
 	//페이징 하기 + 내용 내보내기
-	public ArrayList<CommentDTO> getPaging(int startRow, int endRow) {
+	public ArrayList<CommentDTO> getPaging(int startRow, int endRow, String comment_movie) {
 		
 		Connection con = null;
 		ResultSet rs = null;
@@ -74,12 +74,12 @@ public class CommentDAO {
 			String sql =  "select * from "
 					+ " (select rownum rn,aa.* from"
 					+ " (select * from moviecomment order by no desc)aa)"
-					+ "where rn>=? and rn<=?";
+					+ "where rn>=? and rn<=? and comment_movie=?";
 			
 			ps = con.prepareStatement(sql);
 			ps.setInt(1, startRow);
 			ps.setInt(2, endRow);
-			
+			ps.setString(3, comment_movie);
 			rs = ps.executeQuery();
 			
 			while(rs.next()) {
@@ -104,7 +104,7 @@ public class CommentDAO {
 	}
 	
 	//총 평점 검색
-	public int commentCount() {
+	public int commentCount(String comment_movie) {
 		Connection con = null;
 		Statement st = null;
 		ResultSet rs = null;
@@ -112,7 +112,7 @@ public class CommentDAO {
 		
 		try {
 			con = getConnection();
-			String sql = "select count(*) from moviecomment";
+			String sql = "select count(*) from moviecomment where comment_movie= '"+comment_movie+"'";
 			st = con.createStatement();
 			rs = st.executeQuery(sql);
 			

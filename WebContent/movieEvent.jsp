@@ -5,54 +5,40 @@
 	<head>
 	<meta charset="UTF-8">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="../css/movieEvent.css"/>
+	<link rel="stylesheet" type="text/css" href="/teamproject/css/movieEvent.css"/>
 	
 <title>이벤트페이지</title>
+	<style>
+		.full-body{
+			margin : 0 auto;
+			width : 1600px;
+		}
+	
+		.body_border{
+            background-color: rgba(217,217,217, 0.3);
+            border-bottom: 3px solid purple;
+            width: 1600px;
+            height: 50px;
+        }		
+	</style>
+	
+	<script>
+		function openEventPage(){
+			window.open("/teamproject/eventpage/eventpage.jsp","", "width=1000 height=800");
+		}
+	</script>
 </head>
 
 <body>
-			<!-- 로고 메뉴부분-->
-  <!--   <header id="header">
-			<table class="headertable">
-			<tr>
-				<td colspan="8" width="492px" id="1">
-					<img src="../Imgs/topbg.gif">
-				</td>
-				
-				<td id="2">
-					<a href="../index.jsp"><img src="../Imgs/logo.gif"></a> 
-				</td>
-				
-				<td id="3" width="401px">
-					<img src="../Imgs/topbg.gif"> 
-				</td>
-				
-				<td id="4">
-					<a href="#"><img src="../Imgs/menu1.gif"></a> 
-				</td>
-				<td id="5">
-					<a href="#"><img src="../Imgs/menu2.gif"></a>	
-				</td>
-				
-				<td id="6">
-					<a href="movieEvent.jsp"><img src="../Imgs/menu3.gif"></a> 
-				</td>
-				
-				<td id="7">
-					<a href="#"><img src="../Imgs/menu4.gif"></a>	
-				</td>
-				
-				<td id="8" width="466px">
-					<img src="../Imgs/topbg.gif">
-				</td>
-			</tr>
-		</table>
-	</header> -->
+	<div id="container" style="margin : 0 auto; width:1600px">
+	  	<header id="header">
+				<jsp:include page="movie/header.jsp"/>
+		</header> 	
 	
 	
 	<!-- 로고와 이벤트사진 경계-->
 			<div class="body_border">
-			
+				  
 			</div>
 			
 			<div style="height: 50px; margin: 5px;">
@@ -68,7 +54,7 @@
 		                    <li>
 		                           <!-- 이미지1 -->
 		                        <div class="event_img">
-		                            <img src="../Imgs/event_img/event1_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event1_img.jpg" onclick="openEventPage();">
 		                        </div>
 		                            <!-- 내용&날짜 -->
 		                        <div id="event_content">
@@ -83,11 +69,11 @@
 		                        <!-- 이벤트2-->
 		                     <li>
 		                         <div class="event_img">
-		                             <img src="../Imgs/event_img/event2_img.jpg">
+		                             <img src="/teamproject/Imgs/event_img/event2_img.jpg">
 		                         </div>
 		                        <div id="event_content">
 		                            <div>
-		                               [무비박스] 새해 무비박스 회원이면 누구나 다~ 돼지
+		                               		새해 무비박스 회원이면 누구나 다~ 돼지
 		                            </div>
 		                            <div>
 		                                2019.01.11~2019.01.22
@@ -97,7 +83,7 @@
 		                         <!-- 이벤트3-->
 		                      <li>
 		                        <div class="event_img">
-		                            <img src="../Imgs/event_img/event3_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event3_img.jpg">
 		                        </div>
 		                        <div id="event_content">
 		                            <div>
@@ -112,7 +98,7 @@
 		                          <!-- 이벤트4-->
 		                       <li>
 		                        <div class="event_img">
-		                            <img src="../Imgs/event_img/event4_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event4_img.jpg">
 		                        </div>
 		                        <div id="event_content">
 		                            <div>
@@ -131,7 +117,7 @@
 		                           <!-- 이벤트5-->
 		                    <li>
 		                        <div class="event_img">
-		                            <img src="../Imgs/event_img/event5_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event5_img.jpg">
 		                        </div>
 		                        <div id="event_content">
 		                            <div>
@@ -145,7 +131,7 @@
 		                            <!-- 이벤트6-->
 		                     <li>
 		                        <div class="event_img">
-		                            <img src="../Imgs/event_img/event6_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event6_img.jpg">
 		                        </div>
 		                        <div id="event_content">
 		                            <div>
@@ -159,7 +145,7 @@
 		                             <!-- 이벤트7-->
 		                      <li>
 		                        <div class="event_img">
-		                            <img src="../Imgs/event_img/event7_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event7_img.jpg">
 		                        </div>
 		                        <div id="event_content">
 		                            <div>
@@ -173,7 +159,7 @@
 		                              <!-- 이벤트8-->
 		                       <li>
 		                        <div class="event_img">
-		                            <img src="../Imgs/event_img/event8_img.jpg">
+		                            <img src="/teamproject/Imgs/event_img/event8_img.jpg">
 		                        </div>
 		                       <div id="event_content">
 		                            <div>
@@ -187,9 +173,15 @@
 		               </ul>
 		            </div>
 			    </div>
-			</div>          
-					<!-- script -->
+			</div> 
+			
+			<!-- footer_theater -->
+				<jsp:include page="movie/footer_theater.jsp"/>
+			
+			<!--  footer -->
+				<jsp:include page="movie/footer.jsp"/> 
+			<!-- script -->
 					<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-
+		</div>
 </body>
 </html>

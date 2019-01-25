@@ -12,16 +12,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700,800&amp;subset=korean" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900" rel="stylesheet">
-<title>무비리스트2 수정중</title>
+<title>무비리스트</title>
 </head>
 
 <script>
-	/* malmoe_sangsaePage.jsp로 영화제목 보내기(댓글쓸 때 DB에 영화이름 넣기 위함) */
+	/* aquamans_sangsaePage.jsp로 영화제목 보내기(댓글쓸 때 DB에 영화이름 넣기 위함) */
+	function sendMovieTitleSangsae1(movieTitle){
+		window.open("/teamproject/sangsae/aquaman_sangsaePage.jsp?movieTitle="+movieTitle,"", "width=1800 height=800");
+	}
+	
+	/* 예매하기 이미지 눌러서 Ticketing1.jsp로 영화제목 보내기 */
+	function sendMovieTitleTicket1(movieTitle){
+		window.open("/teamproject/Ticketing1.jsp?movieTitle="+movieTitle,"", "width=1120 height=580");
+	}
+
+	
 	function sendMovieTitleSangsae(movieTitle){
 		window.open("/teamproject/sangsae/malmoe_sangsaePage.jsp?movieTitle="+movieTitle,"", "width=1800 height=800");
 	}
 	
-	/* Ticketing1.jsp로 영화제목 보내기 */
+	
 	function sendMovieTitleTicket(movieTitle){
 		window.open("/teamproject/Ticketing1.jsp?movieTitle="+movieTitle,"", "width=1120 height=580");
 	}
@@ -45,8 +55,8 @@
 	                        </ul>
 	                     </div>
 	                     <div class="movie_button">
-	                         <input class="btn btn-outline-dark" type="button" value="상세정보" onclick="sendMovieTitleSangsae('아쿠아맨');">
-	                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket('아쿠아맨');">
+	                         <input class="btn btn-outline-dark" type="button" value="상세정보" onclick="sendMovieTitleSangsae1('아쿠아맨');">
+	                         <input class="btn btn-outline-dark" type="button" value="예매하기" onclick="sendMovieTitleTicket1('아쿠아맨');">
 	                     </div>
                     </div>
                   </li>
