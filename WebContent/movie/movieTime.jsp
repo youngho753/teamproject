@@ -87,7 +87,7 @@
 					style="position: absolute; height: 452px;">
 				<ul class="inAreaList">
 					<c:forEach items = "${locationArr }" var = "i">
-						<a href = "javascript:void(0)" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })">
+						<a href = "Ticketing.do? =${i.location_no}" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })">
 							<li>${i.location_name }</li>
 						</a>				
 					</c:forEach>
