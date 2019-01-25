@@ -39,14 +39,20 @@ public class Ticket extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		int locationNum = Integer.parseInt(request.getParameter("locationNum"));
-		System.out.println(locationNum);
+		
 		
 		LocationDAO dao = LocationDAO.getInstance();
 		
-		ArrayList<LocationBean> arr = dao.getLocation(locationNum);
+		ArrayList<LocationBean> arr = dao.getLocationName(locationNum);
 		
-		request.setAttribute("locationArr", arr);
+		request.setAttribute("arr", arr);
+		String i =  arr.get(0).getLocation_name();
+		System.out.println(i);
+		request.setAttribute("i", i);
 		
+		
+		response.setContentType("text/html;charset=utf-8");
+
 		RequestDispatcher dispatcher = request.getRequestDispatcher("../ticket/Ticketing1.jsp");
 		dispatcher.forward(request, response);
 		
