@@ -41,12 +41,12 @@
     <td colspan="3"><table width="908" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
 	  <!-- 영화타이틀 이미지 삽입부분 -->
-        <td width="230"><img src="Imgs/mal.jpg" width="230" height="336"></td>
+        <td width="230"><img name="poster" id="poster" src="Imgs/mal.jpg" width="230" height="336"></td>
         <td><table border="0" align="center" cellpadding="0" cellspacing="0">
           
           <tr>
             <td>&nbsp;</td>
-            <td><img src="Imgs/12.gif" width="30" height="31"> <span class="style4">말모이 </span></td>
+            <td><img name="ageLimit" id="ageLimit" src="Imgs/12.gif" width="30" height="31"> <span name="title" id="title" class="style4">말모이 </span></td>
             <td>&nbsp;</td>
             <td colspan="2">&nbsp;</td>
             <!-- 글수정버튼 -->
