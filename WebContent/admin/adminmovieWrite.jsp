@@ -55,10 +55,10 @@
       <td width="175" height="28"><input type="text" name="msubject"></td>
       <td width="109" bgcolor="#CCCCCC"><div align="center"><span class="style4">관람등급아이콘</span></div></td>
       <td height="28" colspan="4"><span class="style2">
-        <input type="radio" name="radio" value="radioAll" checked="checked">전체관람가</span>
-  		<input type="radio" name="radio" value="radio12" >12세이상
-  		<input type="radio" name="radio" value="radio15" >15세이상
- 	    <input type="radio" name="radio" value="radio19" >19세이상</td>
+        <input type="radio" name="ageLimit" value="전체이용가" checked="checked">전체관람가</span>
+  		<input type="radio" name="ageLimit" value="12세이상" >12세이상
+  		<input type="radio" name="ageLimit" value="15세이상" >15세이상
+ 	    <input type="radio" name="ageLimit" value="19세이상" >19세이상</td>
     </tr>
     <tr>
       <td colspan="8"><hr></td>
@@ -115,22 +115,7 @@
     <tr>
       <td colspan="8"><hr></td>
     </tr>
-    <tr>
-      <td height="28" bgcolor="#CCCCCC"><div align="center" class="style2"><strong>스틸컷이미지</strong></div></td>
-      <td height="15">&nbsp;</td>
-      <td height="15" colspan="6">
-      <input type="file" name="mstillfile" value="파일첨부">
-      </td>
-    </tr>
-    <tr>
-      <td colspan="8"><hr></td>
-    </tr>
-    <tr>
-      <td height="15" colspan="8">&nbsp;</td>
-    </tr>
-    <tr>
-      <td height="15" colspan="8">&nbsp;</td>
-    </tr>
+
     <tr>
       <td>&nbsp;</td>
       <td>&nbsp;</td>

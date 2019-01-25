@@ -6,101 +6,12 @@
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" href="/teamproject/Imgs/fontello/fontello-11a7e995/css/fontello.css"/>
 	<style>
-		/* copyright 부분 footer */
-		 #footer_theater{
-			width:1600px;
-            height: 400px;
-			/*border : 2px solid red; 경계확인용*/
-			padding : 0px;
-			background-color : rgba(34,31,31,0.85);
+	
 		
-        }
-        .above_wrap{
-            position: relative;
-            margin: 3px;
-            margin-left: 300px;
-            width: 970px;
-            height: 390px;
-			/*border : 2px solid blue;*/
-        }
-        
-        a{
-            text-decoration: none;
-            color: rgba(255,255,255,0.5);
-        }
-        
-        /*도시명*/
-        #city{
-            margin: 25px;
-            color: rgba(255,255,255,0.7);
-        }
-        
-        /*영화관div 위치 정렬처리*/
-        #seoul_theater{
-            position: absolute;
-            top:50px;
-            right:107px;
-        }
-        #gyeonggi_theater{
-            position: absolute;
-            top:90px;
-            right:120px;
-        }
-        
-        #incheon_theater{
-            position: absolute;
-            top: 140px;
-            right: 543px;
-        }
-        
-        #daegeon_theater{
-            position: absolute;
-            top: 180px;
-            right: 421px;
-        }
-        
-        #busan_theater{
-            position: absolute;
-            top:225px;
-            right: 7px;
-        }
-        
-        #gwangju_theater{
-            position: absolute;
-            top: 275px;
-            right: 123px;
-        }
-        
-        #gangwon_theater{
-            position: absolute;
-            top:310px;
-            right:605px;
-        }
-        
-        #jeju_theater{
-            position: absolute;
-            top: 368px;
-            right: 681px;
-        }
-        
-        /* 무비박스 영화관 찾기 폰트 처리 */
-        #movie_title{
-        	font-size : 20px;
-        	font-family: 'Nunito', sans-serif;
-        	color : black;
-        }
-        
-        
-       /* 영화관위치 폰트사이즈*/
-        span{
-            font-size: 12px;
-        }
-        
-    
-   
+   	/* copyright 부분 footer 및 소셜이미지부분 처리 */
 	footer{
 		width:1600px;
-	          height: 200px;
+	    height: 200px;
 		/*border : 2px solid red;*/  /*경계확인용*/
 		padding : 0px;		
 		background-color : rgb(34,31,31);

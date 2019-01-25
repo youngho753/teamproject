@@ -1,16 +1,19 @@
 package bean;
 
+import java.sql.Date;
+
 public class AdminBean {
 	
+	private int no;
 	private String mpostfile;
 	private String msubject;
 	private String mtype;
-	private String mdate;
+	private Date mdate;
 	private String mdirector;
 	private String mactor;
 	private String mgenre;
 	private String mstory;
-	private String mstillfile;
+	private String ageLimit;
 	
 	
 	public String getMpostfile() {
@@ -31,10 +34,11 @@ public class AdminBean {
 	public void setMtype(String mtype) {
 		this.mtype = mtype;
 	}
-	public String getMdate() {
-		return mdate == null ? "" : mdate.trim();
+
+	public Date getMdate() {
+		return mdate;
 	}
-	public void setMdate(String mdate) {
+	public void setMdate(Date mdate) {
 		this.mdate = mdate;
 	}
 	public String getMdirector() {
@@ -61,12 +65,19 @@ public class AdminBean {
 	public void setMstory(String mstory) {
 		this.mstory = mstory;
 	}
-	public String getMstillfile() {
-		return mstillfile == null ? "" : mstillfile.trim();
+	public int getNo() {
+		return no;
 	}
-	public void setMstillfile(String mstillfile) {
-		this.mstillfile = mstillfile;
+	public void setNo(int no) {
+		this.no = no;
 	}
+	public String getAgeLimit() {
+		return ageLimit == null ? "" : ageLimit.trim();
+	}
+	public void setAgeLimit(String ageLimit) {
+		this.ageLimit = ageLimit;
+	}
+
 	
 	
 	

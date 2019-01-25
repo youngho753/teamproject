@@ -1,6 +1,7 @@
 package commnet.action;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -17,7 +18,7 @@ public class commentServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset=UTF-8");
+		response.setContentType("text/html;charset=UTF-8");
 		
 		String contents = request.getParameter("comment_content");
 		int star_grade = Integer.parseInt(request.getParameter("star_grade"));
@@ -27,8 +28,9 @@ public class commentServlet extends HttpServlet {
 		CommentDAO dao = CommentDAO.getInstance();
 		dao.insertComment(contents, star_grade, comment_movie, comment_id);
 		
-		response.sendRedirect("/teamproject/list.do");
-	}
+		comment_movie = URLEncoder.encode(comment_movie, "UTF-8");
+		response.sendRedirect("/teamproject/list.do?movieTitle="+comment_movie);
+		}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

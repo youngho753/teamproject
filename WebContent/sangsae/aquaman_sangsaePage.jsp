@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>말모이 상세페이지</title>
+<title>아쿠아맨 상세페이지</title>
 	<style>
 		#full-body{
 			margin:0 auto;
@@ -34,7 +34,7 @@
 			$("#comment_result").html(data);
 		});
 	}
-	 
+	
 		function sendComment(){
 			$.ajax({
 				type : "POST",
@@ -44,13 +44,13 @@
 						"movieTitle" : $("#movieTitle").val(),
 						"userID" : $("#userID").val()
 				},
-				success :function(gift){
+				success : function(gift){
 					$("#comment_result").html(gift);
 				},
 				beforeSend : showRequest
 			});
 		}
-		
+
 		function showRequest(){
 			
 			if($('input[name=star-input]:checked').val() == null){
@@ -78,11 +78,11 @@
 		//스틸컷 또는 동영상 누를떄마다 cutORvideo 영역이 바뀌게 하기
 		
 		function showStillcut(){
-			$("#cutORvideo").load("/teamproject/sangsae/malmoeStillCut.jsp");
+			$("#cutORvideo").load("/teamproject/sangsae/aquamanStillCut.jsp");
 		}
 		
 		function showVideo(){
-			$("#cutORvideo").load("/teamproject/sangsae/malmoeVideo.jsp");
+			$("#cutORvideo").load("/teamproject/sangsae/aquamanVideo.jsp");
 		}
 		
 		//Ticketing1.jsp로 영화이름 보내기
@@ -102,11 +102,11 @@
 		    <td width="14"><img src="/teamproject/Imgs/blank.gif" width="14" height="3"></td>
 		    <td colspan="3"><table width="908" border="0" cellspacing="0" cellpadding="0">
 		      <tr>
-		        <td width="230"><img src="/teamproject/Imgs/mal.jpg" width="230" height="336"></td>
+		        <td width="230"><img src="/teamproject/Imgs/aquaman.jpg" width="230" height="336"></td>
 		        <td><table border="0" cellspacing="0" cellpadding="0">
 		          <tr>
 		            <td width="20">&nbsp;</td>
-		            <td colspan="4"><img src="/teamproject/Imgs/12.gif" width="30" height="31"> <span class="style4" id="movieName">말모이 </span></td>
+		            <td colspan="4"><img src="/teamproject/Imgs/12.gif" width="30" height="31"> <span class="style4" id="movieName">아쿠아맨 </span></td>
 		            </tr>
 		          <tr>
 		            <td rowspan="3">&nbsp;</td>
@@ -120,8 +120,8 @@
 		          </tr>
 		          <tr>
 		            <td rowspan="2">&nbsp;</td>
-		            <td width="213">946명 참여 8.8 </td>
-		            <td colspan="2">예매율 <span class="style3">1</span>위 29.6% </td>
+		            <td width="213">4087명 참여 8.0 </td>
+		            <td colspan="2">예매율 <span class="style3">19</span>위 0.5% </td>
 		            <td width="122">
 		            	<div align="right">
 		            		<img src="/teamproject/Imgs/eyme.gif" width="121" height="43" onclick="sendMovieTitleTicket();">
@@ -138,28 +138,28 @@
 		          </tr>
 		          <tr>
 		            <td>&nbsp;</td>
-		            <td>개봉일 : 2019.01.09</td>
+		            <td>개봉일 : 2018.12.19</td>
 		            <td colspan="3">&nbsp;</td>
 		          </tr>
 		          <tr>
 		            <td>&nbsp;</td>
-		            <td>감독 : 엄유나 </td>
+		            <td>감독 : 제임스 완 </td>
 		            <td colspan="3">&nbsp;</td>
 		          </tr>
 		          <tr>
 		            <td>&nbsp;</td>
-		            <td>출연진 : 유해진, 윤계상 </td>
+		            <td>출연진 : 이슨 모모아, 앰버 허드, 니콜 키드먼, 패트릭 윌슨, 윌렘 데포, 돌프 룬드그렌 </td>
 		            <td colspan="3">&nbsp;</td>
 		          </tr>
 		          <tr>
 		            <td>&nbsp;</td>
-		            <td>장르 : 드라마/135분 </td>
+		            <td>장르 : SF, 액션, 어드벤처 /143분 </td>
 		            <td colspan="3">&nbsp;</td>
 		          </tr>
 		          <tr>
 		            <td>&nbsp;</td>
-		            <td>누적관객 : 1,185,837명 </td>
-		            <td colspan="3">전일관객 : 324,341명 </td>
+		            <td>누적관객 : 5,028,502명 </td>
+		            <td colspan="3">전일관객 :  4,572명 </td>
 		          </tr>
 		          <tr>
 		            <td rowspan="2">&nbsp;</td>
@@ -194,16 +194,7 @@
 		      <tr>
 		        <td width="763"><p class="style3 style5">줄거리</p>
 		        	<div id="movie_story">
-		        		까막눈 판수, 우리말에 눈뜨다! vs 조선어학회 대표 정환, ‘우리'의 소중함에 눈뜨다! <br>
-		        		1940년대 우리말이 점점 사라져가고 있는 경성.
-		        		극장에서 해고된 후 아들 학비 때문에 가방을 훔치다 실패한 판수.
-		        		하필 면접 보러 간 조선어학회 대표가 가방 주인 정환이다.
-		        		사전 만드는데 전과자에다 까막눈이라니!
-		        		그러나 판수를 반기는 회원들에 밀려 정환은 읽고 쓰기를 떼는 조건으로 그를 받아들인다.
-		        		돈도 아닌 말을 대체 왜 모으나 싶었던 판수는 난생처음 글을 읽으며 우리말의 소중함에 눈뜨고,
-		        		정환 또한 전국의 말을 모으는 ‘말모이'에 힘을 보태는 판수를 통해 ‘우리'의 소중함에 눈뜬다.
-		        		얼마 남지 않은 시간, 바짝 조여오는 일제의 감시를 피해 ‘말모이'를 끝내야 하는데…
-		        		우리말이 금지된 시대, 말과 마음이 모여 사전이 된다.
+		        		땅의 아들이자 바다의 왕, 심해의 수호자인 슈퍼히어로 아쿠아맨의 탄생을 그린 액션 블록버스터
 		        	</div>
 		         </td>
 		      </tr>
@@ -233,7 +224,7 @@
 		    <td>&nbsp;</td>
 		    <td width="76" bgcolor="#000000"></td>
 		    <td width="798" bgcolor="#000000">
-		    		<div id="cutORvideo"><jsp:include page="/sangsae/malmoeStillCut.jsp"/> <!-- 스틸컷 or 동영상이 나오도록 구분해야함 -->
+		    		<div id="cutORvideo"><jsp:include page="/sangsae/aquamanStillCut.jsp"/> <!-- 스틸컷 or 동영상이 나오도록 구분해야함 -->
 		    		</div>
 		    </td>
 		    <td width="76" bgcolor="#000000"></td>

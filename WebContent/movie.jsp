@@ -40,6 +40,9 @@
 				<jsp:include page="movie/movieListModal.jsp"/>
 						
 			<div style="height : 200px;"></div> <!-- 경계구분용 div -->
+			<!-- footer_theater -->
+				<jsp:include page="movie/footer_theater.jsp"/>
+			
 			<!--  footer -->
 				<jsp:include page="movie/footer.jsp"/>
 		</div>

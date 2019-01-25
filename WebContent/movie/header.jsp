@@ -33,11 +33,11 @@
 				
 				<td id="6">
 
-					<a href="movieEvent2.jsp"><img src="/teamproject/Imgs/menu3.gif"></a> <!-- 이벤트 -->
+					<a href="/teamproject/movieEvent.jsp"><img src="/teamproject/Imgs/menu3.gif"></a> <!-- 이벤트 -->
 				</td>
 				
 				<td id="7">
-					<a href="member/memLogin.jsp"><img src="/teamproject/Imgs/menu4.gif"></a>	<!-- 로그인 -->
+					<a href="/teamproject/member/memLogin.jsp"><img src="/teamproject/Imgs/menu4.gif"></a>	<!-- 로그인 -->
 
 				</td>
 
