@@ -9,7 +9,7 @@ public class MovieBean {
 	String movie_audience;
 	String movie_summary;
 	
-	MovieBean(){
+	public MovieBean(){
 		
 	}
 	
