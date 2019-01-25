@@ -36,7 +36,7 @@
       <td colspan="3"><hr style="border: solid 2px black;"></td>
     </tr>
     <tr>
-      <td colspan="3">&nbsp;</td>
+    <td colspan="3"><span class="style2 style7"><div align="left" id="count">총 회원수 :${count }</div></span></td>
     </tr>
     <tr>
       <td colspan="3"><hr></td>
@@ -54,24 +54,27 @@
         <tr>
           <td colspan="6"><hr></td>
         </tr>
+        <tbody id="result">
         <tr>
 		<!-- 번호 들어가는부분 -->
-          <td height="28"><div align="center"><span class="style6"><span class="style6">1</span></span></div></td>
+		<c:forEach items="${arr }" var="dto">		
+          <td height="28"><div align="center"><span class="style6">${dto.no }</span></div></td>
           <td width="39"><div align="center">            
             <input type="checkbox" name="checkbox" value="checkbox">
             <span class="style6"></span></div></td>
-          <td width="811"><span class="style2">관리자</span></td>
-          <td colspan="2"><div align="center" class="style6">12.31</div></td>
+          <td width="811"><span class="style2">${dto.mem_id }</span></td>
+          <td colspan="2"><div align="center" class="style6">${dto.mem_date }</div></td>
           <td width="80"><div align="center">
             <!-- 회원등급 선택 -->
             <select name="select">            
               <option selected>0</option>
               <option>1</option>
-              <option>2</option>
-                                                                                    </select>
+              <option>2</option>                                                                                    </select>
           </div></td>
-        </tr>
-        <tr>
+          </c:forEach>
+        </tr>        
+        </tbody>
+        <!-- <tr>
           <td colspan="6"><hr></td>
         </tr>
         <tr>
@@ -82,7 +85,7 @@
           <td><span class="style2">내안에 그놈</span></td>
           <td colspan="2"><div align="center" class="style6">01.22</div></td>
           <td><div align="center">
-          <!-- 회원등급 선택 -->
+          회원등급 선택
             <select name="select2">
               <option>0</option>
               <option selected>1</option>
@@ -101,7 +104,7 @@
           <td><span class="style2">주먹왕 랄프</span></td>
           <td colspan="2"><div align="center" class="style6">01.30</div></td>
           <td><div align="center">
-          <!-- 회원등급 선택 -->
+          회원등급 선택
             <select name="select3">
               <option>0</option>
               <option selected>1</option>
@@ -120,7 +123,7 @@
           <td><span class="style2">먹왕 </span></td>
           <td colspan="2"><div align="center" class="style6">01.20</div></td>
           <td><div align="center">
-          <!-- 회원등급 선택 -->
+          회원등급 선택
             <select name="select4">            
               <option>0</option>
               <option selected>1</option>
@@ -139,7 +142,7 @@
           <td><span class="style2">왕프</span></td>
           <td colspan="2"><div align="center" class="style6">01.20</div></td>
           <td><div align="center">
-          <!-- 회원등급 선택 -->
+          회원등급 선택
             <select name="select5">            
               <option>0</option>
               <option>1</option>
@@ -158,7 +161,7 @@
           <td><span class="style2">주먹왕 </span></td>
           <td colspan="2"><div align="center" class="style6">01.20</div></td>
           <td><div align="center">
-          <!-- 회원등급 선택 -->
+          회원등급 선택
             <select name="select6">            
               <option>0</option>
               <option selected>1</option>
@@ -177,7 +180,7 @@
           <td><span class="style2">랄프</span></td>
           <td colspan="2"><div align="center" class="style6">01.20</div></td>
           <td><div align="center">
-          <!-- 회원등급 선택 -->
+          회원등급 선택
             <select name="select7">
               <option>0</option>
               <option selected>1</option>
@@ -196,7 +199,7 @@
           <td><span class="style2">주먹</span></td>
           <td colspan="2"><div align="center" class="style6">01.20</div></td>
           <td><div align="center">
-          <!-- 회원등급 선택 -->
+          회원등급 선택
             <select name="select8">
               <option>0</option>
               <option selected>1</option>
@@ -215,7 +218,7 @@
           <td><span class="style2">주먹쟁이</span></td>
           <td colspan="2"><div align="center" class="style6">01.20</div></td>
           <td><div align="center">
-          <!-- 회원등급 선택 -->
+          회원등급 선택
             <select name="select9">
               <option>0</option>
               <option>1</option>
@@ -234,14 +237,14 @@
           <td><span class="style2">왕자병</span></td>
           <td colspan="2"><div align="center" class="style6">01.20</div></td>
           <td><div align="center">
-          <!-- 회원등급 선택 -->
+          회원등급 선택
             <select name="select10">
               <option>0</option>
               <option>1</option>
               <option selected>2</option>
                         </select>
           </div></td>
-        </tr>
+        </tr> -->
         <tr>
           <td colspan="6"><hr></td>
         </tr>
@@ -252,17 +255,18 @@
           <td height="10" colspan="6">&nbsp;</td>
         </tr>
         <tr>
-          <td height="30" colspan="6"><div align="center">
-            <select name="field" id="select">
-              <option value="name">제목</option>
+        <form action="search.do" name="search" id="serach">
+          <td height="30" colspan="6"><div align="center">          
+            <select name="field" id="field">
+              <option value="name">아이디</option>
             </select>
-            <input type="text" name="moviesubject" id="moviesubject2">
-            <input name="button" type="button" id="button" value="검색">
-</div></td>
+            <input type="text" name="word" id="word">
+            <input type="button" id="btnSearch" value="검색">
+		</div></td>
         </tr>
         <tr>
           <td><div align="right">
-          </div></td>
+          </div></td>          
           <td>&nbsp;</td>
           <td>&nbsp;</td>
           <td width="194"><div align="right">
@@ -271,7 +275,8 @@
           <td width="6">&nbsp;</td>
           <td><input type="submit" name="Submit2" value="선택수정"></td>
         </tr>
-      </table></td>      
+      </table>        
+      </td>      
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -281,7 +286,8 @@
     <tr>
       <td colspan="3">&nbsp;</td>
     </tr>
-  </table>
+  </table>  
 </div>
+</form>  
 </body>
 </html>
