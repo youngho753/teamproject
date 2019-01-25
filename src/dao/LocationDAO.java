@@ -55,6 +55,38 @@ public class LocationDAO {
 		return arr;
 	}
 	
+	public ArrayList<LocationBean> getLocationName(int locationNum) {
+		Connection con = null;
+		Statement st = null;
+		ResultSet rs = null;
+		ArrayList<LocationBean> arr = new ArrayList<>();
+		String sql = "select * where location_no = "+locationNum;
+		try {
+			con = getConnection();
+			st = con.createStatement();
+			rs = st.executeQuery(sql);
+			
+			while(rs.next()) {
+				LocationBean b = new LocationBean(
+						rs.getInt("location_no"),
+						rs.getString("location_name"),
+						rs.getInt("location_bigNum"),
+						rs.getInt("location_x"),
+						rs.getInt("location_y"));
+				arr.add(b);
+			}
+			 
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			disConnection(con, st, null, rs);
+		}
+		
+		return arr;
+	}
+	
+	
 	
 	private void disConnection(Connection con,Statement st,PreparedStatement ps,ResultSet rs) {
 			try {
