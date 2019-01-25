@@ -12,7 +12,14 @@
 
 <script>
 
+function del(){
+	var dd = ("#del").val
+	$(opener.documnet).find("#TheatersSelect1").val("#del");
+	
+}
+
 	$("document").ready(function() {
+		
 
 	});
 	function changePlace(num) {
@@ -49,7 +56,18 @@
 		});
 	}
 	
-	 
+	function closeWin() {
+		var nvua = navigator.userAgent;
+		if (nvua.indexOf('MSIE') >= 0){
+		if(nvua.indexOf('MSIE 5.0') == -1) {
+		top.opener = '';
+		}
+		} else if (nvua.indexOf('Gecko') >= 0){
+		top.name = 'CLOSE_WINDOW';
+		wid = window.open('','CLOSE_WINDOW');
+		}
+		top.close();
+		}
 	
 </script>
 </head>
@@ -93,10 +111,10 @@
 					style="position: absolute; height: 452px;">
 				<ul class="inAreaList">
 					<c:forEach items = "${locationArr }" var = "i">
-						<a href = "ticket.do?locationNum=${i.location_no}" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })" >
+						<span id="del" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })" onclick="del()" >
 							<li>${i.location_name }</li>
-							
-						</a>				
+							<!-- onclick="javascript:history.onclick=closeWin();" -->
+						</span>				
 					</c:forEach>
 				</ul>
 			</div>
