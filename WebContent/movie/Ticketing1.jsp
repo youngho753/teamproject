@@ -13,7 +13,7 @@ $(document).ready(function(){
 	   $("#calendar").click(function(){ 
 		   //calendar.jsp 팝업 실행 
 	
-		window.open('calendar.jsp','달력','width=370, height=400, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left= '+ 290 + ', top= '+ 290 + ', screenX= '+ 290 + ', screenY= '+ 200);
+		window.open('calendar.jsp','달력','width=370, height=400, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left= '+ 300 + ', top= '+ 300 + ', screenX= '+ 290 + ', screenY= '+ 200);
 		});
 	});
 </script>
