@@ -16,7 +16,7 @@ import dao.LocationDAO;
 /**
  * Servlet implementation class Ticketing
  */
-@WebServlet("/movie/Ticketing.do")
+@WebServlet("/movie/ticketing.do")
 public class Ticketing extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -39,9 +39,9 @@ public class Ticketing extends HttpServlet {
 		ArrayList<LocationBean> arr = dao.getLocationName(locationNum);
 		
 		request.setAttribute("locationArr", arr);
-		System.out.println();
+		System.out.println(arr);
 		
-		RequestDispatcher dispatcher = request.getRequestDispatcher("movieTime.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("Ticketing1.jsp");
 		dispatcher.forward(request, response);
 		
 	}
