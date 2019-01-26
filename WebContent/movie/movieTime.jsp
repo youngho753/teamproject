@@ -11,7 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 	$(function(){
-		$('#locationCheck').on('click', act);
+		$('.locationCheck').on('click', act);
 		
 	});
 		function act() {
@@ -21,7 +21,7 @@
 		window.close();
 			
 		}
-	
+		$id = $_GET['id']
 </script>
 <script>
 	$("document").ready(function() {
@@ -102,9 +102,8 @@
 					style="position: absolute; height: 452px;">
 				<ul class="inAreaList">
 					<c:forEach items = "${locationArr }" var = "i">
-						<a href = "#" id="locationCheck" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })">
-							<%-- "ticketing.do?locationNum=${i.location_no}" --%>
-							<li>${i.location_name }</li>
+						<a href = "#" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })" >
+							<li class = "locationCheck" >${i.location_name }</li>
 						</a>				
 					</c:forEach>
 				</ul>
