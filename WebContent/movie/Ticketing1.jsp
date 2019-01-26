@@ -217,14 +217,16 @@ $(document).ready(function(){
 	});
 });
 </script>
-<script>
-$(document).ready(function(){
-		//극장 선택 버튼을 누르면 실행
-	   $("#TheatersSelect1").click(function(){ 
+<script>//극장 선택 버튼을 누르면 실행
+$(function(){
+	$('#TheatersSelect1').on('click', act);
+});
+
+function act() {
 		   //calendar.jsp 팝업 실행 
 		   window.open('/teamproject/movie/movieTime.jsp','지역선택','width=1100px, height=600px, scrollbars= 0, toolbar=0, menubar=no resizable=no');
-		});
-	});
+		};
+	
 </script>
 
 <title>영화 예매1</title> <!-- 타이틀은 일괄로 변경 바람  -->
@@ -310,8 +312,6 @@ a {
 </style>
 
 <body>
-
-
 <form name="Ticketing" action="Ticketing.do" method="get">
 <!-- 전체 테이블 -->
 <table id="Ticketing1">
@@ -342,7 +342,11 @@ a {
 
 <!-- 극장 선택 이미지 -->
 <tr id="TheatersSelect">
-<td colspan="2" align="center"><img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1"></td>
+<td colspan="2" align="center">
+<div id ="TheatersSelectRe">
+<img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1">
+</div></td>
+
 <td colspan="2" align="center"><Img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect2"></td>
 </tr>
 <!-- 극장 선택 이미지 --> 
