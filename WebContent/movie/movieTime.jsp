@@ -11,10 +11,9 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 	$(function(){
-		$('a #locationCheck').on('click', act);
+		$('#locationCheck').on('click', act);
 		
-		});
-
+	});
 		function act() {
 		var thisTxt = $(this).text();
 		
@@ -22,7 +21,6 @@
 		window.close();
 			
 		}
-	
 	
 </script>
 <script>
