@@ -60,7 +60,7 @@ public class LocationDAO {
 		Statement st = null;
 		ResultSet rs = null;
 		ArrayList<LocationBean> arr = new ArrayList<>();
-		String sql = "select * where location_no = "+locationNum;
+		String sql = "select * from location where location_no = "+locationNum;
 		try {
 			con = getConnection();
 			st = con.createStatement();
