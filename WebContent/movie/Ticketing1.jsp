@@ -220,6 +220,7 @@ $(document).ready(function(){
 <script>//극장 선택 버튼을 누르면 실행
 $(function(){
 	$('#TheatersSelect1').on('click', act);
+	
 });
 
 function act() {
