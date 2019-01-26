@@ -12,9 +12,8 @@ $(document).ready(function(){
 		//calendar버튼을 누르면 실행
 	   $("#calendar").click(function(){ 
 		   //calendar.jsp 팝업 실행 
-		var popupX = (window.screen.width / 2) - (200 / 2);
-		var popupY = (window.screen.height / 2) - (100 / 2);
-		window.open('calendar.jsp','달력','width=370, height=400, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left= '+ popupX + ', top= '+ popupY + ', screenX= '+ 290 + ', screenY= '+ 200);
+	
+		window.open('calendar.jsp','달력','width=370, height=400, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left= '+ 290 + ', top= '+ 290 + ', screenX= '+ 290 + ', screenY= '+ 200);
 		});
 	});
 </script>
