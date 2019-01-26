@@ -11,7 +11,7 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 $(function(){
-	$("a,#locationCheck").on('click', act);
+	$("a #locationCheck").on('click', act);
 	});
 
 	function act() {
