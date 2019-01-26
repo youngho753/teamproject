@@ -145,7 +145,10 @@ $(document).ready(function(){
  		var select = $('#weekSelect').text();
 		var nonselect = $(this).text();
  		
- 		alert(nonselect);		
+		if (nonselect = select)
+			
+			alert("극장을 선택해주세요");		
+		
  		return false;
  		
  	}); 
@@ -189,10 +192,14 @@ $(document).ready(function(){
  		var select = $('#timeSelect').text();
 		var nonselect = $(this).text();
  		var grade = $("input:radio[name=TheatersType]:checked").val(); //체크된 radio의 name();
- 		alert(nonselect);		
+		if (nonselect = select)
+			
+			alert("극장을 선택해주세요");		
+ 				
  		return false;
  		
  	}); 
+ 	
  	
  	
 	}
