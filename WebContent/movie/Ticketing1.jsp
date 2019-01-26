@@ -200,18 +200,12 @@ $(document).ready(function(){
  		
  	}); 
  	
- 	
- 	
+ 	 	
 	}
 	
-	
-	
+		
 	timeTable();
 	
-	
-	
-	
-	            
 	
 });
 </script>
@@ -224,6 +218,7 @@ $(document).ready(function(){
 	});
 });
 </script>
+
 <script>//극장 선택 버튼을 누르면 실행
 $(function(){
 	$('#TheatersSelect1').on('click', act);
@@ -231,10 +226,19 @@ $(function(){
 });
 
 function act() {
-		   //calendar.jsp 팝업 실행 
+		   //movie.jsp 팝업 실행 
 		   window.open('/teamproject/movie/movieTime.jsp','지역선택','width=1100px, height=600px, scrollbars= 0, toolbar=0, menubar=no resizable=no');
 		};
 	
+</script>
+<script>
+$(document).ready(function(){
+	
+   $('#reflash1,#reflash2').click(function(){ 
+	   location.reload();
+	   
+	});
+});
 </script>
 
 <title>영화 예매1</title> <!-- 타이틀은 일괄로 변경 바람  -->
