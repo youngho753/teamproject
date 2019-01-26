@@ -39,7 +39,8 @@ public class Ticketing extends HttpServlet {
 		ArrayList<LocationBean> arr = dao.getLocationName(locationNum);
 		
 		request.setAttribute("locationArr", arr);
-		System.out.println(arr);
+		String name = arr.get(0).getLocation_name();
+		System.out.println(name);
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Ticketing1.jsp");
 		dispatcher.forward(request, response);
