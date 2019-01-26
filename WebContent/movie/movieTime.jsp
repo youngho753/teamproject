@@ -10,21 +10,24 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
-$(function(){
-	$("a #locationCheck").on('click', act);
-	});
+	$(function(){
+		$('a #locationCheck').on('click', act);
+		
+		});
 
-	function act() {
-	var thisTxt = $(this).text();
+		function act() {
+		var thisTxt = $(this).text();
+		
+		$('#TheatersSelectRe', opener.document).text(thisTxt);
+		window.close();
+			
+		}
 	
-	$('#TheatersSelectRe', opener.document).text(thisTxt);
-	window.close();
-	}
+	
 </script>
 <script>
 	$("document").ready(function() {
-		$("#TheatersSelectRe", opener.document).val("${locationArr }");
-		
+				
 	});
 	function changePlace(num) {
 		getLocation(num);
@@ -58,6 +61,8 @@ $(function(){
 			}
 		});
 	}
+	
+	
 </script>
 </head>
 
@@ -99,7 +104,8 @@ $(function(){
 					style="position: absolute; height: 452px;">
 				<ul class="inAreaList">
 					<c:forEach items = "${locationArr }" var = "i">
-						<a href = "ticketing.do?locationNum=${i.location_no}" id="locationCheck" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })">
+						<a href = "#" id="locationCheck" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })">
+							<%-- "ticketing.do?locationNum=${i.location_no}" --%>
 							<li>${i.location_name }</li>
 						</a>				
 					</c:forEach>
