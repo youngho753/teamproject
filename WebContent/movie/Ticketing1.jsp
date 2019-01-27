@@ -248,6 +248,7 @@ $(document).ready(function(){
 <script>
 $(document).ready(function(){
 	var moviename = $('#moviename').text();
+	//영화 이름 확인 
 	$('body').append(moviename)
 	
 
