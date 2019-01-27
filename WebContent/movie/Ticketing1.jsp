@@ -6,8 +6,6 @@
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
-
-
 $(document).ready(function(){
 		//calendar버튼을 누르면 실행
 	   $("#calendar").click(function(){ 
@@ -17,6 +15,7 @@ $(document).ready(function(){
 		});
 	});
 </script>
+
 <script>
 $(document).ready(function(){
 	
@@ -140,14 +139,17 @@ $(document).ready(function(){
 	             +"<td>"+"<img src='/teamproject/Imgs/r_btn.gif' id='r_btn_week'>"+"</td>"+"</tr>");
 				
 		}
-	$(document).on('click','#weekSelect , #nonweekSelect',function(){
+	
+	$('#weekSelect , #nonweekSelect').click(function(){
 	 		
  		var select = $('#weekSelect').text();
 		var nonselect = $(this).text();
- 		
+		var moviename = $('#moviename').text();
 		if (nonselect = select)
 			
-			alert("극장을 선택해주세요");		
+			alert("극장을 선택해주세요");
+		
+		
 		
  		return false;
  		
@@ -187,24 +189,27 @@ $(document).ready(function(){
                 Time
     			+"<td>"+"<img src='/teamproject/Imgs/r_btn.gif' id='r_btn'>"+"</td>"+"</tr>");
  	
- 	$(document).on('click','#timeSelect , #timeNonSelect',function(){
- 		 		
+ 	$('#timeSelect , #timeNonSelect').click(function(){
+ 		var a = " ";		
  		var select = $('#timeSelect').text();
 		var nonselect = $(this).text();
  		var grade = $("input:radio[name=TheatersType]:checked").val(); //체크된 radio의 name();
-		if (nonselect = select)
+ 		var TheatersSelectRe = $('#TheatersSelectRe').text();
+ 		
+		if ( a != TheatersSelectRe )
 			
-			alert("극장을 선택해주세요");		
- 				
+			alert("극장을 선택해주세요");
+		
  		return false;
  		
  	}); 
- 	
  	 	
 	}
 	
 		
 	timeTable();
+	
+	
 	
 	
 });
@@ -229,7 +234,7 @@ function act() {
 		   //movie.jsp 팝업 실행 
 		   window.open('/teamproject/movie/movieTime.jsp','지역선택','width=1100px, height=600px, scrollbars= 0, toolbar=0, menubar=no resizable=no');
 		};
-	
+		
 </script>
 <script>
 $(document).ready(function(){
@@ -240,6 +245,36 @@ $(document).ready(function(){
 	});
 });
 </script>
+<script>
+$(document).ready(function(){
+	var moviename = $('#moviename').text();
+	$('body').append(moviename)
+	
+
+	function getmoviename(moviename) { 
+		$.ajax({
+			type : "post",
+			url : "ticketing.do",
+			data : {
+				//이름 : value
+				"moviename" : moviename
+			},
+			success : function(data) {
+				$("#movieresult").html(data);
+				$("#movieresult").attr("text", "moviename");
+			},
+			error : function(e) {
+				alert("다시 해주세요:" + e);
+			}
+		});
+	}	
+	
+   
+});
+</script>
+
+
+
 
 <title>영화 예매1</title> <!-- 타이틀은 일괄로 변경 바람  -->
 </head>
@@ -250,6 +285,7 @@ body{
 	background-color: #f9f9f9;
 
 }
+
 table{
 
 	width: 966px;
@@ -322,7 +358,7 @@ a {
 
 
 </style>
-
+<h1></h1>
 <body>
 <form name="Ticketing" action="Ticketing.do" method="get">
 <!-- 전체 테이블 -->
@@ -349,14 +385,23 @@ a {
 <img src="/teamproject/Imgs/kukjang_img.gif" >
 <img src="/teamproject/Imgs/reflash_img.gif" align="right" style="padding: 10px;" id="reflash1"></td>
 <td rowspan="7" align="center" bgcolor="#ffffff">
-<img src="/teamproject/Imgs/johe_img.gif" ></td>
+<!-- 영화이름 출력 -->
+<div id ="movieresult">
+
+<c:forEach items = "${arr}" var = "i">
+${i.location_name }
+</c:forEach>
+
+<img src="/teamproject/Imgs/johe_img.gif" >
+
+</div></td>
 </tr>
 
 <!-- 극장 선택 이미지 -->
 <tr id="TheatersSelect">
 <td colspan="2" align="center">
-<div id ="TheatersSelectRe">
-<img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1">
+<div id ="moviename" >
+<img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1" >
 </div></td>
 
 <td colspan="2" align="center"><Img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect2"></td>
@@ -397,8 +442,6 @@ a {
 </tr>
 </table>
 </form>
-
-
 </body>
 
 </html>
