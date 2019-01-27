@@ -314,6 +314,7 @@ a {
 
 
 <form name="Ticketing" action="Ticketing.do" method="get">
+<input type="hidden" value="${param.movieTitle }"> <!-- 지훈이형 이게 무비리스트에서 예매하기 눌려서 보낸 영화제목 값이에요. -->
 <!-- 전체 테이블 -->
 <table id="Ticketing1">
 
