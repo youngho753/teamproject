@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import bean.LocationBean;
+import bean.TicketBean;
 import dao.LocationDAO;
+import dao.TicketingDAO;
 
 /**
  * Servlet implementation class Ticketing
@@ -33,14 +35,17 @@ public class Ticketing extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int locationNum = Integer.parseInt(request.getParameter("locationNum"));
 		
-		LocationDAO dao = LocationDAO.getInstance();
-		ArrayList<LocationBean> arr = dao.getLocationName(locationNum);
+		String moviename = request.getParameter("moviename");
 		
-		request.setAttribute("locationArr", arr);
-		String name = arr.get(0).getLocation_name();
-		System.out.println(name);
+		System.out.println(moviename);
+		
+		TicketingDAO dao = TicketingDAO.getInstance();
+		
+		ArrayList<TicketBean> arr = dao.getMoiveName(moviename);
+		
+		request.setAttribute("arr", arr);
+		System.out.println(arr.get(0).getMovie_name());
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher("Ticketing1.jsp");
 		dispatcher.forward(request, response);
