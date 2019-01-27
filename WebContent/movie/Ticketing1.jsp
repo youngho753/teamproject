@@ -14,6 +14,7 @@ $(document).ready(function(){
 		window.open('calendar.jsp','달력','width=370, height=400, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left= '+ 300 + ', top= '+ 300 + ', screenX= '+ 290 + ', screenY= '+ 200);
 		});
 	});
+	
 </script>
 
 <script>
