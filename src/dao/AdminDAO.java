@@ -12,6 +12,7 @@ import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
 import bean.AdminBean;
+import bean.MovieBean;
 
 
 public class AdminDAO {
@@ -94,6 +95,42 @@ public class AdminDAO {
 		}
 		   
 		   return arr;
+	   }
+	   
+	   //상세페이지 바꾸기
+	   public AdminBean changeSangsaePage() {
+		   
+		   Connection con = null;
+		   Statement st = null;
+		   ResultSet rs = null;
+		   
+		   AdminBean bean = new AdminBean();
+		   
+		   try {
+			con = getConnection();
+			String sql = "select * from ADMINMOVIEINFO";
+			st = con.createStatement();
+			rs = st.executeQuery(sql);
+			
+			if(rs.next()) {
+				bean.setNo(rs.getInt("num"));
+				bean.setMpostfile(rs.getString("MPOSTFILE")); //이미지파일
+				bean.setMsubject(rs.getString("MSUBJECT")); //영화제목
+				bean.setMtype(rs.getString("MTYPE")); //디지털
+				bean.setMdate(rs.getDate("MDATE")); //개봉일
+				bean.setMdirector(rs.getString("MDIRECTOR")); //감독
+				bean.setMactor(rs.getString("MACTOR")); //배우
+				bean.setMgenre(rs.getString("MGENRE")); //장르
+				bean.setMstory(rs.getString("MSTORY")); //줄거리
+				bean.setAgeLimit(rs.getString("AGELIMIT")); //연령제한 사진
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			closeCon(con, st, null, rs);
+		}
+		   return bean;
 	   }
 	   
 	 //close

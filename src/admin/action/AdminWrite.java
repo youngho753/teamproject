@@ -89,6 +89,8 @@ public class AdminWrite extends HttpServlet {
 		
 		AdminDAO dao = AdminDAO.getInstance();
 		dao.movieInsert(ab);
+		resp.sendRedirect("change.do");
+		
 		
 		
 	}
