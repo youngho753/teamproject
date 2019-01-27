@@ -10,6 +10,7 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
+//자식창에서 부모창으로 주는 값
 	$(function(){
 		$('.locationCheck').on('click', act);
 		
@@ -17,11 +18,11 @@
 		function act() {
 		var thisTxt = $(this).text();
 		
-		$('#TheatersSelectRe', opener.document).text(thisTxt);
+		$('#moviename', opener.document).text(thisTxt);
 		window.close();
-			
+		
 		}
-		$id = $_GET['id']
+		
 </script>
 <script>
 	$("document").ready(function() {
