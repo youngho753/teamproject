@@ -28,7 +28,7 @@
 
 				</td>
 				<td id="5">
-					<a href="#"><img src="/teamproject/Imgs/menu2.gif"></a>	<!-- 영화관 -->
+					<a href="/teamproject/movieguwan.jsp"><img src="/teamproject/Imgs/menu2.gif"></a>	<!-- 영화관 -->
 				</td>
 				
 				<td id="6">
