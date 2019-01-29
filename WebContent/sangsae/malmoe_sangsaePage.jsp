@@ -88,7 +88,7 @@
 		//Ticketing1.jsp로 영화이름 보내기
 		function sendMovieTitleTicket(){
 			var movieTitle = $("#movieName").text();
-			window.open("/teamproject/Ticketing1.jsp?movieTitle="+movieTitle,"", "width=1120 height=580");
+			window.open("/teamproject/movie/Ticketing1.jsp?movieTitle="+movieTitle,"", "width=1120 height=580");
 			
 		}
 	

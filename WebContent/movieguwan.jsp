@@ -38,7 +38,7 @@
 	</div>
 	
 	<div id="guwan">
-		<jsp:include page="movie/movieTime.jsp"/>
+		<jsp:include page="/movie/guwanInfo.jsp"/>
 	</div>
 	
 	<div style="height : 200px;"></div> <!-- 경계구분용 div -->

@@ -9,10 +9,24 @@
 <link rel="stylesheet" type="text/css" href="/teamproject/css/movieTime.css">
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
+<script>
+//자식창에서 부모창으로 주는 값
+	$(function(){
+		$('.locationCheck').on('click', act);
+		
+	});
+		function act() {
+		var thisTxt = $(this).text();
+		
+		$('#moviename', opener.document).text(thisTxt);
+		window.close();
+		
+		}
+		
+</script>
 <script>
 	$("document").ready(function() {
-
+				
 	});
 	function changePlace(num) {
 		getLocation(num);
@@ -46,6 +60,8 @@
 			}
 		});
 	}
+	
+	
 </script>
 </head>
 
@@ -87,8 +103,8 @@
 					style="position: absolute; height: 452px;">
 				<ul class="inAreaList">
 					<c:forEach items = "${locationArr }" var = "i">
-						<a href = "javascript:void(0)" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })">
-							<li>${i.location_name }</li>
+						<a href = "#" onmouseover = "changePlaceIcon(${i.location_x},${i.location_y })" >
+							<li class = "locationCheck" >${i.location_name }</li>
 						</a>				
 					</c:forEach>
 				</ul>

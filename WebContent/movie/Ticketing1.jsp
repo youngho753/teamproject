@@ -1,23 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
-
-
 $(document).ready(function(){
 		//calendar버튼을 누르면 실행
 	   $("#calendar").click(function(){ 
 		   //calendar.jsp 팝업 실행 
-		var popupX = (window.screen.width / 2) - (200 / 2);
-		var popupY = (window.screen.height / 2) - (100 / 2);
-		window.open('calendar.jsp','달력','width=370, height=400, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left= '+ popupX + ', top= '+ popupY + ', screenX= '+ 290 + ', screenY= '+ 200);
+	
+		window.open('calendar.jsp','달력','width=370, height=400, scrollbars= 0, toolbar=0, menubar=no, resizable=no, left= '+ 300 + ', top= '+ 300 + ', screenX= '+ 290 + ', screenY= '+ 200);
 		});
 	});
+	
 </script>
+
 <script>
 $(document).ready(function(){
 	
@@ -141,12 +141,18 @@ $(document).ready(function(){
 	             +"<td>"+"<img src='/teamproject/Imgs/r_btn.gif' id='r_btn_week'>"+"</td>"+"</tr>");
 				
 		}
-	$(document).on('click','#weekSelect , #nonweekSelect',function(){
+	
+	$('#weekSelect , #nonweekSelect').click(function(){
 	 		
  		var select = $('#weekSelect').text();
 		var nonselect = $(this).text();
- 		
- 		alert(nonselect);		
+		var moviename = $('#moviename').text();
+		if (nonselect = select)
+			
+			alert("극장을 선택해주세요");
+		
+		
+		
  		return false;
  		
  	}); 
@@ -185,27 +191,28 @@ $(document).ready(function(){
                 Time
     			+"<td>"+"<img src='/teamproject/Imgs/r_btn.gif' id='r_btn'>"+"</td>"+"</tr>");
  	
- 	$(document).on('click','#timeSelect , #timeNonSelect',function(){
- 		 		
+ 	$('#timeSelect , #timeNonSelect').click(function(){
+ 		var a = " ";		
  		var select = $('#timeSelect').text();
 		var nonselect = $(this).text();
  		var grade = $("input:radio[name=TheatersType]:checked").val(); //체크된 radio의 name();
- 		alert(nonselect);		
+ 		var TheatersSelectRe = $('#TheatersSelectRe').text();
+ 		
+		if ( a != TheatersSelectRe )
+			
+			alert("극장을 선택해주세요");
+		
  		return false;
  		
  	}); 
- 	
- 	
+ 	 	
 	}
 	
-	
-	
+		
 	timeTable();
 	
 	
 	
-	
-	            
 	
 });
 </script>
@@ -218,15 +225,65 @@ $(document).ready(function(){
 	});
 });
 </script>
+
+<script>//극장 선택 버튼을 누르면 실행
+$(function(){
+	$('#TheatersSelect1').on('click', act);
+	
+});
+
+function act() {
+		   //movie.jsp 팝업 실행 
+		   window.open('/teamproject/movie/movieTime.jsp','지역선택','width=1100px, height=600px, scrollbars= 0, toolbar=0, menubar=no resizable=no');
+		};
+		
+</script>
 <script>
 $(document).ready(function(){
-		//극장 선택 버튼을 누르면 실행
-	   $("#TheatersSelect1").click(function(){ 
-		   //calendar.jsp 팝업 실행 
-		   window.open('/teamproject/movie/movieTime.jsp','지역선택','width=1100px, height=600px, scrollbars= 0, toolbar=0, menubar=no resizable=no');
-		});
+	
+   $('#reflash1,#reflash2').click(function(){ 
+	   location.reload();
+	   
 	});
+});
 </script>
+<script>
+$(document).ready(function(){
+	var moviename = $('#moviename').text();
+	//영화 이름 확인 
+	$('body').append(moviename)
+	
+
+	function getmoviename(moviename) { 
+		$.ajax({
+			type : "post",
+			url : "ticketing.do",
+			data : {
+				//이름 : value
+				"moviename" : moviename
+			},
+			success : function(data) {
+				$("#movieresult").html(data);
+				$("#movieresult").attr("text", "moviename");
+			},
+			error : function(e) {
+				alert("다시 해주세요:" + e);
+			}
+		});
+	}	
+	
+   
+});
+</script>
+
+<script>
+
+	function yeamaeTime(){
+		$("#movieresult").load("/teamproject/movie/yeamaeTime.jsp");
+	}
+
+</script>
+
 
 <title>영화 예매1</title> <!-- 타이틀은 일괄로 변경 바람  -->
 </head>
@@ -237,6 +294,7 @@ body{
 	background-color: #f9f9f9;
 
 }
+
 table{
 
 	width: 966px;
@@ -309,12 +367,10 @@ a {
 
 
 </style>
-
+<h1></h1>
 <body>
-
-
 <form name="Ticketing" action="Ticketing.do" method="get">
-<input type="hidden" value="${param.movieTitle }"> <!-- 지훈이형 이게 무비리스트에서 예매하기 눌려서 보낸 영화제목 값이에요. -->
+<input type="hidden" value="${param.movieTitle }"/>
 <!-- 전체 테이블 -->
 <table id="Ticketing1">
 
@@ -339,12 +395,26 @@ a {
 <img src="/teamproject/Imgs/kukjang_img.gif" >
 <img src="/teamproject/Imgs/reflash_img.gif" align="right" style="padding: 10px;" id="reflash1"></td>
 <td rowspan="7" align="center" bgcolor="#ffffff">
-<img src="/teamproject/Imgs/johe_img.gif" ></td>
+<!-- 영화이름 출력 -->
+<div id ="movieresult">
+
+<c:forEach items = "${arr}" var = "i">
+${i.location_name }
+</c:forEach>
+
+<img src="/teamproject/Imgs/johe_img.gif" onclick="yeamaeTime();" >
+
+</div>
+</td>
 </tr>
 
 <!-- 극장 선택 이미지 -->
 <tr id="TheatersSelect">
-<td colspan="2" align="center"><img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1"></td>
+<td colspan="2" align="center">
+<div id ="moviename" >
+<img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect1" >
+</div></td>
+
 <td colspan="2" align="center"><Img src="/teamproject/Imgs/kukjang_plus.gif" id="TheatersSelect2"></td>
 </tr>
 <!-- 극장 선택 이미지 --> 
@@ -363,7 +433,14 @@ a {
 
 <!-- 영화 선택 이미지 -->
 <tr id="MoveSelect" style="border: 1px solid gray;">
-<td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
+<td align="center" style="border: 1px solid gray;">
+<c:if test="${param.movieTitle ==null }">
+<img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1">
+</c:if>
+<c:if test="${param.movieTitle !=null }">
+<img src="/teamproject/Imgs/mal.jpg" style="width:97px; height:140px;"/>
+</c:if>
+</td>
 <td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
 <td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
 <td align="center" style="border: 1px solid gray;"><img src="/teamproject/Imgs/movie_plus.gif" id="MoveSelect1"></td>
@@ -383,8 +460,6 @@ a {
 </tr>
 </table>
 </form>
-
-
 </body>
 
 </html>
