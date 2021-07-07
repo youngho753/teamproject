@@ -4,9 +4,47 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>환영합니다.</title>
+<style>
+*{
+	margin : 0px;
+	padding : 0px;
+}
+	#container{
+		margin : 0 auto;
+		width : 1600px;
+	}
+	#header{
+	
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+/* 이 페이지는 처음 시작할때 나오는 페이지 입니다. */
+$(document).ready(function(){
+	//페이지가 load되면 다른파일의 페이지를 가져온다.
+    $("#header").load("movie/header.jsp");
+	$("#slide").load("movie/slide.jsp");
+    $("#Article").load("movie/movieList.jsp");
+    $("#footer").load("movie/footer.jsp");
+});
+</script>
 </head>
+
 <body>
-indexasdasd;
+
+	<!-- header -->
+	<div id = "header" style = "width : 1600px; height : 50px;"></div>
+	<!--  slideshow -->
+	<div id = "slide" style = "width : 1600px;"></div>
+	<!-- 본문 -->
+	<div id = "article" style = "width : 1600px;"></div>
+	
+	<div style="height : 200px;"></div> <!-- 경계구분용 div -->
+	<!-- footer -->
+	<div id = "footer" style = "width : 1600px; height : 200px;"></div>
+
 </body>
 </html>
+
+
